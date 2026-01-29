@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College of AI</title>
+</head>
+<body style="text-align:center; margin-top:100px;">
+
+    <h1 style="background:white; color:rgb(22, 16, 16); display:inline-block; padding:10px;">
+        College of Artificial Intelligence
+    </h1>
+
+    <br><br>
+
+    <input type="text" id="question" placeholder="Ask anything about the college..." size="40">
+    <button onclick="ask()">Search</button>
+
+    <p id="answer" style="margin-top:30px; font-weight:bold;"></p>
+
+    <script>
+        function ask() {
+            let q = document.getElementById("question").value;
+
+            fetch("/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({question: q})
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("answer").innerText = data.answer;
+            });
+        }
+    </script>
+
+</body>
+</html>
