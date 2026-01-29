@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>College of AI</title>
-</head>
-<body style="text-align:center; margin-top:100px;">
-
-    <h1 style="background:white; color:rgb(22, 16, 16); display:inline-block; padding:10px;">
-        College of Artificial Intelligence
-    </h1>
-
-    <br><br>
-
-    <input type="text" id="question" placeholder="Ask anything about the college..." size="40">
-    <button onclick="ask()">Search</button>
-
-    <p id="answer" style="margin-top:30px; font-weight:bold;"></p>
-
-    <script>
-        function ask() {
-            let q = document.getElementById("question").value;
-
-            fetch("/ask", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({question: q})
-            })
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById("answer").innerText = data.answer;
-            });
+    <title>Our Joint Project</title>
+    <style>
+        body {
+            background-color: #2c3e50; /* Dark Blue Background */
+            color: white; /* White Text */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
         }
-    </script>
+        .giant-button {
+            background-color: #e74c3c; /* Bright Red */
+            padding: 20px 40px;
+            font-size: 30px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .giant-button:hover {
+            background-color: #c0392b; /* Darker Red on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 MISSION CONTROL 🚀</h1>
+    <p>If you can read this, the sync worked!</p>
+    
+    <button class="giant-button" onclick="alert('WE ARE CONNECTED!')">
+        CLICK ME
+    </button>
 
 </body>
 </html>
