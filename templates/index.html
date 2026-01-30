@@ -3,17 +3,55 @@
 <head>
     <title>Our Amazing Project</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <div class="card">
         <h1>🚀 WE ARE LIVE</h1>
-        <p>The design is now loaded from a separate CSS file.</p>
-        <br>
-        <button class="giant-button" onclick="alert('The new design works!')">
-            TEST ME
-        </button>
+        <p>Scroll down to see the questions.</p>
     </div>
+
+    <div class="faq-section">
+
+        <h2 class="section-title">Section 1: Admission and Registration</h2>
+
+        <button class="accordion">
+            What is the admission average for the College of Artificial Intelligence? 
+            <i class="fas fa-chevron-down arrow"></i>
+        </button>
+        <div class="panel">
+            <p>The admission average is determined annually by the Ministry of Higher Education and Scientific Research, and it depends on the college's capacity and the general averages of applicants. According to the latest results for special admissions for the academic year 2020-2021, the minimum admission average for the College of Artificial Intelligence at the University of Baghdad was 62.62%. This means that a student must obtain an average close to this percentage to be admitted to one of the college's departments, noting that the college's admission system is a special admissions process.</p>
+        </div>
+
+        <button class="accordion">
+            What is the mechanism for special or direct admission to the college? 
+            <i class="fas fa-chevron-down arrow"></i>
+        </button>
+        <div class="panel">
+            <p>The college's admission system consists of several criteria, the first being the applicant's GPA, which must be at least 62%. Other criteria focus on the applicant's English language proficiency and technical experience. All applicants are interviewed, and admission to the College of Artificial Intelligence is based on these interviews.</p>
+        </div>
+        
+        </div> 
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                /* Toggle between adding and removing the "active" class */
+                this.classList.toggle("active");
+
+                /* Toggle hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
 
 </body>
 </html>
