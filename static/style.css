@@ -1,61 +1,74 @@
-/* Import a cool font from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-
+/* UPDATE BODY: Change height to min-height so we can scroll */
 body {
-    /* Animated Gradient Background */
-<<<<<<< Updated upstream
-    background: linear-gradient(-45deg, #3a3737, #ded0d5, #23a6d5, #23d5ab);
-=======
-    background: linear-gradient(-45deg, #ee7752, #d6e73c, #23a6d5, #23d5ab);
->>>>>>> Stashed changes
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    
-    height: 100vh;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh; /* Was height: 100vh */
+    height: auto;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* NEW STYLES FOR THE SECTIONS */
+.faq-section {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.section-title {
     color: white;
+    font-size: 24px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
-.card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 50px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px); /* The "Glass" effect */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.giant-button {
-    background-color: white;
-    color: #e73c7e;
-    padding: 15px 40px;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 50px;
+/* The Question Button */
+.accordion {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
-.giant-button:hover {
-    transform: scale(1.1); /* Grows when you touch it */
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+/* Hover Effect */
+.accordion:hover, .active {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* The Answer Panel (Hidden by default) */
+.panel {
+    padding: 0 18px;
+    background-color: rgba(0, 0, 0, 0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+}
+
+.panel p {
+    padding: 15px 0;
+}
+
+/* The Arrow Icon Rotation */
+.arrow {
+    transition: transform 0.3s;
+}
+
+.active .arrow {
+    transform: rotate(180deg);
 }
