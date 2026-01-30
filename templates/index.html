@@ -3,17 +3,122 @@
 <head>
     <title>Our Amazing Project</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <div class="card">
         <h1>🚀 WE ARE LIVE</h1>
-        <p>The design is now loaded from a separate CSS file.</p>
-        <br>
-        <button class="giant-button" onclick="alert('The new design works!')">
-            TEST ME
-        </button>
+        <p>Scroll down to see the questions.</p>
     </div>
+
+    <div class="faq-section">
+
+        <h2 class="section-title">Section 1: General Questions</h2>
+
+        <button class="accordion"><!DOCTYPE html>
+<html>
+<head>
+    <title>Q&A Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>📚 KNOWLEDGE BASE</h1>
+        <p>10 Sections | 100 Questions</p>
+    </div>
+
+    <div class="faq-container">
+
+        <h2 class="section-title">Section 1: The Beginning</h2>
+
+        <button class="accordion">Question 1 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 1 goes here.</p></div>
+
+        <button class="accordion">Question 2 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 2 goes here.</p></div>
+
+        <button class="accordion">Question 3 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 3 goes here.</p></div>
+
+        <button class="accordion">Question 4 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 4 goes here.</p></div>
+
+        <button class="accordion">Question 5 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 5 goes here.</p></div>
+
+        <button class="accordion">Question 6 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 6 goes here.</p></div>
+
+        <button class="accordion">Question 7 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 7 goes here.</p></div>
+
+        <button class="accordion">Question 8 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 8 goes here.</p></div>
+
+        <button class="accordion">Question 9 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 9 goes here.</p></div>
+
+        <button class="accordion">Question 10 <i class="fas fa-chevron-down icon"></i></button>
+        <div class="panel"><p>Answer for question 10 goes here.</p></div>
+        </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+
+</body>
+</html>
+            What is this project about? 
+            <i class="fas fa-chevron-down arrow"></i>
+        </button>
+        <div class="panel">
+            <p>This is an AI project built by our amazing team of 6 people.</p>
+        </div>
+
+        <button class="accordion">
+            How do I join? 
+            <i class="fas fa-chevron-down arrow"></i>
+        </button>
+        <div class="panel">
+            <p>Ask the admin to add you on GitHub!</p>
+        </div>
+        
+        </div> 
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                /* Toggle between adding and removing the "active" class */
+                this.classList.toggle("active");
+
+                /* Toggle hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
 
 </body>
 </html>
