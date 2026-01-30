@@ -8,67 +8,138 @@
 <body>
 
     <div class="header-section">
-        <h1 style="margin-bottom: 15px;">🚀 GALAXY KNOWLEDGE BASE</h1>
-        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="Type to search for a question...">
+        <h1 style="margin-bottom: 15px;">🚀 College of AI</h1>
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="Type to search (e.g., 'Git', 'AI', 'Python')...">
     </div>
 
     <div class="faq-container">
 
         <div class="searchable-section">
-            <h2 class="section-title">Section 1: The Basics</h2>
+            <h2 class="section-title">Section 1: AI & Machine Learning</h2>
 
             <div class="q-wrapper">
                 <button class="accordion">What is Artificial Intelligence? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>AI is the simulation of human intelligence by machines.</p></div>
+                <div class="panel"><p>AI is the simulation of human intelligence processes by machines, especially computer systems.</p></div>
             </div>
 
             <div class="q-wrapper">
-                <button class="accordion">How do I install Python? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Download it from python.org and check 'Add to PATH'.</p></div>
+                <button class="accordion">What is the difference between AI and ML? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>AI is the broad concept of smart machines, while Machine Learning (ML) is a subset where machines learn from data without being explicitly programmed.</p></div>
             </div>
 
             <div class="q-wrapper">
-                <button class="accordion">What is GitHub? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>It is a platform for hosting code and collaboration.</p></div>
+                <button class="accordion">What is Deep Learning? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Deep Learning is a type of ML based on artificial neural networks with multiple layers (hence "deep").</p></div>
             </div>
-            
+
+            <div class="q-wrapper">
+                <button class="accordion">What is NLP? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Natural Language Processing (NLP) helps computers understand, interpret, and manipulate human language (like ChatGPT!).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Computer Vision? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It is a field of AI that enables computers and systems to derive meaningful information from digital images and videos.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Neural Network? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>A series of algorithms that mimic the operations of a human brain to recognize relationships between vast amounts of data.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Supervised Learning? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>A type of ML where the model is trained on labeled data (it knows the answers beforehand).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Unsupervised Learning? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>A type of ML where the model works on data that is not labeled, finding hidden patterns on its own.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">Who is the 'father' of AI? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Alan Turing is often considered the father of theoretical computer science and artificial intelligence.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the Turing Test? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>A test of a machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human.</p></div>
             </div>
         </div>
 
-    <script>
-        // 1. Accordion Logic (Click to Open)
-        var acc = document.getElementsByClassName("accordion");
-        for (var i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-            });
-        }
+        <div class="searchable-section">
+            <h2 class="section-title">Section 2: Web Development & Git</h2>
 
-        // 2. Smart Search Logic
-        function searchFunction() {
-            var input = document.getElementById("searchInput");
-            var filter = input.value.toUpperCase();
-            var wrappers = document.getElementsByClassName("q-wrapper");
+            <div class="q-wrapper">
+                <button class="accordion">What is HTML? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>HyperText Markup Language (HTML) is the standard language for creating web pages.</p></div>
+            </div>
 
-            for (var i = 0; i < wrappers.length; i++) {
-                var btn = wrappers[i].getElementsByClassName("accordion")[0];
-                var txtValue = btn.textContent || btn.innerText;
-                
-                // If text matches search, show it. If not, hide it.
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    wrappers[i].style.display = "";
-                } else {
-                    wrappers[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+            <div class="q-wrapper">
+                <button class="accordion">What is CSS? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Cascading Style Sheets (CSS) describe how HTML elements are to be displayed on screen (colors, fonts, layout).</p></div>
+            </div>
 
-</body>
-</html>
+            <div class="q-wrapper">
+                <button class="accordion">What is Flask? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Flask is a lightweight web framework written in Python used to build websites easily.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What does 'Git Push' do? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It uploads your local code changes to a remote repository like GitHub.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What does 'Git Pull' do? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It downloads changes from GitHub to your local computer to keep your code up to date.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a 404 Error? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It means 'Page Not Found'. The server could not find what was requested.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Bootstrap? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>A popular CSS framework for developing responsive and mobile-first websites.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the DOM? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>The Document Object Model (DOM) is an interface that treats an HTML document as a tree structure.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is JavaScript used for? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It is used to make webpages interactive (like this search bar!).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a 'div' tag? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It is a container unit used to group HTML elements together for styling.</p></div>
+            </div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title">Section 3: Python & Tools</h2>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is 'Pip'? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Pip is the package installer for Python. You use it to install libraries like Flask.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Virtual Environment? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>A tool that helps to keep dependencies required by different projects separate by creating isolated python environments.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">How do you comment in Python? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>You use the hash symbol (#) for single-line comments.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Python List? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>
