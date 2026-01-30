@@ -1,74 +1,111 @@
-/* UPDATE BODY: Change height to min-height so we can scroll */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
 body {
-    min-height: 100vh; /* Was height: 100vh */
-    height: auto;
-    flex-direction: column;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  background-color: #F4F6F7;
+  color: #333;
 }
 
-/* NEW STYLES FOR THE SECTIONS */
-.faq-section {
-    width: 80%;
-    max-width: 800px;
-    margin-top: 40px;
-    text-align: left;
+/* Navbar */
+.navbar {
+  background-color: #0B3C5D;
+  color: white;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.section-title {
-    color: white;
-    font-size: 24px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-/* The Question Button */
-.accordion {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    font-size: 18px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
+.navbar a:hover {
+  color: #328CC1;
 }
 
-/* Hover Effect */
-.accordion:hover, .active {
-    background-color: rgba(255, 255, 255, 0.3);
+/* Hero */
+.hero {
+  height: 70vh;
+  background: linear-gradient(
+    rgba(11, 60, 93, 0.8),
+    rgba(11, 60, 93, 0.8)
+  ),
+  url("campus.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-/* The Answer Panel (Hidden by default) */
-.panel {
-    padding: 0 18px;
-    background-color: rgba(0, 0, 0, 0.2);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 10px;
+.hero-content {
+  color: white;
+  max-width: 600px;
+  margin-left: 80px;
 }
 
-.panel p {
-    padding: 15px 0;
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
 }
 
-/* The Arrow Icon Rotation */
-.arrow {
-    transition: transform 0.3s;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
 }
 
-.active .arrow {
-    transform: rotate(180deg);
+.hero button {
+  background-color: #328CC1;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #1e6fa3;
+}
+
+/* Sections */
+section {
+  padding: 70px 80px;
+}
+
+section h2 {
+  color: #0B3C5D;
+  margin-bottom: 20px;
+}
+
+/* Departments */
+.dept-cards {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 40px;
+  flex: 1;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Footer */
+footer {
+  background-color: #0B3C5D;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
