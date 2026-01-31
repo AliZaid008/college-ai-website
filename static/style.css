@@ -1,28 +1,22 @@
-/* --- MIDNIGHT GALAXY THEME --- */
+/* =======================================================
+   1. تنسيقات عامة (الخلفية والخطوط)
+   ======================================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 body {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-    /* Deep Animated Gradient (No White!) */
+    /* خلفية المجرة المتحركة */
     background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
     color: white;
-    padding-bottom: 50px;
-=======
-  background-color: #d00f0f;
-=======
->>>>>>> Stashed changes
-  background-color: #F4F6F7;
-  color: #333;
->>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
+    direction: rtl;
+    text-align: right;
 }
 
 @keyframes gradientBG {
@@ -31,127 +25,253 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* --- THE SMART SEARCH BAR --- */
+/* =======================================================
+   2. رأس الصفحة وشريط البحث
+   ======================================================= */
 .header-section {
     background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 30px 20px;
-    text-align: center;
-    position: sticky; /* Sticks to top when scrolling */
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px); /* تأثير الزجاج الضبابي */
+    padding: 50px 20px;
+    text-align: center; /* توسيط المحتوى */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.header-section h1 {
+    margin-bottom: 15px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+.header-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+/* شريط البحث (تم تعديله ليكون في الوسط وواضحاً) */
 .search-box {
-    width: 100%;
-    max-width: 600px;
-    padding: 15px 25px;
-    font-size: 18px;
+    display: block;
+    margin: 0 auto; /* هذا الأمر يجعل الشريط في المنتصف تماماً */
+    width: 90%;
+    max-width: 700px;
+    padding: 18px 30px;
     border-radius: 50px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
+    
+    /* لون خلفية غامق ليكون متبايناً مع الخلفية */
+    background: rgba(0, 0, 0, 0.6); 
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    
     color: white;
+    font-size: 1.1rem;
     outline: none;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.search-box::placeholder { color: rgba(255, 255, 255, 0.6); }
 .search-box:focus {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #00d2ff;
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+    background: rgba(0, 0, 0, 0.85);
+    border-color: #ffca28; /* يتحول للإطار الذهبي عند الكتابة */
+    box-shadow: 0 0 20px rgba(255, 202, 40, 0.4);
+    transform: scale(1.02);
 }
 
-/* --- THE QUESTIONS --- */
-.faq-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+.search-box::placeholder {
+    color: #bbb;
+}
+
+/* =======================================================
+   3. قائمة الأسئلة (Accordion)
+   ======================================================= */
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    padding-bottom: 100px;
 }
 
 .section-title {
-    color: #00d2ff; /* Neon Blue Title */
-    border-bottom: 2px solid rgba(255,255,255,0.1);
-    padding-bottom: 10px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+    color: #4fc3f7; /* لون أزرق نيون للعناوين */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-shadow: 0 0 5px rgba(79, 195, 247, 0.3);
+}
+
+.q-wrapper {
+    margin-bottom: 15px;
 }
 
 .accordion {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     color: white;
     cursor: pointer;
-    padding: 18px;
+    padding: 20px 25px;
     width: 100%;
-    text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
     outline: none;
-    transition: 0.3s;
-    font-size: 16px;
-    border-radius: 10px;
-    margin-bottom: 8px;
+    font-size: 1.15rem;
+    transition: 0.4s;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 600;
 }
 
 .accordion:hover {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateX(5px); /* Slight movement effect */
+    transform: translateX(-5px); /* حركة بسيطة عند الماوس */
 }
 
 .active {
-    background: rgba(0, 210, 255, 0.2); /* Glow when open */
-    border-color: #00d2ff;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffca28; /* إطار ذهبي عند الفتح */
+    color: #ffca28;
 }
 
 .panel {
-    padding: 0 18px;
-    background: rgba(0, 0, 0, 0.2);
+    padding: 0 25px;
+    background: rgba(0, 0, 0, 0.3); /* خلفية أغمق للإجابة */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 10px;
+    border-radius: 0 0 12px 12px;
+    border-right: 3px solid #ffca28; /* خط ذهبي جانبي */
 }
 
-.panel p { padding: 20px 0; color: #ddd; line-height: 1.6; }
-
-<<<<<<< HEAD
-/* Arrow Rotation */
-.icon { transition: transform 0.3s; }
-.active .icon { transform: rotate(180deg); }
-=======
-/* Departments */
-.dept-cards {
-  display: flex;
-  gap: 30px;
+.panel p {
+    padding: 25px 0;
+    line-height: 1.8;
+    color: #e0e0e0;
+    font-size: 1.05rem;
 }
 
-.card {
-  background-color: white;
-  padding: 40px;
-  flex: 1;
-  text-align: center;
-  border-radius: 6px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
+/* =======================================================
+   4. الأزرار وصندوق "لا توجد نتائج"
+   ======================================================= */
+
+/* زر "طرح سؤال" الذهبي */
+.ask-btn {
+    display: inline-block;
+    background: #ffca28; /* أصفر ذهبي */
+    color: #0d47a1;      /* نص أزرق غامق */
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(255, 202, 40, 0.4);
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-.card:hover {
-  transform: translateY(-8px);
+.ask-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    background: #ffd54f;
+    box-shadow: 0 8px 25px rgba(255, 202, 40, 0.6);
 }
 
-/* Footer */
-footer {
-  background-color: #0B3C5D;
-  color: white;
-  text-align: center;
-  padding: 20px;
+/* صندوق "لم تجد سؤالك" المخفي */
+.no-results-box {
+    display: none; /* مخفي افتراضياً */
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    margin-top: 40px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease;
 }
 
->>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* المنطقة السفلية الثابتة */
+.footer-cta {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =======================================================
+   5. تنسيقات صفحة النموذج (ask.html)
+   ======================================================= */
+.form-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #4fc3f7;
+    font-size: 1.1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: 'Cairo';
+    font-size: 1rem;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #ffca28;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Cairo';
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(13, 71, 161, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13, 71, 161, 0.6);
+    background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
+}
+
+.success-box {
+    background: rgba(46, 204, 113, 0.15);
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
