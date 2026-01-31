@@ -6,19 +6,27 @@
     <title>دليل كلية الذكاء الاصطناعي - جامعة بغداد</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     
     <style>
         /* =======================================================
-           1. إعدادات أساسية ومتغيرات الألوان
+           1. نظام الألوان الفخم (The Magnificent Palette)
            ======================================================= */
         :root {
-            --primary-color: #00d2ff;
-            --secondary-color: #3a7bd5;
-            --accent-color: #ffca28;
-            --text-light: #ffffff;
-            --glass-bg: rgba(0, 0, 0, 0.6);
-            --border-radius: 15px;
+            /* الألوان الرئيسية: سيان مشع + ذهبي فخم */
+            --primary-neon: #00f2ff;       /* Cyan Neon */
+            --secondary-neon: #7000ff;     /* Purple Neon */
+            --accent-gold: #ffd700;        /* Gold */
+            
+            /* خلفيات العناصر */
+            --card-bg: rgba(20, 20, 45, 0.75);     /* كحلي غامق شفاف */
+            --accordion-bg: rgba(30, 30, 70, 0.8); /* أفتح قليلاً */
+            --accordion-hover: rgba(50, 50, 100, 0.9);
+            --panel-bg: rgba(10, 10, 25, 0.6);
+            
+            /* النصوص */
+            --text-main: #ffffff;
+            --text-secondary: #e0e0e0;
         }
 
         * {
@@ -29,13 +37,13 @@
 
         body {
             font-family: 'Tajawal', 'Cairo', sans-serif;
-            color: var(--text-light);
+            color: var(--text-main);
             min-height: 100vh;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.7;
             text-align: right;
             
-            /* --- الخلفية: صورة مدخل الجامعة --- */
+            /* --- الخلفية: صورة مدخل الجامعة الجادرية --- */
             background-image: url("{{ url_for('static', filename='uob-entrance001.jpg') }}");
             background-size: cover;
             background-position: center;
@@ -43,43 +51,45 @@
             background-repeat: no-repeat;
         }
 
-        /* طبقة تعتيم */
-        .main-overlay {
+        /* طبقة التلوين الفخمة (Gradient Overlay) */
+        /* هذه الطبقة تعطي اللون البنفسجي/الأزرق العميق فوق الصورة */
+        .magnificent-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 12, 41, 0.85);
+            /* تدرج لوني من الكحلي الغامق إلى البنفسجي الغامق */
+            background: linear-gradient(135deg, rgba(10, 10, 30, 0.92) 0%, rgba(25, 20, 60, 0.88) 100%);
             z-index: -1;
         }
 
         /* =======================================================
-           2. الهيدر
+           2. الهيدر والتصميم العلوي
            ======================================================= */
         header.official-header {
             position: relative;
-            background: transparent;
-            padding: 60px 20px;
+            padding: 60px 20px 40px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* خط فاصل نيون خفيف في الأسفل */
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .header-content {
             position: relative;
             z-index: 2;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        /* تنسيق الشعارات */
+        /* حاوية الشعارات */
         .logos-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 35px;
         }
 
         .logo-img {
@@ -89,42 +99,70 @@
             background: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
             padding: 5px;
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
-            transition: transform 0.3s ease;
+            /* توهج حول الشعارات */
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
-        .logo-img:hover { transform: scale(1.1); }
+        
+        /* شعار الكلية في المنتصف يكون أكبر قليلاً */
+        .logo-center {
+            width: 130px;
+            height: 130px;
+            box-shadow: 0 0 35px rgba(0, 242, 255, 0.5);
+        }
 
-        /* العناوين */
-        .titles-container h1 { font-size: 2.4rem; color: var(--primary-color); margin-bottom: 10px; text-shadow: 2px 2px 4px black; }
-        .titles-container h2 { font-size: 2rem; color: #fff; margin-bottom: 10px; }
-        .titles-container h3 { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 25px; font-weight: normal; letter-spacing: 1px; }
+        .logo-img:hover { transform: scale(1.15) rotate(5deg); }
+
+        /* العناوين وتأثيرات النصوص */
+        .titles-container h1 { 
+            font-size: 2.6rem; 
+            color: var(--primary-neon); 
+            margin-bottom: 10px; 
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            font-weight: 900;
+        }
+        
+        .titles-container h2 { 
+            font-size: 2.2rem; 
+            color: #fff; 
+            margin-bottom: 10px;
+            font-weight: 700; 
+        }
+        
+        .titles-container h3 { 
+            font-size: 1.6rem; 
+            color: var(--accent-gold); 
+            margin-bottom: 30px; 
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
 
         /* صندوق الوصف */
         .college-description {
-            background: var(--glass-bg);
-            padding: 30px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05); /* زجاجي خفيف جداً */
+            padding: 35px;
+            border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 35px;
-            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-size: 1.15rem;
             line-height: 2;
             text-align: justify;
             text-align-last: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            color: #f8f9fa;
         }
 
-        /* تنويه إخلاء المسؤولية */
         .disclaimer-box {
-            background: rgba(255, 68, 68, 0.15);
-            border: 1px dashed #ff4444;
-            color: #ffcccc;
-            padding: 15px;
-            border-radius: 8px;
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.5);
+            color: #ffadb5;
+            padding: 15px 25px;
+            border-radius: 10px;
             font-size: 0.95rem;
             display: inline-block;
-            max-width: 850px;
-            line-height: 1.6;
+            max-width: 900px;
             backdrop-filter: blur(5px);
         }
 
@@ -132,57 +170,55 @@
            3. شريط البحث
            ======================================================= */
         .search-container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            margin-top: 60px;
+            margin-bottom: 60px;
             text-align: center;
-            position: relative;
-            z-index: 10;
         }
 
         .search-box {
             width: 90%;
-            max-width: 750px;
-            padding: 20px 35px;
-            border-radius: 50px;
-            background: rgba(0, 0, 0, 0.7); 
-            border: 2px solid var(--secondary-color);
+            max-width: 800px;
+            padding: 22px 40px;
+            border-radius: 60px;
+            background: rgba(0, 0, 0, 0.6); 
+            border: 2px solid var(--primary-neon);
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             outline: none;
             transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
             font-family: 'Tajawal', sans-serif;
         }
 
         .search-box:focus {
-            background: rgba(0, 0, 0, 0.9);
-            border-color: var(--accent-color);
-            box-shadow: 0 0 25px rgba(255, 202, 40, 0.5);
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.4);
             transform: scale(1.02);
         }
+        .search-box::placeholder { color: rgba(255, 255, 255, 0.6); }
 
         /* =======================================================
-           4. قائمة الأسئلة (Accordion)
+           4. الأسئلة (Accordion)
            ======================================================= */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px 120px 20px;
+            padding: 0 20px 150px 20px;
             position: relative;
             z-index: 10;
         }
 
         .section-title {
-            color: var(--primary-color);
+            color: var(--primary-neon);
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 15px;
-            margin-top: 70px;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
+            margin-top: 80px;
+            margin-bottom: 35px;
+            font-size: 1.9rem;
             font-weight: 800;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
             position: relative;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
         }
         
         .section-title::after {
@@ -190,60 +226,67 @@
             position: absolute;
             bottom: -2px;
             right: 0;
-            width: 100px;
-            height: 2px;
-            background-color: var(--accent-color);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            border-radius: 2px;
         }
 
-        .q-wrapper { margin-bottom: 18px; }
+        .q-wrapper { margin-bottom: 20px; }
 
         .accordion {
-            background: rgba(30, 30, 60, 0.8);
+            background: var(--accordion-bg);
             color: white;
             cursor: pointer;
             padding: 22px 30px;
             width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: none;
+            border-right: 4px solid transparent; /* تحضير للحافة الملونة */
             text-align: right;
             outline: none;
-            font-size: 1.2rem;
-            transition: all 0.4s ease;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
             border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
             font-family: 'Tajawal', sans-serif;
-            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .accordion:hover {
-            background: rgba(50, 50, 90, 0.9);
+            background: var(--accordion-hover);
             transform: translateX(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .active {
-            background: rgba(20, 20, 40, 0.95);
-            border-color: var(--accent-color);
-            color: var(--accent-color);
+            background: linear-gradient(90deg, rgba(0, 210, 255, 0.15) 0%, rgba(30, 30, 70, 0.9) 100%);
+            border-right: 4px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .accordion .icon {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
         }
 
         .panel {
-            padding: 0 30px;
-            background: rgba(0, 0, 0, 0.6);
+            padding: 0 35px;
+            background: var(--panel-bg);
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             border-radius: 0 0 12px 12px;
-            border-right: 4px solid var(--accent-color);
+            margin-top: -5px; /* دمج بصري مع السؤال */
+            margin-bottom: 5px;
         }
 
         .panel p {
             padding: 30px 0;
             line-height: 1.9;
-            color: #f0f0f0;
-            font-size: 1.1rem;
+            color: #dcdcdc;
+            font-size: 1.15rem;
         }
 
         /* =======================================================
@@ -258,69 +301,66 @@
 
         .ask-btn {
             display: inline-block;
-            background: var(--accent-color);
-            color: #0d47a1;
-            padding: 16px 40px;
+            background: linear-gradient(45deg, var(--accent-gold), #ffbf00);
+            color: #000;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(255, 202, 40, 0.4);
+            font-size: 1.3rem;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
             transition: 0.3s;
             border: none;
             cursor: pointer;
         }
         .ask-btn:hover {
             transform: scale(1.05) translateY(-3px);
-            background: #ffd54f;
-            box-shadow: 0 8px 30px rgba(255, 202, 40, 0.6);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
         }
 
         .no-results-box {
             display: none;
             text-align: center;
             padding: 60px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             margin-top: 50px;
             border: 2px dashed rgba(255, 255, 255, 0.2);
-            animation: fadeIn 0.5s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         footer {
             text-align: center;
             padding: 40px;
-            margin-top: 60px;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             font-size: 1rem;
-            color: #aaa;
+            color: #888;
             border-top: 1px solid #333;
         }
 
+        /* تحسينات للجوال */
         @media (max-width: 768px) {
             .logos-container { gap: 15px; }
             .logo-img { width: 70px; height: 70px; }
-            .titles-container h1 { font-size: 1.8rem; }
-            .college-description { font-size: 0.95rem; padding: 15px; }
-            .accordion { font-size: 1rem; padding: 15px 20px; }
+            .logo-center { width: 90px; height: 90px; }
+            .titles-container h1 { font-size: 2rem; }
+            .college-description { font-size: 1rem; padding: 20px; }
+            .search-box { padding: 15px 25px; font-size: 1rem; }
+            .accordion { font-size: 1.1rem; padding: 15px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-overlay"></div>
+    <div class="magnificent-overlay"></div>
 
     <header class="official-header">
-        
         <div class="header-content">
             <div class="logos-container">
-                <img src="{{ url_for('static', filename='OIP logo.jpg') }}" alt="شعار جامعة بغداد" class="logo-img" title="جامعة بغداد">
-                <img src="{{ url_for('static', filename='coai-arabic-logo.png') }}" alt="شعار كلية الذكاء الاصطناعي" class="logo-img" style="width: 120px; height: 120px;" title="كلية الذكاء الاصطناعي">
-                <img src="{{ url_for('static', filename='1769261644329.jpg') }}" alt="شعار قسم البيانات الضخمة" class="logo-img" title="قسم البيانات الضخمة">
+                <img src="{{ url_for('static', filename='OIP logo.jpg') }}" alt="جامعة بغداد" class="logo-img" title="جامعة بغداد">
+                
+                <img src="{{ url_for('static', filename='coai-arabic-logo.png') }}" alt="كلية الذكاء الاصطناعي" class="logo-img logo-center" title="كلية الذكاء الاصطناعي">
+                
+                <img src="{{ url_for('static', filename='1769261644329.jpg') }}" alt="قسم البيانات الضخمة" class="logo-img" title="قسم البيانات الضخمة">
             </div>
 
             <div class="titles-container">
@@ -340,7 +380,7 @@
             </div>
 
             <div class="disclaimer-box">
-                ⚠️ <strong>تنويه هام:</strong> هذا الدليل هو <u>مبادرة طلابية تطوعية</u>. المعلومات الواردة هنا تم جمعها بعناية، ولكن هذا الموقع <strong>غير رسمي</strong> ولا يمثل القنوات الرسمية لعمادة الكلية.
+                <i class="fas fa-exclamation-triangle"></i> <strong>تنويه هام:</strong> هذا الدليل هو <u>مبادرة طلابية تطوعية</u>. المعلومات الواردة هنا تم جمعها بعناية لتسهيل حياة الطالب الجامعي، ولكن هذا الموقع <strong>غير رسمي</strong> ولا يمثل القنوات الرسمية لعمادة الكلية.
             </div>
         </div>
     </header>
@@ -352,7 +392,7 @@
     <div class="container">
 
         <div class="searchable-section">
-            <h2 class="section-title">1. معدلات القبول وآلية التقديم</h2>
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> 1. معدلات القبول وآلية التقديم</h2>
             <div class="q-wrapper">
                 <button class="accordion">ما هو معدل القبول في كلية الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>يُحدد معدل القبول سنويًا من قبل وزارة التعليم العالي، ووفقًا لأحدث نتائج للعام 2025-2026، بلغ الحد الأدنى 96.86%. القبول في الكلية هو قبول خاص.</p></div>
@@ -370,17 +410,13 @@
                 <div class="panel"><p>يتم التركيز على الشغف بالتقنية، القدرة على حل المشكلات (Logic)، والثقافة العامة حول الذكاء الاصطناعي.</p></div>
             </div>
             <div class="q-wrapper">
-                <button class="accordion">هل يمكن لخريجي التعليم المهني أو التجارة التقديم؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>حالياً، القبول مقتصر على خريجي الدراسة الإعدادية (الفرع العلمي / التطبيقي / الأحيائي) حسب ضوابط الوزارة.</p></div>
-            </div>
-            <div class="q-wrapper">
                 <button class="accordion">هل يوجد تقديم مسائي أو موازي؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>نعم، تم فتح باب التقديم الموازي بنسب محددة، أما المسائي فيخضع للتعليمات الوزارية السنوية، يرجى مراجعة شعبة التسجيل للتأكد من توفره لهذا العام.</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">2. التأسيس والرؤية الأكاديمية</h2>
+            <h2 class="section-title"><i class="fas fa-university"></i> 2. التأسيس والرؤية الأكاديمية</h2>
             <div class="q-wrapper">
                 <button class="accordion">تأسس القسم في 2025، هل هي قلة خبرة؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>بل ميزة استراتيجية. القسم وُلد رقمياً بمناهج 2025 بعيداً عن تركة المناهج القديمة.</p></div>
@@ -396,7 +432,7 @@
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">3. المناهج ونظام بولونيا</h2>
+            <h2 class="section-title"><i class="fas fa-book-open"></i> 3. المناهج ونظام بولونيا</h2>
             <div class="q-wrapper">
                 <button class="accordion">ما الفرق في نظام بولونيا (Bologna Process)؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>الطالب شريك، التقييم مستمر يومياً، وليس مجرد امتحان نهائي. يعتمد على الوحدات (ECTS) والجهد الطالب، ويسمح بمرونة عالية في التنقل الأكاديمي.</p></div>
@@ -420,23 +456,7 @@
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">4. بيئة الامتحانات والتقييم</h2>
-            <div class="q-wrapper">
-                <button class="accordion">هل تعدد بيئات الامتحان تعقيد؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>هو تدريب على المرونة الذهنية لتكون قادراً على استخدام أدوات مختلفة (ورقي، إلكتروني، عملي).</p></div>
-            </div>
-            <div class="q-wrapper">
-                <button class="accordion">كيف تضمنون عدالة التقييم؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>بملاءمة الأداة للمهمة؛ المبرمج يُقيم بالكود والمشروع، وليس بالحفظ الكتابي للنظريات فقط.</p></div>
-            </div>
-            <div class="q-wrapper">
-                <button class="accordion">ما هو نظام الغيابات؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نظام بولونيا صارم جداً في الحضور. تجاوز نسبة الغياب المحددة (10% بدون عذر) يؤدي إلى الرسوب في المادة مباشرة دون دخول الامتحان النهائي.</p></div>
-            </div>
-        </div>
-
-        <div class="searchable-section">
-            <h2 class="section-title">5. المختبرات والجانب العملي</h2>
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> 4. المختبرات والجانب العملي</h2>
             <div class="q-wrapper">
                 <button class="accordion">ما هي مواصفات المختبرات؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>تم تجهيز المختبرات بأحدث أجهزة الحاسوب ذات المواصفات العالية (GPUs) المناسبة لتدريب نماذج الذكاء الاصطناعي ومعالجة البيانات الضخمة.</p></div>
@@ -452,7 +472,7 @@
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">6. المستقبل الوظيفي والتعيين</h2>
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> 5. المستقبل الوظيفي والتعيين</h2>
             <div class="q-wrapper">
                 <button class="accordion">هل التعيين مركزي؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>كليات الذكاء الاصطناعي مشمولة بالتعيين المركزي حالياً وفق القوانين النافذة (قانون التدرج الطبي والصحي والعلوم الساندة - حسب التحديثات الأخيرة).</p></div>
@@ -468,7 +488,7 @@
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">7. الموقع والحياة الجامعية</h2>
+            <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> 6. الموقع والحياة الجامعية</h2>
             <div class="q-wrapper">
                 <button class="accordion">أين تقع الكلية بالضبط؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>تقع الكلية داخل مجمع الجادرية (جامعة بغداد)، قرب المكتبة المركزية.</p></div>
@@ -484,7 +504,7 @@
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">8. شؤون الطلبة والخدمات</h2>
+            <h2 class="section-title"><i class="fas fa-concierge-bell"></i> 7. شؤون الطلبة والخدمات</h2>
             <div class="q-wrapper">
                 <button class="accordion">كيف يمكنني الحصول على هوية الطالب؟ <i class="fas fa-chevron-down icon"></i></button>
                 <div class="panel"><p>بعد إتمام التسجيل ودفع الرسوم، يتم إصدار الهوية الجامعية من قسم التسجيل. يجب جلب صورة شخصية حديثة والمستمسكات الأصلية.</p></div>
@@ -500,7 +520,7 @@
         </div>
 
         <div id="noResults" class="no-results-box">
-            <h3 style="color: var(--accent-color); margin-bottom: 10px;">لم تجد سؤالك؟</h3>
+            <h3 style="color: var(--accent-gold); margin-bottom: 10px;">لم تجد سؤالك؟</h3>
             <p style="margin-bottom: 20px;">يبدو أننا لم نجب على هذا السؤال بعد. يمكنك إرساله إلينا الآن!</p>
             <a href="{{ url_for('ask') }}" class="ask-btn">
                 <i class="fas fa-paper-plane"></i> أرسل سؤالك للفريق
@@ -508,7 +528,7 @@
         </div>
 
         <div class="footer-cta">
-            <p style="margin-bottom: 20px; font-size: 1.2rem;">هل تصفحت الأسئلة ولم تجد ضالتك؟</p>
+            <p style="margin-bottom: 20px; font-size: 1.3rem;">هل تصفحت الأسئلة ولم تجد ضالتك؟</p>
             <a href="{{ url_for('ask') }}" class="ask-btn">
                 <i class="fas fa-plus-circle"></i> اضغط هنا لطرح سؤال جديد
             </a>
@@ -517,11 +537,10 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 مبادرة طلبة كلية الذكاء الاصطناعي - جامعة بغداد. جميع الحقوق محفوظة للطلبة المبدعين.</p>
+        <p>&copy; 2025 مبادرة طلبة كلية الذكاء الاصطناعي - جامعة بغداد.</p>
     </footer>
 
     <script>
-        // 1. كود القائمة المنسدلة (Accordion)
         var acc = document.getElementsByClassName("accordion");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
@@ -544,7 +563,6 @@
             });
         }
 
-        // 2. كود البحث الذكي
         function searchFunction() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
@@ -553,7 +571,6 @@
             var noResultsDiv = document.getElementById("noResults");
             var totalVisibleQuestions = 0;
 
-            // أ. فحص جميع الأسئلة
             for (var i = 0; i < wrappers.length; i++) {
                 var btn = wrappers[i].getElementsByClassName("accordion")[0];
                 var panel = wrappers[i].getElementsByClassName("panel")[0];
@@ -568,7 +585,6 @@
                 }
             }
             
-            // ب. إخفاء الأقسام الفارغة
             for (var j = 0; j < sections.length; j++) {
                 var visibleInThisSection = 0;
                 var questionsInSection = sections[j].getElementsByClassName("q-wrapper");
@@ -578,7 +594,6 @@
                 sections[j].style.display = (visibleInThisSection === 0 && filter !== "") ? "none" : "";
             }
 
-            // ج. إظهار صندوق "لا توجد نتائج"
             if (totalVisibleQuestions === 0 && filter !== "") {
                 noResultsDiv.style.display = "block";
             } else {
