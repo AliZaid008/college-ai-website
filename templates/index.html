@@ -1,9 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>AI Knowledge Base</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل قسم الذكاء الاصطناعي</title>
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* تنسيقات إضافية لضمان جمالية الخط العربي */
+        body { font-family: 'Cairo', sans-serif !important; background-color: #f4f7f6; }
+        .header-section { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 40px 20px; text-align: center; }
+        .section-title { color: #1e3c72; border-bottom: 3px solid #f9a825; display: inline-block; padding-bottom: 5px; margin-top: 40px; }
+        .accordion { background-color: #fff; color: #444; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: right; outline: none; font-size: 16px; transition: 0.4s; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .active, .accordion:hover { background-color: #e3f2fd; color: #1e3c72; }
+        .panel { padding: 0 18px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; border-radius: 0 0 8px 8px; border-left: 4px solid #f9a825; }
+        .panel p { padding: 15px 0; color: #555; line-height: 1.6; }
+        .search-box { width: 80%; padding: 15px; border-radius: 25px; border: none; margin-top: 20px; font-family: 'Cairo'; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body>
 
@@ -15,213 +32,185 @@
 
  
     <div class="header-section">
-        <h1 style="margin-bottom: 15px;">🚀 College of AI</h1>
-        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="Search... (Try 'Python', 'Web', 'AI')">
+        <h1>🎓 دليل قسم الذكاء الاصطناعي</h1>
+        <p style="font-size: 1.1rem; opacity: 0.9;">كل ما تحتاج معرفته عن القبول، المناهج، الامتحانات، والمستقبل المهني</p>
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="ابحث عن سؤالك هنا... (مثلاً: معدل القبول، بايثون، الوظائف)">
     </div>
 
-    <div class="faq-container">
+    <div class="faq-container" style="max-width: 900px; margin: 0 auto; padding: 20px;">
 
         <div class="searchable-section">
-            <h2 class="section-title">Admission and Registration</h2>
+<<<<<<< HEAD
+            
+            <h2 class="section-title">📂 القسم 1: سياسات القبول والمعدلات</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is the admission average for the College of Artificial Intelligence?
-                    <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>The admission average is determined annually by the Ministry of Higher Education and Scientific Research and depends on the college’s absorption capacity and the announced admission averages.
-
-                    According to the latest admission results for the academic year 2020–2021, the minimum admission average for applicants to the College of Artificial Intelligence – University of Baghdad reached 62.62%.
-                    This means that the student must obtain an average close to this percentage to be admitted to one of the college’s departments. It should be noted that the admission system in the college is special admission.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is the mechanism on which special or direct admission to the college depends? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>The admission mechanism adopted by the college consists of several axes. The first is that the applicant’s average must not be less than 62%. As for the other axes, emphasis is placed on the applicant’s English language proficiency as well as technical experience. Based on this, all applicants undergo an interview, and accordingly the applicant is accepted into the College of Artificial Intelligence.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">Why was the “English Language Proficiency Test” set as the first threshold that must be passed before considering any other criterion? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Because the English language is the language of technology and programming worldwide. Placing this test at the beginning acts as a form of “realistic filtering.” If the student does not possess the linguistic tools that enable him to search global sources and understand algorithms, he will face difficulties later on. It is a procedure intended to ensure the student’s academic interest before anything else.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is the purpose of conducting a “personal interview in English” after passing the written test? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>The written test measures linguistic vocabulary, while the interview measures leadership personality, the ability to communicate spontaneously, and confidence in speaking and discussion in the language of specialization. The committee looks for students who possess intellectual depth, not students who rely solely on memorization.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">When students’ language competencies are similar, how is the final decision made? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Here comes the role of the sixth preparatory scientific average as a decisive and weighted factor. The academic average reflects discipline and diligence in the long term. Therefore, the student who combines talent (language), diligence (average), and perseverance is the most deserving of the seat amid intense competition.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">How was your experience in this department, given that university registration procedures are usually characterized by routine and complexity? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>The experience was completely different thanks to the distinctive human and administrative touch, specifically from the registration supervisor Dr. Ziyad. His great cooperation, patience, and role in removing obstacles and guiding students were essential.
-                </p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">Does requiring English constitute a kind of exclusion for academically intelligent but linguistically weak students?
-                    <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>It is not exclusion as much as it is professional guidance. A student who is brilliant in mathematics but lacks language skills will remain confined to local sources. The department’s conditions place students early on in front of the reality of the labor market: *“Develop your language to unleash your scientific intelligence globally.”*</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">As a student, what does passing all these stages (test, interview, competition) mean to you? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>It means that I am not here by chance, and that my classmates were carefully selected as an elite. This creates a highly competitive and healthy environment where academic discussion is deeper and more enriching compared to randomly admitted disciplines.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">Was the personal interview merely a routine procedure or a real test of abilities? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>It was a real and serious test. The questions were not superficial but aimed at exploring the student’s way of thinking and intellectual approach. This type of interview gives the student an initial impression that this academic institution respects minds and values competence.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">How does the admission mechanism ensure fairness among applicants amid intense competition?
-                    <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Fairness was achieved through the diversity of criteria. Reliance was not placed on a single standard that might wrong the student. Instead, there was integration between language skill (test), personal strength (interview), and academic history (average). This integrated system ensures that the most deserving and complete student reaches the academic seat.</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">كم هو معدل القبول في كلية الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يحدد معدل القبول سنوياً من قبل وزارة التعليم العالي والبحث العلمي، ويعتمد على الطاقة الاستيعابية ومعدلات الطلبة المتقدمين. في العام الدراسي 2020-2021 بلغ الحد الأدنى 92.62% (جامعة بغداد). وهذا يعني ضرورة حصول الطالب على معدل قريب من هذا الرقم للمنافسة، علماً أن القبول في القسم هو "قبول خاص/مباشر".</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما هي الآلية المعتمدة في نظام القبول؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تعتمد الآلية على عدة محاور: أولاً معدل الطالب المتقدم (يجب ألا يقل عن 75% أو حسب التعليمات)، وثانياً التركيز على اختبار اللغة الإنجليزية والخبرة التقنية والمقابلة الشخصية. يتم قبول الطالب بناءً على محصلة هذه المعايير.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">لماذا تم وضع "اختبار كفاءة اللغة الإنجليزية" كشرط أساسي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لأن اللغة الإنجليزية هي لغة التكنولوجيا والبرمجة عالمياً. هذا الاختبار بمثابة "وقفة واقعية"؛ فإذا لم يمتلك الطالب الأدوات اللغوية التي تمكنه من البحث في المصادر العالمية وفهم الخوارزميات، سيواجه صعوبات جمة لاحقاً. إنه إجراء لضمان مصلحة الطالب الأكاديمية.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما الغاية من "المقابلة الشخصية" باللغة الإنجليزية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الاختبار التحريري يقيس المخزون اللغوي، أما المقابلة فتقيس "الشخصية القيادية" والقدرة على التواصل والارتجال تحت الضغط. اللجنة تبحث عن طلاب يمتلكون الثقة للنقاش بلغة التخصص، وهذا ما يميز الطالب "المثقف" عن الطالب الذي يعتمد على الحفظ فقط.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف يتم الحسم عند تشابه كفاءة الطلاب في اللغة والمقابلة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هنا يأتي دور "معدل السادس العلمي" كعامل مرجح وحاسم. المعدل الدراسي يعكس الانضباط والاجتهاد على المدى الطويل. وبالتالي، الطالب الذي يجمع بين الموهبة (اللغة) والاجتهاد (المعدل) هو الأحق بالمقعد في ظل التنافس الشديد.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف كانت تجربة إجراءات التسجيل (الروتين)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كانت التجربة مختلفة تماماً بفضل "اللمسة الإنسانية" والإدارية المتميزة، وتحديداً من مشرف التسجيل د. زياد. لقد كان تعاونه كبيراً وسعة صدره دور جوهري في تذليل العقبات وتوجيه الطلاب.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يعتبر اشتراط الإنجليزية إقصاءً للطلاب الأذكياء علمياً ولكن ضعفاء لغوياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ليس إقصاءً بقدر ما هو "توجيه مهني". الطالب العبقري في الرياضيات الذي يفتقر للغة سيظل حبيس المصادر المحلية المحدودة. شروط القسم تضع الطالب أمام حقيقة سوق العمل مبكراً: "طور لغتك لتتمكن من إطلاق عنان ذكائك العلمي عالمياً".</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ماذا يعني اجتيازي لكل مراحل القبول (اختبار، مقابلة، مفاضلة)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يعني أنك لست هنا بالصدفة، وأن زملاءك في القاعة الدراسية هم "نخبة" تم اختيارهم بعناية. هذا يخلق بيئة تنافسية صحية ومرتفعة المستوى، حيث يكون النقاش العلمي أعمق وأكثر ثراءً مقارنة بالتخصصات ذات القبول العشوائي.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل كانت المقابلة الشخصية روتينية أم اختباراً حقيقياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كانت اختباراً حقيقياً وجاداً. الأسئلة لم تكن سطحية بل استهدفت استكشاف طريقة تفكير الطالب ومدى جديته. هذا النوع من المقابلات يعطي انطباعاً أولياً للطالب بأن هذا الصرح الأكاديمي يحترم العقول ويقدر الكفاءة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف تضمن آلية القبول العدالة بين المتقدمين؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تحققت العدالة من خلال تنوع المعايير. لم يتم الاعتماد على معيار واحد قد يظلم الطالب، بل تم الدمج بين مهارة اللغة (الاختبار)، وقوة الشخصية (المقابلة)، والتاريخ الدراسي (المعدل). هذه المنظومة المتكاملة تضمن وصول الطالب الأكثر استحقاقاً وتكاملاً للمقعد الدراسي.</p></div></div>
+>>>>>>> aa9bd5d94fc5d947302ba2710c7f509ff9466268
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">Section 2: Web Development</h2>
+            <h2 class="section-title">🏛️ القسم 2: رؤية القسم والتأسيس</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">What does HTML stand for? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: HyperText Markup Language.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is CSS used for? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: CSS (Cascading Style Sheets) is used to style and layout web pages (colors, fonts, spacing).</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is Flask? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: Flask is a micro web framework written in Python used to build websites.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is GitHub? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: GitHub is a platform for hosting and collaborating on code using Git.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is a 404 Error? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: It indicates that the server could not find the requested webpage (Page Not Found).</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is JavaScript? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: A programming language that enables interactive web pages (like the search bar on this site).</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What does 'Responsive' mean? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: It means the website adjusts its layout to look good on both phones and computers.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is a Server? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: A computer or system that provides resources, data, services, or programs to other computers, known as clients.</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is the Frontend? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: The part of the website that the user interacts with directly (HTML, CSS, JS).</p></div>
-            </div>
-
-            <div class="q-wrapper">
-                <button class="accordion">What is the Backend? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: The server-side of the website that handles databases and logic (like Python/Flask).</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">تأسس القسم عام 2020، هل تعتبر هذه "حداثة" أم "نقص في الخبرة"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بل هي ميزة استراتيجية كبرى. تأسيس القسم في 2020 يعني أنه وُلد "رقمياً" بامتياز، بمناهج وُضعت لتناسب تكنولوجيا اليوم، بعيداً عن تركة المناهج القديمة التي تعاني منها الكليات التقليدية. إنه انطلاقة من حيث انتهى الآخرون، لا من حيث بدؤوا.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ماذا يعني أن تكون طالباً في "الدفعة الأولى"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الدفعة الأولى هم "المؤسسون الشركاء". القسم ينظر إليهم كرواد سيصنعون سمعة الكلية. الاهتمام الموجه لهذه الدفعة استثنائي لأن نجاحهم هو الدليل الوحيد على نجاح القسم. لذا، هم ليسوا حقل تجارب، بل هم حجر الأساس الذي سيبنى عليه المستقبل.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">تتميز رئاسة القسم (د. سهاد) بالصرامة الأكاديمية، كيف يخدم ذلك الطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>القسم الجديد يحتاج إلى يد قوية لترسيخ النظام وبناء التقاليد الأكاديمية من الصفر. قوة الشخصية تضمن عدم التسيب وتفرض معايير جودة عالية منذ اليوم الأول، مما يجعل الشهادة التي سيحملها الطالب ذات ثقل وقيمة حقيقية وليست مجرد ورقة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">بما أن القسم يختص بـ "البيانات الضخمة"، هل رؤيته تقتصر على التخريج أم بناء شراكات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الرؤية تتجاوز القاعات الدراسية. القسم يخطط ليكون مركزاً بحثياً واستشارياً يربط الطلاب بسوق العمل قبل التخرج. الهدف ليس فقط منح شهادة بكالوريوس، بل بناء "بوابة" تعبر منها كبرى الشركات لاستقطاب المواهب العراقية الشابة في مجال البيانات.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل "حداثة" المباني والتجهيزات تنعكس على نفسية الطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>البيئة المكانية جزء لا يتجزأ من العملية التعليمية. الدراسة في قاعات حديثة ومختبرات مجهزة بأحدث تقنيات 2020 تخلق بيئة محفزة للإبداع، وتُشعر الطالب بأنه في صرح علمي يحترم عقله، بعيداً عن كآبة المباني المتهالكة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل هناك مخاوف من عدم اعتراف سوق العمل بالقسم لأنه جديد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>سوق التكنولوجيا لا يعترف بتاريخ التأسيس، بل بمهارة الخريج. القسم يراهن على "المحتوى". عندما يخرج الطالب يتقن أدوات 2020 ويعالج البيانات باحترافية، سيفرض نفسه على السوق. وجود قيادة واعية تضمن أن المخرجات ستتحدث عن نفسها وتجبر السوق على الاحترام.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما هي القيمة المضافة التي يقدمها هذا القسم للعراق تحديداً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>العراق يتجه نحو التحول الرقمي والحوكمة الإلكترونية. هذا القسم جاء ليسد فجوة هائلة في "علماء البيانات" والمحللين. إنه استجابة وطنية ذكية لحاجة ملحة وليس مجرد ترف أكاديمي، مما يجعل خريجيه عملة نادرة ومطلوبة في القطاعين الحكومي والخاص.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل سيتبع القسم أساليب تدريس تقليدية أم سيكسر الجمود؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>النشأة الحديثة تفرض أساليب حديثة. القسم متحرر من قيود "هكذا وجدنا آباءنا". المتوقع هو اعتماد التعلم التفاعلي، المشاريع التطبيقية، والابتعاد عن التلقين تماشياً مع عقلية الجيل الجديد وطبيعة تخصص البيانات المتسارع.</p></div></div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title">Section 3: Python & Tools</h2>
+            <h2 class="section-title">📚 القسم 3: النظام الدراسي والمناهج</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is Python? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: Python is a high-level, general-purpose programming language known for its readability.</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">توصف الخطة الدراسية بأنها "صعبة وكثيفة"، هل الهدف تعجيز الطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الصعوبة هنا ليست تعجيزاً، بل هي "محاكاة لواقع العمل". مجال البيانات الضخمة عالمياً هو مجال شاق ومتغير. المنهج الصعب هو بمثابة "دورة تدريب قوات خاصة"؛ من يجتازها يخرج بصلابة ذهنية ومهارية تجعل أي وظيفة لاحقاً تبدو سهلة مقارنة بما درسه.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">يعتمد القسم "نظام بولونيا"، كيف يختلف عن النظام التقليدي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>النظام التقليدي يعتمد غالباً على "الامتحان النهائي" كمصير وحيد. أما نظام بولونيا، فهو يضع الطالب في قلب العملية التعليمية؛ الطالب شريك، الحضور إلزامي، والتقييم مستمر يومياً. إنه يحول الطالب من "متلقي سلبي" للملومة إلى "باحث نشط" عنها.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">يتم تدريس مادة "التفكير الناقد" (Critical Thinking)، ما علاقة الفلسفة بالبيانات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذه هي "الجوهرة المخفية" في المنهج. عالم البيانات ليس مجرد كاتب أكواد، بل هو محلل للمشاكل. التفكير الناقد هو الأداة التي تحول المبرمج من مجرد "Coder" إلى "Problem Solver" يرى ما لا يراه الآخرون، ويكشف التحيزات في البيانات.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">إذا كان 85% من المنهج "تطبيقياً"، هل يعني ذلك موت أسلوب "الحفظ"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تماماً. في هذا القسم، الذاكرة وحدها لن تسعفك. نسبة 85% تعني أنك ستقضي وقتك أمام الشاشات وفي المختبرات أكثر من قاعات المحاضرات النظرية. التقييم مبني على "ماذا تستطيع أن تفعل بيدك؟" وليس "ماذا تستطيع أن تكتب على الورقة؟".</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف يساهم نظام بولونيا في تقليص الفجوة بين الطالب والأستاذ؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نظام بولونيا يفرض التفاعل المستمر وقلة أعداد الطلاب في المجموعات (Small Groups)، مما يجبر الأستاذ على متابعة تطور كل طالب بشكل فردي. العلاقة تتحول من "محاضر وجمهور" إلى "مشرف وفريق عمل"، مما يعزز الثقة وينقل الخبرة بشكل أسرع.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">مادة "Critical Thinking" تبدو غريبة، هل ستكون عبئاً أم مهارة حياة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ستكون الصدمة الإيجابية الأكبر للطلاب. هذه المادة ستعلمهم كيف لا يقبلون المعلومة كمسلمات، وكيف يفككون المشاكل المعقدة. إنها مهارة ستفيدهم في حياتهم الشخصية وقراراتهم المصيرية بنفس قدر فائدتها في تحليل البيانات.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما هو التحدي الأكبر الذي سيواجهه الطالب في ظل هذا النظام المكثف؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>التحدي هو "إدارة الوقت والضغط". الطالب هنا موظف بدوام كامل؛ محاضرات، مختبرات، مشاريع مستمرة. هذا الضغط هو الذي يصقل الشخصية، ولكنه يتطلب تنظيماً دقيقاً للوقت، فلا مجال للتأجيل.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف نضمن التركيز العملي بنسبة 85% جاهزية الخريج لسوق العمل؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الشركات تعاني عادة من إعادة تدريب الخريجين لأنهم درسوا نظريات فقط. خريج هذا القسم، الذي قضى 85% من وقته يطبق ويحل مشاكل برمجية، سيدخل سوق العمل وكأنه يمتلك خبرة عملية مسبقة. هو جاهز للإنتاج فوراً.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">في ظل هذه الصعوبة والمعايير العالمية، هل شهادة هذا القسم ستكون "جواز سفر" تقني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ستكون "وسام استحقاق". من ينجو من هذا النظام الصارم، ويتقن التفكير الناقد، ويمتلك مهارات عملية بنسبة 85%، لن يبحث عن عمل، بل العمل هو من سيبحث عنه. هذه الشهادة ستقول لأرباب العمل: "حامل هذه الورقة خضع لاختبارات حقيقية وهو جاهز لأصعب المهام".</p></div></div>
+        </div>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is 'pip'? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: Pip is the standard package manager for Python, used to install libraries like Flask.</p></div>
-            </div>
+        <div class="searchable-section">
+            <h2 class="section-title">📝 القسم 4: بيئة الامتحانات والتقييم</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">How do you write a comment in Python? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: By using the hash symbol (#).</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">هل يُعتبر تعدد بيئات الامتحان "تعقيداً" إضافياً للطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ليس تعقيداً، بل هو "تدريب على المرونة الذهنية". في سوق العمل، المهندس لا يحل المشاكل بالورقة والقلم، بل باستخدام أدوات مختلفة. هذا التنوع يكسر حاجز الرهبة ويجعل الطالب "حرباء تقنية" قادرة على التكيف مع أي بيئة عمل.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف تضمنون العدالة في التقييم إذا كانت طرق الامتحان تختلف جذرياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>العدالة تتحقق هنا من خلال "ملاءمة الأداة للمهمة". ظلم للطالب المبرمج أن يُقيّم بقدرته على الحفظ والكتابة اليدوية، بينما تكمن مهارته في التفكير المنطقي والكود. تخصيص البيئة يضمن أن كل مهارة تُقاس بالميزان الصحيح الخاص بها.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">في ظل وجود بيئات امتحانية تقنية (Digital)، كيف يتم ضمان النزاهة ومنع الغش؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>البيئات الخاصة مصممة لتكون "صناديق مغلقة" (Sandboxed Environments). الطالب يمتلك الأدوات اللازمة للحل فقط، والشبكة مراقبة ومقيدة. التحدي في هذه الامتحانات ليس في "سرقة المعلومة" لأن الأسئلة تعتمد على الفهم والتحليل الآني، مما يجعل الغش بلا جدوى.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ذكرتم أن مادة "التفكير الناقد" تُدرّس لأول مرة، فكيف تكون بيئة امتحانها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>قطعاً ليست أسئلة (صح وخطأ). بيئة امتحان التفكير الناقد هي "بيئة اشتباك فكري". قد يُوضع الطالب أمام معضلة حقيقية أو بيانات متضاربة ويُطلب منه تفكيكها ونقدها. الامتحان هنا يقيس "مسار التفكير" (Process) وليس النتيجة النهائية فقط.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يؤدي تغيير بيئة الامتحان لكل مادة إلى تقليل التوتر النفسي لدى الطلاب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وبشكل ملحوظ. الرهبة تأتي غالباً من "الجمود" والصمت في القاعات التقليدية. عندما يدخل الطالب بيئة امتحان تشبه المختبر الذي يحبه ويستخدم الحاسوب والأدوات التي يتدرب عليها يومياً، يتحول الشعور من "خوف من الاختبار" إلى "تحدٍ لإثبات المهارة".</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يتطلب هذا النظام بنية تحتية تقنية هائلة داخل القاعات الامتحانية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بالتأكيد، وهذا ما يميز القسم في كليته الجديدة. القاعات الامتحانية ليست مجرد طاولات، بل هي "محطات عمل" (Workstations) متصلة بسيرفرات وأنظمة إدارة تعلم متطورة، قادرة على استيعاب بيئات برمجية ثقيلة لكل الطلاب في وقت واحد.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف يتم تقييم الطالب في مادة تعتمد كلياً على بيئة ابتكارية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا مكان للمزاجية هنا. لكل بيئة امتحان "مصفوفة تقييم" (Rubrics) دقيقة ومعلنة. في البرمجة مثلاً، يُقاس الكود بناءً على: العمل، الكفاءة، النظافة، والتوثيق. الطالب يعرف مسبقاً القواعد التي سُيحكم بها داخل هذه البيئة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما هي الرسالة التي يود القسم إيصالها من خلال هذا الجهد الكبير في تنويع البيئات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الرسالة هي: "نحن نحترم تخصصك". نحن لا نتعامل مع المواد كقوالب جامدة، بل نعطي كل علم حقه وقدره. هذا الاهتمام بالتفاصيل الامتحانية يعكس احترام القسم لعقلية الطالب ولطبيعة العلم الذي يدرسه.</p></div></div>
+        </div>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is a Loop? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: A programming structure that repeats a sequence of instructions until a specific condition is met.</p></div>
-            </div>
+        <div class="searchable-section">
+            <h2 class="section-title">💡 القسم 5: أسلوب التدريس والمشاريع</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is a Variable? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: A container for storing data values.</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">يُقال إن التدريسيين في هذا القسم "شديدين جداً"، لماذا كل هذا الحزم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذا الحزم هو حرقة إيجابية؛ الأساتذة هنا يتعاملون معكم كمشاريع خبراء وليس مجرد طلاب. الشدة في الدراسة هدفها صقل مهاراتكم لتكونوا بمستوى العمالقة الذين يدرسونكم، ولضمان أن خريجنا يمتلك الانضباط الذي تتطلبه الشركات العالمية.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما الذي يميز المواد الدراسية مثل "التفكير النقدي" في قسم تقني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن لا نخرج آلات كود، بل نخرج مفكرين. مواد مثل التفكير النقدي تبني عقلك ليعرف كيف يحلل المشكلة قبل كتابة أول سطر برمجي. هذه المواد هي التي تميز خريجنا وتجعله قادراً على اتخاذ قرارات ذكية في المشاريع المعقدة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل نكتفي بما يُطرح في المحاضرة فقط أم هناك مصادر إضافية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الأستاذ هنا لا ينهي دوره بانتهاء المحاضرة. الـ Google Classroom يتحول إلى مكتبة حية؛ حيث يرسل الأساتذة باستمرار كورسات ومصادر تعليمية وتحديثات تقنية لضمان أن الطالب يسبق سوق العمل بخطوات.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما هي قيمة التعاون مع شركة "هواوي" (Huawei) في هذا القسم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تعاوننا مع هواوي ليس شكلياً؛ نحن ندرس منهجاً من صنعهم (Introduction to AI)، مما يعني أنك تدرس مادة صممتها واحدة من أكبر شركات التكنولوجيا في العالم، وهذا يمنحك شهادة خبرة ومطابقة للمعايير الصناعية العالمية.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل الورش الخارجية مجرد "تضييع وقت" أم لها فائدة حقيقية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الورش هي نافذتك على العالم. نستضيف فيها خبراء ودكاترة أجانب لنقل تجاربهم الدولية إليك. هذه الورش تكسر حاجز الخوف وتجعلك تطلع على كيف يفكر العالم في تكنولوجيا البيانات والذكاء الاصطناعي خارج حدود الكتاب.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف نستفيد من خبرة "عمالقة الشرح" في القسم بمشاريعنا؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>وجود دكاترة بخبرة د. لؤي إدوارد وغيره من المتخصصين في الـ Big Data يعني أن مشروع تخرجك سيشرف عليه عقل خبير يوجهك نحو أحدث ما توصل إليه العلم، مما يرفع قيمة مشروعك من مجرد "واجب" إلى "بحث علمي" رصين.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل المشاريع تركز على الجانب النظري أم التطبيقي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>التركيز الكلي هو على (التطبيق). بفضل التعاون مع شركات مثل هواوي وتوفر المصادر، تُبنى المشاريع لحل مشكلات حقيقية، ويُطلب من الطالب إثبات نجاح مشروعه عملياً باستخدام البيانات الضخمة التي تدرب عليها.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل هناك تشجيع للطلاب على المشاركة في مسابقات دولية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم وبقوة. القسم يعتبر هذه المسابقات جزءاً من التدريب العملي، ويقوم الأساتذة بالإشراف المباشر على الفرق للمشاركة وتمثيل الجامعة في المحافل الدولية، وهذا بحد ذاته تدريب لا يُقدر بثمن.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">لماذا يتم إرسال كورسات خارجية إضافية لنا بينما المنهج دسم بما يكفي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لأن تكنولوجيا البيانات تتغير كل ساعة. الأساتذة يطمحون لأن يكون الطالب "متعلماً ذاتياً" (Self-learner)؛ الكورسات الإضافية هي أدوات مساعدة لتوسيع مداركك وجعلك مرجعاً في تخصصك بعيداً عن التقيد بالورقة والقلم فقط.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما هو الهدف النهائي من كل هذا الضغط الأكاديمي والورش والمشاريع؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الهدف هو بناء "شخصية مهنية". نحن نعدّك لتخرج من هنا وأنت تمتلك: عقلية نقدية، مهارة تقنية عالمية (من هواوي)، وخبرة عملية من عمالقة التخصص، لتكون الخيار الأول لأي شركة كبرى فور تخرجك.</p></div></div>
+        </div>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is Git? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: A version control system used to track changes in source code.</p></div>
-            </div>
+        <div class="searchable-section">
+            <h2 class="section-title">🚀 القسم 6: المستقبل المهني وسوق العمل</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is VS Code? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: Visual Studio Code is a popular code editor developed by Microsoft.</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">هل هذا التخصص مجرد "تريند" (موضة) سيختفي الطلب عليه قريباً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>البيانات أصبحت هي "النفط الجديد". طالما هناك إنترنت، بنوك، تطبيقات، وتسويق، سيزداد حجم البيانات. العالم يتجه لأتمتة الذكاء الاصطناعي، وهذا التخصص هو العمود الفقري لهذه التقنيات، لذا الحاجة للخريجين في تصاعد وليست فقاعة مؤقتة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل سأكون محصوراً في العمل بشركات البرمجة فقط وأمام شاشات سوداء؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أبداً، هذه ميزة "علم البيانات". أنت الجوكر في سوق العمل. يمكنك العمل في مستشفى (لتحليل بيانات المرضى)، في بنك (لكشف الاحتيال)، في شركات اتصالات، أو حتى في شركات تسويق لفهم سلوك الزبائن.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل سيأتي يوم يأخذ فيه الـ AI وظيفتي كمحلل بيانات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الـ AI هو أداة بيدك أنت وليست بديلاً عنك. الأدوات تحتاج لمن يبنيها، يدربها، يراقبها ويصحح مخرجاتها. دراستك هنا تجعلك أنت "صانع" الذكاء الاصطناعي وليس المستخدم الذي يتم استبداله.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل شهادتي تؤهلني للعمل "عن بُعد" (Remotely) مع شركات عالمية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم وبقوة. تخصص البيانات الضخمة هو أحد أكثر التخصصات طلباً في نظام العمل عن بُعد عالمياً. لغة البيانات والرياضيات عالمية، والشركات الأجنبية تبحث عن المهارة بغض النظر عن موقعك الجغرافي.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل الرواتب في هذا المجال تستحق عناء الدراسة وصعوبتها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>قاعدة السوق تقول: "كلما زادت ندرة المهارة وصعوبتها، زاد السعر". بما أن تخصص البيانات الضخمة يتطلب مهارات تحليلية وبرمجية عالية، فإن رواتب هذا المجال تُصنف عالمياً ومحلياً ضمن الفئات الأعلى دخلاً مقارنة بتخصصات الـ IT التقليدية.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يمكنني العمل كـ (Freelancer) أثناء الدراسة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بالتأكيد. مهارات مثل "تنظيف البيانات"، "بناء لوحات المعلومات" (Dashboards)، أو "التنبؤ بالمبيعات" مطلوبة جداً بنظام القطعة (المشاريع المستقلة) لأصحاب الأعمال الصغيرة والمتوسطة.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ما الفرق بيني وبين خريج علوم الحاسوب العادي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>خريج الحاسوب العام هو "طبيب عام"، وأنت "طبيب جراح متخصص". الشركة التي لديها تيرابايت من البيانات تحتاج شخصاً يعرف كيف يتعامل مع البنية التحتية الضخمة (Hadoop, Spark) وكيف يستخرج منها قيمة، وهي مهارات دقيقة يفتقدها المبرمج العام.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل الشهادة الجامعية وحدها تكفي أم سأضطر لدفع مبالغ على دورات خارجية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لنكن واقعيين، التكنولوجيا تتغير كل يوم. الشهادة تمنحك الأساس القوي والمنطق السليم، لكننا في القسم نحاول دمج الشهادات الاحترافية ضمن المنهج لتقليل الفجوة. التعلم الذاتي المستمر هو قدرك، لكن الأساس الذي ستبنيه هنا سيوفر عليك سنوات من التخبط.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يمكنني تأسيس عملي الخاص (Startup) بهذا التخصص؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، أغلب الشركات المليارية اليوم (مثل Uber, Careem, Talabat) قائمة في أساسها على "البيانات". إذا كانت لديك فكرة تعتمد على استغلال البيانات لحل مشكلة، فأنت تمتلك أقوى أداة لتنفيذها.</p></div></div>
+        </div>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is a Bug? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: An error, flaw or fault in a computer program that causes it to produce an incorrect or unexpected result.</p></div>
-            </div>
+        <div class="searchable-section">
+            <h2 class="section-title">🖥️ القسم 7: المختبرات والتجهيزات</h2>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is Open Source? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: Software for which the original source code is made freely available and may be redistributed and modified.</p></div>
-            </div>
+            <div class="q-wrapper"><button class="accordion">هل حاسبات المختبر قوية بما يكفي لتشغيل خوارزميات الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>المختبرات مجهزة بحاسبات ذات مواصفات عالية جداً ومصممة خصيصاً لتتحمل الأكواد الصعبة والمعالجات الثقيلة التي يتطلبها تخصصنا، لضمان تنفيذ مشاريعك بكفاءة عالية وبدون توقف.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف يتم شرح المواد البرمجية المعقدة في المختبر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>المختبرات مجهزة بشاشات ذكية تفاعلية حديثة، تسمح للأستاذ بعرض الكود وشرح الخطوات البرمجية بوضوح تام أمام الجميع، مما يجعل عملية الفهم والمتابعة أسهل بكثير من الطرق التقليدية.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">سأقضي ساعات طويلة في البرمجة، هل البيئة مريحة جسدياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن نهتم بصحتك وتركيزك؛ لذلك اختارت الكلية كراسي مريحة جداً (Ergonomic) مصممة للجلسات الطويلة أمام الحاسوب، لضمان أن يكون تركيزك كاملاً على الإبداع والكود وليس على آلام الظهر.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ماذا لو واجهت مشكلة تقنية أثناء العمل في المختبر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لن تكون وحيداً أبداً. مشرفو المختبر متواجدون دائماً وهم متعاونون لأبعد الحدود. هدفهم مساعدتك في حل المشاكل التقنية وتوجيهك لتجاوز أي عقبة تواجهك أثناء التطبيق العملي.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل المختبرات متاحة فقط وقت المحاضرة أم يمكنني استغلالها في وقت فراغي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الأجهزة موجودة لخدمتك. نتبع سياسة الباب المفتوح في حال عدم وجود محاضرة، حيث يمكنك الجلوس والعمل على تطوير مهاراتك واستخدام إمكانيات الأجهزة المتطورة في أي وقت متاح للقسم.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل البرامج (Software) المطلوبة محملة مسبقاً أم سأضيع وقتي في التنصيب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كل ما تحتاجه من بيئات تطوير وأدوات تحليل بيانات جاهز للعمل فوراً. فريق الدعم الفني يحرص على تحديث البرامج دورياً لتكون متوافقة مع أحدث التقنيات في سوق العمل.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل تستخدم الشاشات الذكية للعرض فقط أم يمكن للطلاب التفاعل معها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هي شاشات تفاعلية؛ يمكنك كطالب في مرحلة عرض المشاريع أن تستخدمها لعرض نتائجك ومناقشة الكود مع زملائك والأساتذة بطريقة احترافية تشبه العروض التقديمية في الشركات العالمية.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">كيف يضمن القسم بقاء هذه التجهيزات "حديثة" ولا تصبح قديمة بعد سنوات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هناك ميزانية دورية مخصصة لتحديث القطع الحيوية في الحاسبات وصيانة الشاشات الذكية، لأننا نؤمن أن جودة التعليم تبدأ من جودة الأدوات التي يستخدمها الطالب.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل استخدام الروبوتات والطابعات ثلاثية الأبعاد متاح للطلاب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذه التجهيزات جزء من المنهج العملي؛ أي أنك ستتعامل مع الروبوتات وتتعلم أسرار الطباعة ثلاثية الأبعاد في مختبرات الدروس اليومية. نؤمن أن التجربة والخطأ بالأجهزة الفعلية هي التي تصنع مهندساً ناجحاً.</p></div></div>
+        </div>
 
-            <div class="q-wrapper">
-                <button class="accordion">What is Syntax? <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>Answer: The set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</p></div>
-            </div>
+        <div class="searchable-section">
+            <h2 class="section-title">🤝 القسم 8: دعم الطالب والتواصل</h2>
+
+            <div class="q-wrapper"><button class="accordion">إذا واجهت مشكلة في فهم مادة معينة، هل يمكنني طلب جلسة شرح إضافية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>طبعاً، يمكنك طلب توضيح لنقطة علمية، وسيقوم القسم بتوجيه سؤالك للأستاذ المختص ليرد عليك أو يحدد لك موعداً في الساعات المكتبية ليشرح لك وجهاً لوجه.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل الردود هنا سريعة؟ أخاف أن ينتهي الفصل وأنا أنتظر الجواب. <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الردود غالباً ما تصل خلال 24 إلى 48 ساعة. وإذا كان السؤال طارئاً (مثل مشاكل الامتحانات)، يتم التعامل معه بصفة "عاجل".</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يمكنني تقديم اقتراح لتطوير المختبر أو إضافة مادة معينة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن نكبر باقتراحاتكم. القسم يرحب بأي فكرة لمشروع مشترك أو تحسين لخدمة معينة. رسالتك تصل مباشرة للإدارة وتؤخذ بمحمل الجد في اجتماعات القسم.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل الأسئلة التي تطرح هنا تظهر للعلن (للجميع) أم هي سرية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الخصوصية مقدسة عندنا. رسالتك تصل كبريد إلكتروني خاص ومحمي، ولا يطلع عليها إلا الشخص المسؤول عن حل مشكلتك. لن يعرف أحد بخصوصية سؤالك أو هويتك.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">سؤالي يتعلق بـ "النقل" أو "الإدارة"، هل هذا القسم يجاوبني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>حتى لو كان سؤالك إدارياً، لن نتركك. سنقوم بتوجيهك للجهة الصحيحة أو نأتيك بالمعلومة الأكيدة من رئاسة الكلية لنوفر عليك عناء البحث والتنقل بين المكاتب.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">ماذا لو شعرت أن أحد الأساتذة ظلمني في الدرجات، هل يمكنني تقديم شكوى؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وبكل ثقة. الشكاوى تعامل بسرية تامة وتُرفع للجنة المختصة للنظر فيها دون أي تأثير سلبي على الطالب، لأن هدفنا هو بيئة تعليمية عادلة للجميع.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">هل يمكنني السؤال عن "المنح الدراسية" أو "الدراسات العليا"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بالتأكيد، القسم مطلع على كافة التحديثات والتعليمات الوزارية بخصوص المنح والتخفيضات، وسنزودك بالشروط والأوراق المطلوبة وكيفية التقديم عليها.</p></div></div>
+            <div class="q-wrapper"><button class="accordion">إذا سألت عن رأي القسم في "كورس خارجي" أريد أخذه، هل ستنصحوني بصدق؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن شركاء في نجاحك. إذا استشرتنا عن أي مهارة خارجية أو كورس لتطوير نفسك، سيقوم أساتذة القسم بتقييم المحتوى وإخبارك إذا كان مفيداً لمسارك المهني أم لا.</p></div></div>
         </div>
 
     </div>
 
     <script>
-        // 1. Accordion Logic
+        // 1. منطق القائمة المنسدلة (Accordion)
         var acc = document.getElementsByClassName("accordion");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
+                var icon = this.querySelector(".icon");
+                
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
+                    icon.classList.remove("fa-chevron-up");
+                    icon.classList.add("fa-chevron-down");
                 } else {
                     panel.style.maxHeight = panel.scrollHeight + "px";
+                    icon.classList.remove("fa-chevron-down");
+                    icon.classList.add("fa-chevron-up");
                 } 
             });
         }
 
-        // 2. Smart Search Logic
+        // 2. منطق البحث الذكي
         function searchFunction() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
             var wrappers = document.getElementsByClassName("q-wrapper");
+            var sections = document.getElementsByClassName("searchable-section");
 
 
             for (var i = 0; i < wrappers.length; i++) {
                 var btn = wrappers[i].getElementsByClassName("accordion")[0];
+                var panel = wrappers[i].getElementsByClassName("panel")[0];
                 var txtValue = btn.textContent || btn.innerText;
+                var panelValue = panel.textContent || panel.innerText;
                 
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                // البحث في السؤال والإجابة معاً
+                if ((txtValue.toUpperCase().indexOf(filter) > -1) || (panelValue.toUpperCase().indexOf(filter) > -1)) {
                     wrappers[i].style.display = "";
                 } else {
                     wrappers[i].style.display = "none";
+                }
+            }
+            
+            // إخفاء الأقسام الفارغة
+            for (var j = 0; j < sections.length; j++) {
+                var visibleQuestions = 0;
+                var questionsInSection = sections[j].getElementsByClassName("q-wrapper");
+                for (var k = 0; k < questionsInSection.length; k++) {
+                    if (questionsInSection[k].style.display !== "none") {
+                        visibleQuestions++;
+                    }
+                }
+                if (visibleQuestions === 0 && filter !== "") {
+                    sections[j].style.display = "none";
+                } else {
+                    sections[j].style.display = "";
                 }
             }
         }
