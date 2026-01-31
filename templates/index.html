@@ -1,48 +1,203 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Our Amazing Project</title>
+    <title>AI Knowledge Base</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+<<<<<<< HEAD
     <div class="card">
         <h1>🚀 WE ARE LIVE</h1>
         <p>Scroll down to see the questions.</p>
     </div>
 
-    <div class="faq-section">
+ 
+    <div class="header-section">
+        <h1 style="margin-bottom: 15px;">🚀 College of AI</h1>
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="Search... (Try 'Python', 'Web', 'AI')">
+    </div>
 
-        <h2 class="section-title">Section 1: General Questions</h2>
+    <div class="faq-container">
 
-        <button class="accordion">
-            What is this project about? 
-            <i class="fas fa-chevron-down arrow"></i>
-        </button>
-        <div class="panel">
-            <p>This is an AI project built by our amazing team of 6 people.</p>
+        <div class="searchable-section">
+            <h2 class="section-title">Admission and Registration</h2>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the admission average for the College of Artificial Intelligence?
+                    <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>The admission average is determined annually by the Ministry of Higher Education and Scientific Research and depends on the college’s absorption capacity and the announced admission averages.
+
+                    According to the latest admission results for the academic year 2020–2021, the minimum admission average for applicants to the College of Artificial Intelligence – University of Baghdad reached 62.62%.
+                    This means that the student must obtain an average close to this percentage to be admitted to one of the college’s departments. It should be noted that the admission system in the college is special admission.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the mechanism on which special or direct admission to the college depends? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>The admission mechanism adopted by the college consists of several axes. The first is that the applicant’s average must not be less than 62%. As for the other axes, emphasis is placed on the applicant’s English language proficiency as well as technical experience. Based on this, all applicants undergo an interview, and accordingly the applicant is accepted into the College of Artificial Intelligence.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">Why was the “English Language Proficiency Test” set as the first threshold that must be passed before considering any other criterion? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Because the English language is the language of technology and programming worldwide. Placing this test at the beginning acts as a form of “realistic filtering.” If the student does not possess the linguistic tools that enable him to search global sources and understand algorithms, he will face difficulties later on. It is a procedure intended to ensure the student’s academic interest before anything else.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the purpose of conducting a “personal interview in English” after passing the written test? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>The written test measures linguistic vocabulary, while the interview measures leadership personality, the ability to communicate spontaneously, and confidence in speaking and discussion in the language of specialization. The committee looks for students who possess intellectual depth, not students who rely solely on memorization.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">When students’ language competencies are similar, how is the final decision made? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Here comes the role of the sixth preparatory scientific average as a decisive and weighted factor. The academic average reflects discipline and diligence in the long term. Therefore, the student who combines talent (language), diligence (average), and perseverance is the most deserving of the seat amid intense competition.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">How was your experience in this department, given that university registration procedures are usually characterized by routine and complexity? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>The experience was completely different thanks to the distinctive human and administrative touch, specifically from the registration supervisor Dr. Ziyad. His great cooperation, patience, and role in removing obstacles and guiding students were essential.
+                </p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">Does requiring English constitute a kind of exclusion for academically intelligent but linguistically weak students?
+                    <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It is not exclusion as much as it is professional guidance. A student who is brilliant in mathematics but lacks language skills will remain confined to local sources. The department’s conditions place students early on in front of the reality of the labor market: *“Develop your language to unleash your scientific intelligence globally.”*</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">As a student, what does passing all these stages (test, interview, competition) mean to you? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It means that I am not here by chance, and that my classmates were carefully selected as an elite. This creates a highly competitive and healthy environment where academic discussion is deeper and more enriching compared to randomly admitted disciplines.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">Was the personal interview merely a routine procedure or a real test of abilities? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>It was a real and serious test. The questions were not superficial but aimed at exploring the student’s way of thinking and intellectual approach. This type of interview gives the student an initial impression that this academic institution respects minds and values competence.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">How does the admission mechanism ensure fairness among applicants amid intense competition?
+                    <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Fairness was achieved through the diversity of criteria. Reliance was not placed on a single standard that might wrong the student. Instead, there was integration between language skill (test), personal strength (interview), and academic history (average). This integrated system ensures that the most deserving and complete student reaches the academic seat.</p></div>
+            </div>
         </div>
 
-        <button class="accordion">
-            How do I join? 
-            <i class="fas fa-chevron-down arrow"></i>
-        </button>
-        <div class="panel">
-            <p>Ask the admin to add you on GitHub!</p>
+        <div class="searchable-section">
+            <h2 class="section-title">Section 2: Web Development</h2>
+
+            <div class="q-wrapper">
+                <button class="accordion">What does HTML stand for? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: HyperText Markup Language.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is CSS used for? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: CSS (Cascading Style Sheets) is used to style and layout web pages (colors, fonts, spacing).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Flask? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: Flask is a micro web framework written in Python used to build websites.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is GitHub? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: GitHub is a platform for hosting and collaborating on code using Git.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a 404 Error? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: It indicates that the server could not find the requested webpage (Page Not Found).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is JavaScript? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: A programming language that enables interactive web pages (like the search bar on this site).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What does 'Responsive' mean? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: It means the website adjusts its layout to look good on both phones and computers.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Server? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: A computer or system that provides resources, data, services, or programs to other computers, known as clients.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the Frontend? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: The part of the website that the user interacts with directly (HTML, CSS, JS).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is the Backend? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: The server-side of the website that handles databases and logic (like Python/Flask).</p></div>
+            </div>
         </div>
-        
-        </div> 
+
+        <div class="searchable-section">
+            <h2 class="section-title">Section 3: Python & Tools</h2>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Python? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: Python is a high-level, general-purpose programming language known for its readability.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is 'pip'? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: Pip is the standard package manager for Python, used to install libraries like Flask.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">How do you write a comment in Python? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: By using the hash symbol (#).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Loop? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: A programming structure that repeats a sequence of instructions until a specific condition is met.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Variable? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: A container for storing data values.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Git? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: A version control system used to track changes in source code.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is VS Code? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: Visual Studio Code is a popular code editor developed by Microsoft.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is a Bug? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: An error, flaw or fault in a computer program that causes it to produce an incorrect or unexpected result.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Open Source? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: Software for which the original source code is made freely available and may be redistributed and modified.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">What is Syntax? <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>Answer: The set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</p></div>
+            </div>
+        </div>
+
+    </div>
+
     <script>
+        // 1. Accordion Logic
         var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
+        for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
-                /* Toggle between adding and removing the "active" class */
                 this.classList.toggle("active");
-
-                /* Toggle hiding and showing the active panel */
                 var panel = this.nextElementSibling;
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
@@ -50,6 +205,25 @@
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 } 
             });
+        }
+
+        // 2. Smart Search Logic
+        function searchFunction() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var wrappers = document.getElementsByClassName("q-wrapper");
+>>>>>>> d08b5c1ac8bb92725771a0f22b3388dd0e524a5a
+
+            for (var i = 0; i < wrappers.length; i++) {
+                var btn = wrappers[i].getElementsByClassName("accordion")[0];
+                var txtValue = btn.textContent || btn.innerText;
+                
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    wrappers[i].style.display = "";
+                } else {
+                    wrappers[i].style.display = "none";
+                }
+            }
         }
     </script>
 
