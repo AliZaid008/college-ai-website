@@ -7,6 +7,7 @@
 }
 
 body {
+<<<<<<< HEAD
     /* Deep Animated Gradient (No White!) */
     background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
     background-size: 400% 400%;
@@ -14,6 +15,11 @@ body {
     min-height: 100vh;
     color: white;
     padding-bottom: 50px;
+=======
+  background-color: #d00f0f;
+  background-color: #F4F6F7;
+  color: #333;
+>>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
 }
 
 @keyframes gradientBG {
@@ -112,6 +118,37 @@ body {
 
 .panel p { padding: 20px 0; color: #ddd; line-height: 1.6; }
 
+<<<<<<< HEAD
 /* Arrow Rotation */
 .icon { transition: transform 0.3s; }
 .active .icon { transform: rotate(180deg); }
+=======
+/* Departments */
+.dept-cards {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 40px;
+  flex: 1;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Footer */
+footer {
+  background-color: #0B3C5D;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+>>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
