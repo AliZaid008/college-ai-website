@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>أضف سؤالاً جديداً</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header-section">
+        <h1><i class="fas fa-question-circle"></i> لم تجد إجابتك؟</h1>
+        <p>لا تقلق، فريقنا والشركاء الخمسة جاهزون للإجابة على استفسارك خلال 24 ساعة.</p>
+    </div>
+
+    <div class="container" style="max-width: 600px;">
+        
+        {% if success %}
+        <div class="success-box">
+            <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 15px;"></i><br>
+            تم إرسال سؤالك بنجاح!<br>
+            سيقوم أحد المتعاونين بمراجعة سؤالك والرد عليك عبر البريد الإلكتروني قريباً.
+            <br><br>
+            <a href="{{ url_for('home') }}" class="ask-btn" style="background: transparent; border: 2px solid #2ecc71; color: #2ecc71; box-shadow: none;">العودة للأسئلة الشائعة</a>
+        </div>
+        {% else %}
+
+        <div class="searchable-section" style="padding: 30px; text-align: right;">
+            <form action="/ask" method="POST">
+                
+                <label class="form-label">البريد الإلكتروني (لنرسل لك الإجابة):</label>
+                <input type="email" name="email" class="form-input" placeholder="example@gmail.com" required>
+
+                <label class="form-label">اكتب سؤالك هنا بالتفصيل:</label>
+                <textarea name="question" class="form-input" rows="6" placeholder="مثال: هل يمكن لخريج هذا القسم العمل في مجال الأمن السيبراني؟" required></textarea>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> إرسال السؤال للتقييم
+                </button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="{{ url_for('home') }}" style="color: #aaa; text-decoration: none; border-bottom: 1px dashed #777;">إلغاء والعودة للرئيسية</a>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

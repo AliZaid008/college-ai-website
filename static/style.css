@@ -1,25 +1,21 @@
-/* --- MIDNIGHT GALAXY THEME --- */
+/* =========================================
+   1. GLOBAL STYLES (THEME & FONTS)
+   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 body {
-<<<<<<< HEAD
-    /* Deep Animated Gradient (No White!) */
     background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
     color: white;
-    padding-bottom: 50px;
-=======
-  background-color: #d00f0f;
-  background-color: #F4F6F7;
-  color: #333;
->>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
+    direction: rtl;
+    text-align: right;
 }
 
 @keyframes gradientBG {
@@ -28,54 +24,67 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* --- THE SMART SEARCH BAR --- */
+/* =========================================
+   2. HEADER & SEARCH
+   ========================================= */
 .header-section {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
-    position: sticky; /* Sticks to top when scrolling */
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-section h1 {
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: white;
+}
+
+.header-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    color: #ddd;
 }
 
 .search-box {
-    width: 100%;
+    width: 90%;
     max-width: 600px;
     padding: 15px 25px;
-    font-size: 18px;
     border-radius: 50px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.1);
     color: white;
+    font-size: 1rem;
     outline: none;
     transition: 0.3s;
+    text-align: center;
 }
 
-.search-box::placeholder { color: rgba(255, 255, 255, 0.6); }
 .search-box:focus {
     background: rgba(255, 255, 255, 0.2);
-    border-color: #00d2ff;
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+    border-color: #ffca28;
 }
 
-/* --- THE QUESTIONS --- */
-.faq-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* =========================================
+   3. ACCORDION (Q&A LIST)
+   ========================================= */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .section-title {
-    color: #00d2ff; /* Neon Blue Title */
+    color: #4fc3f7; /* Light Blue Neon */
     border-bottom: 2px solid rgba(255,255,255,0.1);
     padding-bottom: 10px;
     margin-top: 50px;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .accordion {
@@ -84,30 +93,25 @@ body {
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
     outline: none;
+    font-size: 1.1rem;
     transition: 0.3s;
-    font-size: 16px;
     border-radius: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.accordion:hover {
+.accordion:hover, .active {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateX(5px); /* Slight movement effect */
-}
-
-.active {
-    background: rgba(0, 210, 255, 0.2); /* Glow when open */
-    border-color: #00d2ff;
+    border-color: #ffca28;
 }
 
 .panel {
-    padding: 0 18px;
+    padding: 0 20px;
     background: rgba(0, 0, 0, 0.2);
     max-height: 0;
     overflow: hidden;
@@ -116,39 +120,108 @@ body {
     margin-bottom: 10px;
 }
 
-.panel p { padding: 20px 0; color: #ddd; line-height: 1.6; }
-
-<<<<<<< HEAD
-/* Arrow Rotation */
-.icon { transition: transform 0.3s; }
-.active .icon { transform: rotate(180deg); }
-=======
-/* Departments */
-.dept-cards {
-  display: flex;
-  gap: 30px;
+.panel p {
+    padding: 20px 0;
+    line-height: 1.8;
+    color: #ddd;
 }
 
-.card {
-  background-color: white;
-  padding: 40px;
-  flex: 1;
-  text-align: center;
-  border-radius: 6px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
+/* =========================================
+   4. NEW ADDITIONS: BUTTONS & FORMS
+   ========================================= */
+
+/* The Yellow "Add Question" Button */
+.ask-btn {
+    display: inline-block;
+    background: #ffca28; /* Gold Yellow */
+    color: #0d47a1;      /* Deep Blue Text */
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(255, 202, 40, 0.4);
+    transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-8px);
+.ask-btn:hover {
+    transform: scale(1.05);
+    background: #ffd54f;
+    box-shadow: 0 6px 20px rgba(255, 202, 40, 0.6);
 }
 
-/* Footer */
-footer {
-  background-color: #0B3C5D;
-  color: white;
-  text-align: center;
-  padding: 20px;
+/* The Form Container */
+.form-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
->>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
+/* Input Labels */
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #4fc3f7;
+    font-size: 1.1rem;
+}
+
+/* Text Inputs & Textarea */
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: 'Cairo';
+    font-size: 1rem;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #ffca28;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Cairo';
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.6);
+}
+
+/* Success Message Box */
+.success-box {
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

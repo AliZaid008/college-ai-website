@@ -1,27 +1,35 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-data = {
-    "dean": "The dean of the college is Dr. Ahmed Ali.",
-    "departments": "The college has Data Science, AI, and Robotics departments.",
-    "location": "The college is located at University of Baghdad.",
-    "hours": "The college opens from 8 AM to 2 PM."
-}
-
-@app.route("/")
+# --- ROUTE 1: HOME PAGE ---
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route("/ask", methods=["POST"])
+# --- ROUTE 2: ASK A QUESTION PAGE ---
+@app.route('/ask', methods=['GET', 'POST'])
 def ask():
-    question = request.json["question"].lower()
+    if request.method == 'POST':
+        # 1. Get data from the form
+        user_email = request.form.get('email')
+        user_question = request.form.get('question')
 
-    for key in data:
-        if key in question:
-            return jsonify({"answer": data[key]})
+        # 2. SIMULATE EMAIL SENDING
+        # In a real app, you would use an SMTP library here.
+        # For now, we print to the console to prove it works.
+        print(f"--------------------------------------------------")
+        print(f"📩 NEW QUESTION RECEIVED!")
+        print(f"From: {user_email}")
+        print(f"Question: {user_question}")
+        print(f"Action: Forwarding to Admin + 5 Collaborators...")
+        print(f"--------------------------------------------------")
 
-    return jsonify({"answer": "Sorry, I don't have information about that."})
+        # 3. Reload page with a "Success" message
+        return render_template('ask.html', success=True)
 
-if __name__ == "__main__":
+    # If it's a GET request (user just opening the page)
+    return render_template('ask.html', success=False)
+
+if __name__ == '__main__':
     app.run(debug=True)
