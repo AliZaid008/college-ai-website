@@ -7,6 +7,7 @@
 }
 
 body {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     /* Deep Animated Gradient (No White!) */
     background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
@@ -17,6 +18,8 @@ body {
     padding-bottom: 50px;
 =======
   background-color: #d00f0f;
+=======
+>>>>>>> Stashed changes
   background-color: #F4F6F7;
   color: #333;
 >>>>>>> 3156890b23dfd642822c9b01d7ae2a8344db7f9f
