@@ -212,7 +212,7 @@
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
             var wrappers = document.getElementsByClassName("q-wrapper");
->>>>>>> d08b5c1ac8bb92725771a0f22b3388dd0e524a5a
+
 
             for (var i = 0; i < wrappers.length; i++) {
                 var btn = wrappers[i].getElementsByClassName("accordion")[0];
@@ -225,6 +225,23 @@
                 }
             }
         }
+
+document.querySelectorAll('.accordion').forEach(button => {
+    button.addEventListener('click', () => {
+       
+        button.classList.toggle('active');
+        
+        
+        const panel = button.nextElementSibling;
+        
+        
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+});
     </script>
 
 </body>
