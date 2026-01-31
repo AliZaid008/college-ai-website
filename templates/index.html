@@ -13,18 +13,15 @@
            1. نظام الألوان الفخم (The Magnificent Palette)
            ======================================================= */
         :root {
-            /* الألوان الرئيسية: سيان مشع + ذهبي فخم */
-            --primary-neon: #00f2ff;       /* Cyan Neon */
-            --secondary-neon: #7000ff;     /* Purple Neon */
-            --accent-gold: #ffd700;        /* Gold */
+            --primary-neon: #00f2ff;       /* سماوي مشع */
+            --secondary-neon: #7000ff;     /* بنفسجي مشع */
+            --accent-gold: #ffd700;        /* ذهبي ملكي */
             
-            /* خلفيات العناصر */
-            --card-bg: rgba(20, 20, 45, 0.75);     /* كحلي غامق شفاف */
-            --accordion-bg: rgba(30, 30, 70, 0.8); /* أفتح قليلاً */
-            --accordion-hover: rgba(50, 50, 100, 0.9);
-            --panel-bg: rgba(10, 10, 25, 0.6);
+            --card-bg: rgba(20, 20, 45, 0.8);
+            --accordion-bg: rgba(30, 30, 70, 0.85);
+            --accordion-hover: rgba(50, 50, 100, 0.95);
+            --panel-bg: rgba(15, 15, 30, 0.7);
             
-            /* النصوص */
             --text-main: #ffffff;
             --text-secondary: #e0e0e0;
         }
@@ -43,7 +40,7 @@
             line-height: 1.7;
             text-align: right;
             
-            /* --- الخلفية: صورة مدخل الجامعة الجادرية --- */
+            /* --- الخلفية: الصورة الرابعة (مدخل الجامعة) --- */
             background-image: url("{{ url_for('static', filename='uob-entrance001.jpg') }}");
             background-size: cover;
             background-position: center;
@@ -51,16 +48,14 @@
             background-repeat: no-repeat;
         }
 
-        /* طبقة التلوين الفخمة (Gradient Overlay) */
-        /* هذه الطبقة تعطي اللون البنفسجي/الأزرق العميق فوق الصورة */
+        /* طبقة التلوين الفخمة */
         .magnificent-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* تدرج لوني من الكحلي الغامق إلى البنفسجي الغامق */
-            background: linear-gradient(135deg, rgba(10, 10, 30, 0.92) 0%, rgba(25, 20, 60, 0.88) 100%);
+            background: linear-gradient(135deg, rgba(5, 5, 20, 0.93) 0%, rgba(30, 20, 60, 0.88) 100%);
             z-index: -1;
         }
 
@@ -71,9 +66,8 @@
             position: relative;
             padding: 60px 20px 40px;
             text-align: center;
-            /* خط فاصل نيون خفيف في الأسفل */
             border-bottom: 1px solid rgba(0, 242, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
         .header-content {
@@ -83,7 +77,6 @@
             margin: 0 auto;
         }
 
-        /* حاوية الشعارات */
         .logos-container {
             display: flex;
             justify-content: center;
@@ -93,64 +86,61 @@
         }
 
         .logo-img {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             object-fit: contain;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
             padding: 5px;
-            /* توهج حول الشعارات */
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
         
-        /* شعار الكلية في المنتصف يكون أكبر قليلاً */
         .logo-center {
-            width: 130px;
-            height: 130px;
-            box-shadow: 0 0 35px rgba(0, 242, 255, 0.5);
+            width: 140px;
+            height: 140px;
+            box-shadow: 0 0 45px rgba(0, 242, 255, 0.6);
+            z-index: 5;
         }
 
         .logo-img:hover { transform: scale(1.15) rotate(5deg); }
 
-        /* العناوين وتأثيرات النصوص */
         .titles-container h1 { 
-            font-size: 2.6rem; 
+            font-size: 2.8rem; 
             color: var(--primary-neon); 
             margin-bottom: 10px; 
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
             font-weight: 900;
         }
         
         .titles-container h2 { 
-            font-size: 2.2rem; 
+            font-size: 2.4rem; 
             color: #fff; 
             margin-bottom: 10px;
             font-weight: 700; 
         }
         
         .titles-container h3 { 
-            font-size: 1.6rem; 
+            font-size: 1.8rem; 
             color: var(--accent-gold); 
-            margin-bottom: 30px; 
+            margin-bottom: 35px; 
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
-        /* صندوق الوصف */
         .college-description {
-            background: rgba(255, 255, 255, 0.05); /* زجاجي خفيف جداً */
-            padding: 35px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 30px;
-            font-size: 1.15rem;
-            line-height: 2;
+            margin-bottom: 35px;
+            font-size: 1.2rem;
+            line-height: 2.1;
             text-align: justify;
             text-align-last: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             color: #f8f9fa;
         }
 
@@ -158,9 +148,9 @@
             background: rgba(220, 53, 69, 0.15);
             border: 1px solid rgba(220, 53, 69, 0.5);
             color: #ffadb5;
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 0.95rem;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1rem;
             display: inline-block;
             max-width: 900px;
             backdrop-filter: blur(5px);
@@ -170,39 +160,39 @@
            3. شريط البحث
            ======================================================= */
         .search-container {
-            margin-top: 60px;
-            margin-bottom: 60px;
+            margin-top: 70px;
+            margin-bottom: 70px;
             text-align: center;
         }
 
         .search-box {
             width: 90%;
-            max-width: 800px;
-            padding: 22px 40px;
+            max-width: 850px;
+            padding: 25px 45px;
             border-radius: 60px;
-            background: rgba(0, 0, 0, 0.6); 
+            background: rgba(0, 0, 0, 0.7); 
             border: 2px solid var(--primary-neon);
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             outline: none;
             transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
             font-family: 'Tajawal', sans-serif;
         }
 
         .search-box:focus {
-            background: rgba(0, 0, 0, 0.85);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.4);
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.5);
             transform: scale(1.02);
+            border-color: var(--accent-gold);
         }
-        .search-box::placeholder { color: rgba(255, 255, 255, 0.6); }
 
         /* =======================================================
            4. الأسئلة (Accordion)
            ======================================================= */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px 150px 20px;
             position: relative;
@@ -211,82 +201,82 @@
 
         .section-title {
             color: var(--primary-neon);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 15px;
-            margin-top: 80px;
-            margin-bottom: 35px;
-            font-size: 1.9rem;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-top: 90px;
+            margin-bottom: 40px;
+            font-size: 2.1rem;
             font-weight: 800;
             position: relative;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: -3px;
             right: 0;
-            width: 80px;
-            height: 4px;
+            width: 100px;
+            height: 5px;
             background-color: var(--accent-gold);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
-        .q-wrapper { margin-bottom: 20px; }
+        .q-wrapper { margin-bottom: 22px; }
 
         .accordion {
             background: var(--accordion-bg);
             color: white;
             cursor: pointer;
-            padding: 22px 30px;
+            padding: 25px 35px;
             width: 100%;
             border: none;
-            border-right: 4px solid transparent; /* تحضير للحافة الملونة */
+            border-right: 5px solid transparent;
             text-align: right;
             outline: none;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
-            border-radius: 12px;
+            border-radius: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
             font-family: 'Tajawal', sans-serif;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
         .accordion:hover {
             background: var(--accordion-hover);
-            transform: translateX(-5px);
+            transform: translateX(-8px);
         }
 
         .active {
-            background: linear-gradient(90deg, rgba(0, 210, 255, 0.15) 0%, rgba(30, 30, 70, 0.9) 100%);
-            border-right: 4px solid var(--accent-gold);
+            background: linear-gradient(90deg, rgba(0, 210, 255, 0.2) 0%, rgba(30, 30, 70, 0.95) 100%);
+            border-right: 5px solid var(--accent-gold);
             color: var(--accent-gold);
         }
 
-        .accordion .icon {
-            font-size: 1rem;
-            transition: transform 0.3s ease;
-        }
-
         .panel {
-            padding: 0 35px;
+            padding: 0 40px;
             background: var(--panel-bg);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            border-radius: 0 0 12px 12px;
-            margin-top: -5px; /* دمج بصري مع السؤال */
-            margin-bottom: 5px;
+            transition: max-height 0.4s ease-out;
+            border-radius: 0 0 15px 15px;
+            margin-top: -8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-top: none;
         }
 
         .panel p {
-            padding: 30px 0;
-            line-height: 1.9;
-            color: #dcdcdc;
-            font-size: 1.15rem;
+            padding: 35px 0;
+            line-height: 2;
+            color: #e6e6e6;
+            font-size: 1.2rem;
         }
 
         /* =======================================================
@@ -294,8 +284,8 @@
            ======================================================= */
         .footer-cta {
             text-align: center;
-            margin-top: 100px;
-            padding-top: 60px;
+            margin-top: 120px;
+            padding-top: 80px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -303,49 +293,50 @@
             display: inline-block;
             background: linear-gradient(45deg, var(--accent-gold), #ffbf00);
             color: #000;
-            padding: 18px 50px;
+            padding: 20px 60px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.3rem;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            font-size: 1.4rem;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
             transition: 0.3s;
             border: none;
             cursor: pointer;
         }
         .ask-btn:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
         }
 
         .no-results-box {
             display: none;
             text-align: center;
             padding: 60px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 20px;
             margin-top: 50px;
-            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
         }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 50px;
             background: rgba(0,0,0,0.95);
-            font-size: 1rem;
-            color: #888;
+            font-size: 1.1rem;
+            color: #999;
             border-top: 1px solid #333;
+            margin-top: 50px;
         }
 
-        /* تحسينات للجوال */
         @media (max-width: 768px) {
             .logos-container { gap: 15px; }
             .logo-img { width: 70px; height: 70px; }
             .logo-center { width: 90px; height: 90px; }
             .titles-container h1 { font-size: 2rem; }
             .college-description { font-size: 1rem; padding: 20px; }
-            .search-box { padding: 15px 25px; font-size: 1rem; }
-            .accordion { font-size: 1.1rem; padding: 15px 20px; }
+            .search-box { padding: 15px 25px; font-size: 1.1rem; width: 95%; }
+            .accordion { font-size: 1.1rem; padding: 18px 25px; }
+            .section-title { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -357,9 +348,7 @@
         <div class="header-content">
             <div class="logos-container">
                 <img src="{{ url_for('static', filename='OIP logo.jpg') }}" alt="جامعة بغداد" class="logo-img" title="جامعة بغداد">
-                
                 <img src="{{ url_for('static', filename='coai-arabic-logo.png') }}" alt="كلية الذكاء الاصطناعي" class="logo-img logo-center" title="كلية الذكاء الاصطناعي">
-                
                 <img src="{{ url_for('static', filename='1769261644329.jpg') }}" alt="قسم البيانات الضخمة" class="logo-img" title="قسم البيانات الضخمة">
             </div>
 
@@ -386,149 +375,239 @@
     </header>
 
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="ابحث عن سؤالك هنا... (مثلاً: الأقسام الداخلية، الراتب، المناهج، النقل)">
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="ابحث عن سؤالك هنا... (مثلاً: الأقسام الداخلية، القسط الموازي، اللابتوب، المناهج)">
     </div>
 
     <div class="container">
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> 1. معدلات القبول وآلية التقديم</h2>
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> 1. معدلات القبول، الآلية، والرسوم</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">ما هو معدل القبول في كلية الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>يُحدد معدل القبول سنويًا من قبل وزارة التعليم العالي، ووفقًا لأحدث نتائج للعام 2025-2026، بلغ الحد الأدنى 96.86%. القبول في الكلية هو قبول خاص.</p></div>
+                <button class="accordion">ما هو معدل القبول المركزي والموازي للعام الحالي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>القبول المركزي سجل حداً أدنى بلغ <strong>96.86%</strong>. أما الموازي، فيقل بمقدار درجات محددة (عادة 3-4 درجات) حسب المنافسة، لكن المعدل العام للمنافسة يبقى مرتفعاً جداً نظراً لقلة المقاعد.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">ما هي الآلية التي يعتمد عليها القبول الخاص؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>تعتمد على عدة محاور: معدل الطالب (لا يقل عن 85)، اختبار اللغة الإنجليزية، المقابلة الشخصية، والخبرة التقنية. المعادلة هي: (معدل السادس × 60%) + (درجة المقابلة والاختبار × 40%).</p></div>
+                <button class="accordion">ما هي تفاصيل "القبول الخاص" وآليته؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نظام القبول يعتمد على "المفاضلة الإلكترونية". المعادلة هي: (معدل السادس الإعدادي × 60%) + (درجة الاختبار التنافسي والمقابلة × 40%). الشرط الأساسي للتقديم هو معدل لا يقل عن 85% كحد أدنى للدخول في المفاضلة.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">لماذا اختبار اللغة الإنجليزية هو العتبة الأولى؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>لأن الإنجليزية هي لغة التكنولوجيا. هو فلترة واقعية لضمان قدرة الطالب على البحث في المصادر العالمية.</p></div>
+                <button class="accordion">كم تبلغ الأجور الدراسية للموازي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>للعام الدراسي الحالي، أجور التعليم الموازي الحكومي للكليات التقنية والهندسية (والتي تندرج ضمنها كليتنا) تتراوح غالباً حول <strong>3 مليون دينار عراقي</strong> سنوياً. قد توجد تخفيضات وزارية سنوية، لذا يرجى مراجعة الحسابات عند التسجيل.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">ما الذي يتم التركيز عليه في المقابلة الشخصية؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>يتم التركيز على الشغف بالتقنية، القدرة على حل المشكلات (Logic)، والثقافة العامة حول الذكاء الاصطناعي.</p></div>
+                <button class="accordion">هل يحق لخريجي معاهد الحاسوب التقديم؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، تخصص الوزارة نسبة <strong>10% من المقاعد</strong> للأوائل على المعاهد التقنية (تخصصات الحاسوب والأنظمة). التنافس بينهم يكون قوياً جداً ويعتمد على المعدل التراكمي للمعهد.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل يوجد تقديم مسائي أو موازي؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، تم فتح باب التقديم الموازي بنسب محددة، أما المسائي فيخضع للتعليمات الوزارية السنوية، يرجى مراجعة شعبة التسجيل للتأكد من توفره لهذا العام.</p></div>
+                <button class="accordion">ما هي المستمسكات المطلوبة للتسجيل؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>1. وثيقة التخرج الأصلية مع نسخ مصورة.<br>2. البطاقة الوطنية (أو الجنسية وشهادة الجنسية) للطالب والوالدين.<br>3. بطاقة السكن.<br>4. صور شخصية حديثة (خلفية بيضاء) عدد 6.<br>5. استمارة الفحص الطبي.<br>6. وصل دفع رسوم التسجيل.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل يوجد شرط للعمر؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>للدراسة الصباحية، يجب ألا يتجاوز عمر الطالب 24 سنة (لخريجي الإعدادية). أما الدراسة المسائية (إن توفرت) فلا يوجد فيها شرط للعمر.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">لماذا يتم إجراء اختبار لغة إنجليزية ومقابلة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لأن جميع المناهج، المصادر، والبرمجيات تعتمد على اللغة الإنجليزية. المقابلة تهدف لفرز الطلاب الشغوفين حقاً بالتكنولوجيا والقادرين على مواكبة التطور السريع، وليس فقط الحاصلين على معدلات عالية بالحفظ.</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-university"></i> 2. التأسيس والرؤية الأكاديمية</h2>
+            <h2 class="section-title"><i class="fas fa-university"></i> 2. التأسيس، الرؤية، والفرق عن باقي الكليات</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">تأسس القسم في 2025، هل هي قلة خبرة؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>بل ميزة استراتيجية. القسم وُلد رقمياً بمناهج 2025 بعيداً عن تركة المناهج القديمة.</p></div>
+                <button class="accordion">ما الفرق بين "علوم البيانات" و"علوم الحاسوب (CS)"؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>علوم الحاسوب (CS) عام وشامل (بناء برامج، شبكات، خوارزميات). أما قسمنا (Big Data) فهو تخصص دقيق يركز على <strong>استخراج المعرفة من البيانات</strong>، الإحصاء المتقدم، الذكاء الاصطناعي، وتعلم الآلة (Machine Learning).</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">ماذا يعني أن نكون الدفعة الأولى؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>أنتم المؤسسون الشركاء، ولستم حقل تجارب. نجاحكم هو دليل نجاح الكلية، وستحصلون على اهتمام أكاديمي مكثف.</p></div>
+                <button class="accordion">تأسس القسم في 2025، هل هذا يعني ضعف الخبرة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بالعكس، هذا يعني <strong>حداثة المناهج</strong>. القسم تأسس ليكون "رقمياً" بالكامل، بعيداً عن المناهج الكلاسيكية القديمة التي تعاني منها الكليات التقليدية. الكادر التدريسي تم اختياره بعناية من حملة الشهادات العليا من جامعات عالمية.</p></div>
             </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل يمكنني إكمال الدراسات العليا (ماجستير/دكتوراه) لاحقاً؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، وبقوة. تخصص البيانات الضخمة هو "الترند" العالمي حالياً في البحوث. خريجو هذا القسم هم الأوفر حظاً للقبول في المنح الدولية والبعثات نظراً لندرة التخصص وحداثته.</p></div>
+            </div>
+
             <div class="q-wrapper">
                 <button class="accordion">هل الشهادة معترف بها دولياً؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، جامعة بغداد هي الجامعة الأم في العراق، وشهاداتها معتمدة عالمياً. إضافة لذلك، المناهج مصممة وفق معايير الجودة العالمية.</p></div>
+                <div class="panel"><p>بالتأكيد. جامعة بغداد هي الجامعة الأم وهي ضمن التصنيفات العالمية (QS و Times). شهادتك معتمدة رسمياً ويمكن معادلتها في أي دولة في العالم.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي الرؤية المستقبلية للكلية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>الرؤية هي تحويل بغداد إلى مركز إقليمي للذكاء الاصطناعي، وتخريج جيل يقود التحول الرقمي في مؤسسات الدولة والقطاع الخاص، بدلاً من الاعتماد على الشركات الأجنبية.</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-book-open"></i> 3. المناهج ونظام بولونيا</h2>
+            <h2 class="section-title"><i class="fas fa-book-open"></i> 3. المناهج، الصعوبة، ونظام بولونيا</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">ما الفرق في نظام بولونيا (Bologna Process)؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>الطالب شريك، التقييم مستمر يومياً، وليس مجرد امتحان نهائي. يعتمد على الوحدات (ECTS) والجهد الطالب، ويسمح بمرونة عالية في التنقل الأكاديمي.</p></div>
+                <button class="accordion">ما هو نظام بولونيا (Bologna Process) باختصار؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>هو نظام تعليمي أوروبي يعتمد على "تجميع الوحدات" (ECTS). الميزة الأساسية: <strong>التقييم المستمر</strong>. لا يوجد شيء اسمه "أقرأ فقط قبل الامتحان النهائي". درجاتك تجمع يومياً من الحضور، الكويزات، والمشاريع.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل انتهى عصر الدرخ؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، 95% تطبيقي. التقييم على ما تفعله بيدك (Projects) لا ما تحفظه.</p></div>
+                <button class="accordion">هل توجد مواد حفظية (درخ)؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>قليلة جداً (مثل حقوق الإنسان أو متطلبات الجامعة). 90% من المواد هي مواد فهمية، تحليلية، وتطبيقية (برمجة، رياضيات، منطق). إذا كنت تعتمد على الحفظ دون الفهم، ستواجه صعوبة.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">ما هي المواد الدراسية في المرحلة الأولى؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>تشمل: البرمجة المهيكلة (Python/C++)، مقدمة في تكنولوجيا المعلومات، الرياضيات المتقطعة، التفاضل والتكامل، اللغة الإنجليزية التقنية، وحقوق الإنسان.</p></div>
+                <button class="accordion">ما هي لغات البرمجة التي سنتعلمها؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>البداية ستكون مع <strong>Python</strong> لأنها لغة الذكاء الاصطناعي الأولى عالمياً. ستتعلمون أيضاً C++ لفهم هيكلية الحاسوب، و SQL لقواعد البيانات، ولاحقاً R لتحليل البيانات.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل الدراسة صعبة جداً؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>الدراسة ممتعة لمن يحب المجال. هي تتطلب "متابعة يومية" وتطبيق عملي مستمر بدلاً من الدراسة المكثفة ليلة الامتحان.</p></div>
+                <button class="accordion">هل الرياضيات في القسم صعبة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>الرياضيات هي العمود الفقري للذكاء الاصطناعي. ستدرس التفاضل والتكامل (Calculus)، الجبر الخطي (Linear Algebra)، والإحصاء والاحتمالات. هي ليست "صعبة" تعجيزية، لكنها مكثفة وتحتاج متابعة.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل يوجد تدريب صيفي؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، التدريب الصيفي إلزامي في الشركات أو المؤسسات ذات العلاقة، وهو جزء أساسي من متطلبات التخرج.</p></div>
+                <button class="accordion">هل مستواي الضعيف في الإنجليزية سيمنعني من النجاح؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>ليس بالضرورة، لكن ستتعب. الكلية توفر كورس "English for IT"، لكن عليك تطوير نفسك ذاتياً. المصطلحات التقنية ستتكرر عليك حتى تحفظها، لكن القراءة والفهم ضروريان.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي مواد المرحلة الأولى بالتحديد؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>الكورس الأول عادة يشمل: برمجة مهيكلة (1)، رياضيات متقطعة (Discrete Math)، مقدمة في تكنولوجيا المعلومات (IT)، لغة إنجليزية، وتفاضل وتكامل.</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-laptop-code"></i> 4. المختبرات والجانب العملي</h2>
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> 4. المختبرات، اللابتوب، والأدوات</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">ما هي مواصفات المختبرات؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>تم تجهيز المختبرات بأحدث أجهزة الحاسوب ذات المواصفات العالية (GPUs) المناسبة لتدريب نماذج الذكاء الاصطناعي ومعالجة البيانات الضخمة.</p></div>
+                <button class="accordion">ما هي مواصفات اللابتوب الذي أحتاجه؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا تحتاج جهازاً خارقاً في المرحلة الأولى. المواصفات الموصى بها: معالج Core i5 (جيل عاشر وفوق) أو ما يعادله من AMD، رام 8GB (يفضل 16GB)، وهارد SSD ضروري جداً للسرعة. كرت الشاشة المنفصل (NVIDIA) ستحتاجه في المراحل المتقدمة (الثالثة والرابعة).</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل هناك تعاون مع شركات عالمية؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، هناك شراكات واتفاقيات تعاون مع شركات كبرى مثل Huawei و Google لتدريب الطلبة وتوفير شهادات معتمدة.</p></div>
+                <button class="accordion">MacBook أم Windows؟ أيهما أفضل للقسم؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>كلاهما ممتاز. Windows هو الأكثر شيوعاً وتوافقاً مع برامج الجامعات العراقية. الـ Mac ممتاز للمبرمجين، لكن قد تواجه صعوبة بسيطة في تنصيب بعض الأدوات القديمة المطلوبة في المناهج، لذا Windows هو الخيار الآمن والأوفر.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل أحتاج لابتوب شخصي قوي؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>يُفضل ذلك للمارسة في المنزل، ولكن مختبرات الكلية متاحة ومجهزة بكل ما تحتاجه لإتمام المشاريع داخل الكلية.</p></div>
+                <button class="accordion">هل توفر الكلية إنترنت للطلاب؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، المختبرات متصلة بشبكة إنترنت، وتوجد شبكة Wi-Fi في المكتبة وبعض المناطق العامة داخل الكلية لأغراض البحث الدراسي.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل المختبرات مفتوحة للتدريب خارج أوقات المحاضرات؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، بالتنسيق مع مسؤولي المختبرات، يُسمح للطلبة باستخدام الأجهزة لإنجاز المشاريع والواجبات في أوقات الفراغ.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي البرامج التي يجب أن أثبتها قبل الدوام؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>يفضل تثبيت VS Code (محرر أكواد)، Python، وحزمة Microsoft Office. باقي البرامج سيخبركم الأساتذة بها تباعاً.</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-briefcase"></i> 5. المستقبل الوظيفي والتعيين</h2>
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> 5. التعيين، الرواتب، وسوق العمل</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">هل التعيين مركزي؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>كليات الذكاء الاصطناعي مشمولة بالتعيين المركزي حالياً وفق القوانين النافذة (قانون التدرج الطبي والصحي والعلوم الساندة - حسب التحديثات الأخيرة).</p></div>
+                <button class="accordion">هل التعيين المركزي مضمون 100%؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>وفق القوانين الحالية (قانون تدرج ذوي المهن الطبية والصحية والعلوم الساندة)، خريجو الذكاء الاصطناعي مشمولون. لكن القوانين في العراق تتغير وتعتمد على الموازنة. نصيحتنا: لا تعتمد على التعيين الحكومي، القطاع الخاص هو الذهب.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">ما هي المسميات الوظيفية للخريج؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>مهندس بيانات (Data Engineer)، محلل بيانات (Data Analyst)، مطور ذكاء اصطناعي، وعالم بيانات (Data Scientist).</p></div>
+                <button class="accordion">كم تبلغ رواتب خريجي هذا التخصص في القطاع الخاص؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>الرواتب تختلف حسب المهارة، لكن المبتدئ (Junior) في شركات البيانات والاتصالات يبدأ عادة من <strong>800$ إلى 1200$</strong>. الخبراء (Seniors) تصل رواتبهم لأرقام عالية جداً تنافس الأطباء.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل السوق العراقي يحتاج هذا التخصص؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>الطلب هائل جداً ومتزايد، خصوصاً في شركات الاتصالات (Zain, Asiacell)، المصارف، وشركات الدفع الإلكتروني (Qi, Neo) التي تبحث عن متخصصين في البيانات.</p></div>
+                <button class="accordion">هل يمكنني العمل "فريلانس" (عمل حر) أثناء الدراسة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، وهذا ما يفعله الأذكياء. يمكنك تعلم تحليل البيانات أو بناء لوحات القيادة (Dashboards) والعمل مع شركات عربية أو أجنبية عن بعد وأنت في غرفتك.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي الشركات التي تطلب تخصصنا في العراق؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>شركات الاتصالات (Zain, Asiacell)، شركات الدفع الإلكتروني (Qi, Neo, NassWallet)، المصارف الأهلية (لتحليل المخاطر)، وشركات التطبيقات (Talabat, Totters).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي المسميات الوظيفية غير "مبرمج"؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>محلل بيانات (Data Analyst)، مهندس بيانات (Data Engineer)، متخصص ذكاء أعمال (BI Specialist)، مهندس تعلم آلة (ML Engineer).</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> 6. الموقع والحياة الجامعية</h2>
+            <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> 6. الموقع، النقل، والحياة الجامعية</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">أين تقع الكلية بالضبط؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>تقع الكلية داخل مجمع الجادرية (جامعة بغداد)، قرب المكتبة المركزية.</p></div>
+                <button class="accordion">أين تقع الكلية بالضبط داخل مجمع الجادرية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>تقع بالقرب من "المكتبة المركزية" وكلية العلوم. المجمع كبير جداً، لكن توجد باصات داخلية لنقل الطلبة من البوابة الرئيسية إلى الكليات.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل توجد أندية طلابية؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، تم تشكيل نادي جوجل للطلبة المطورين (GDSC) ونوادي أخرى للروبوتات والبرمجة، والنشاطات اللاصفية مدعومة بقوة.</p></div>
+                <button class="accordion">كيف أصل للجامعة؟ هل توجد خطوط نقل؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، خطوط النقل متوفرة من جميع مناطق بغداد إلى الجادرية. توجد مرائب كبيرة قرب الجامعة. تكلفة الخطوط تعتمد على بعد منطقتك (تتراوح عادة بين 50 إلى 100 ألف دينار شهرياً).</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل يوجد زي موحد؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، تلتزم جامعة بغداد بالزي الموحد (القميص الأبيض والبنطلون الرصاصي/النيلي/الأسود) والتنورة للطالبات، مع الالتزام بالحشمة.</p></div>
+                <button class="accordion">هل يوجد نادي طلابي (كافيتريا) ومطاعم؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، تحتوي جامعة بغداد على عدة نوادي طلابية كبيرة، بالإضافة إلى "أكشاك" قريبة من الكلية توفر وجبات سريعة ومشروبات بأسعار مدعومة ومناسبة للطلبة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي نشاطات الكلية غير الدراسة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>توجد بطولات رياضية، مهرجانات شعرية، ومعارض تكنولوجية سنوية. كما ينشط "نادي جوجل للطلبة المطورين" (GDSC) الذي يقيم ورشات عمل ممتعة جداً.</p></div>
+            </div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">هل الزي الموحد مطبق بصرامة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، الأمن الجامعي يشدد على الزي. القميص (أبيض)، البنطلون/التنورة (رصاصي، نيلي، أسود، جوزي). يمنع الجينز (الكاوبوي) الأزرق والملابس الضيقة جداً.</p></div>
             </div>
         </div>
 
         <div class="searchable-section">
-            <h2 class="section-title"><i class="fas fa-concierge-bell"></i> 7. شؤون الطلبة والخدمات</h2>
+            <h2 class="section-title"><i class="fas fa-concierge-bell"></i> 7. شؤون الطلبة، الأقسام الداخلية، والخدمات</h2>
+            
             <div class="q-wrapper">
-                <button class="accordion">كيف يمكنني الحصول على هوية الطالب؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>بعد إتمام التسجيل ودفع الرسوم، يتم إصدار الهوية الجامعية من قسم التسجيل. يجب جلب صورة شخصية حديثة والمستمسكات الأصلية.</p></div>
+                <button class="accordion">كيف أحصل على الإيميل الجامعي (.iq)؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بعد التسجيل والمباشرة، يقوم مركز الحاسبة بإصدار إيميلات رسمية لجميع الطلبة. هذا الإيميل مهم جداً للحصول على تخفيضات برمجية (مثل GitHub Student Pack) والدخول للكلاسات الإلكترونية.</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">هل تتوفر أقسام داخلية؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>نعم، جامعة بغداد توفر أقساماً داخلية للطلبة القادمين من المحافظات، تقع في مجمع الجادرية ومناطق أخرى قريبة، مع توفير خطوط نقل.</p></div>
+                <button class="accordion">ما هي شروط السكن في الأقسام الداخلية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>أن يكون الطالب من سكنة المحافظات (أو مناطق نائية في بغداد)، ناجحاً في دراسته، وجالباً للكفالة القانونية. السكن شبه مجاني (مبالغ رمزية للصيانة).</p></div>
             </div>
+
             <div class="q-wrapper">
-                <button class="accordion">كيف أتواصل مع العمادة أو القسم؟ <i class="fas fa-chevron-down icon"></i></button>
-                <div class="panel"><p>يمكن التواصل عبر البريد الإلكتروني الرسمي للكلية، أو مراجعة مقر العمادة في الجادرية خلال الدوام الرسمي.</p></div>
+                <button class="accordion">كيف أستخرج تأييد بالدوام؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>تقدم طلباً لشعبة التسجيل، وتدفع رسماً بسيطاً (حوالي 3000-5000 دينار)، ويتم توقيعه من العمادة. تحتاجه لعمل اشتراكات النقل أو للجهات الرسمية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل يمكنني تأجيل الدراسة لسنة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، يحق للطالب التأجيل لسنة دراسية واحدة لأسباب مشروعة (مرضية أو ظروف قاهرة) بموافقة مجلس الكلية، بشرط تقديم الطلب في بداية العام الدراسي.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف يتم التواصل الرسمي مع الطلبة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>عبر لوحة الإعلانات في الكلية، وعبر قناة التليكرام الرسمية للقسم، ومن خلال ممثل المرحلة الذي يكون حلقة الوصل بين الطلاب والأساتذة.</p></div>
             </div>
         </div>
 
         <div id="noResults" class="no-results-box">
-            <h3 style="color: var(--accent-gold); margin-bottom: 10px;">لم تجد سؤالك؟</h3>
-            <p style="margin-bottom: 20px;">يبدو أننا لم نجب على هذا السؤال بعد. يمكنك إرساله إلينا الآن!</p>
+            <h3 style="color: var(--accent-gold); margin-bottom: 15px;">لم تجد سؤالك؟</h3>
+            <p style="margin-bottom: 25px; color: #ccc;">قاعدة بياناتنا ضخمة، لكن ربما سؤالك مميز جداً! لا تتردد في طرحه.</p>
             <a href="{{ url_for('ask') }}" class="ask-btn">
                 <i class="fas fa-paper-plane"></i> أرسل سؤالك للفريق
             </a>
         </div>
 
         <div class="footer-cta">
-            <p style="margin-bottom: 20px; font-size: 1.3rem;">هل تصفحت الأسئلة ولم تجد ضالتك؟</p>
+            <p style="margin-bottom: 25px; font-size: 1.4rem; color: #fff;">هل تصفحت كل هذه الأسئلة ولم تجد ضالتك؟</p>
             <a href="{{ url_for('ask') }}" class="ask-btn">
                 <i class="fas fa-plus-circle"></i> اضغط هنا لطرح سؤال جديد
             </a>
@@ -538,6 +617,7 @@
 
     <footer>
         <p>&copy; 2025 مبادرة طلبة كلية الذكاء الاصطناعي - جامعة بغداد.</p>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">تم التصميم والتطوير بجهود طلابية خالصة ❤️</p>
     </footer>
 
     <script>
@@ -554,6 +634,11 @@
                         icon.classList.add("fa-chevron-down");
                     }
                 } else {
+                    // إغلاق باقي الأكورديونات (اختياري، لراحة المستخدم)
+                    var allPanels = document.querySelectorAll('.panel');
+                    var allIcons = document.querySelectorAll('.accordion .icon');
+                    // لإلغاء هذه الميزة وحل كل سؤال وحده، احذف هذا الجزء
+                    
                     panel.style.maxHeight = panel.scrollHeight + "px";
                     if(icon) {
                         icon.classList.remove("fa-chevron-down");
