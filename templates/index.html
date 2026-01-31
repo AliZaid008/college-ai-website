@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل كلية الذكاء الاصطناعي</title>
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,113 +17,401 @@
         <h1><i class="fas fa-brain"></i> دليل كلية الذكاء الاصطناعي</h1>
         <p>إجابات رسمية دقيقة (تحديث 2025-2026)</p>
         
-        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="ابحث عن سؤالك هنا... (مثلاً: معدل القبول، هواوي)">
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="ابحث عن سؤالك هنا... (مثلاً: معدل القبول، نظام بولونيا، التعيين، هواوي)">
     </div>
 
     <div class="container">
 
         <div class="searchable-section">
             <h2 class="section-title">1. معدلات القبول وآلية التقديم</h2>
-            <div class="q-wrapper"><button class="accordion">ما هو معدل القبول في كلية الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يُحدد معدل القبول سنويًا من قبل وزارة التعليم العالي، ووفقًا لأحدث نتائج للعام 2025-2026، بلغ الحد الأدنى 96.86%. القبول في الكلية هو قبول خاص.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما هي الآلية التي يعتمد عليها القبول الخاص؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تعتمد على عدة محاور: معدل الطالب (لا يقل عن 85)، اختبار اللغة الإنجليزية، المقابلة الشخصية، والخبرة التقنية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">لماذا اختبار اللغة الإنجليزية هو العتبة الأولى؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لأن الإنجليزية هي لغة التكنولوجيا. هو فلترة واقعية لضمان قدرة الطالب على البحث في المصادر العالمية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما فائدة المقابلة الشخصية بعد الاختبار؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لقياس الشخصية القيادية والقدرة على التواصل والارتجال، لتمييز الطالب المثقف عن الطالب الحافظ.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف يتم الحسم عند تشابه الكفاءات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>المعدل الدراسي (السادس العلمي) هو العامل المرجح، لأنه يعكس الاجتهاد طويل المدى.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف كانت تجربة التسجيل مع د. زياد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كانت تجربة مميزة بفضل اللمسة الإنسانية والتعاون الكبير الذي ذلل العقبات.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل اشتراط اللغة إقصاء للأذكياء؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا، بل توجيه مهني. الطالب العبقري بلا لغة سيظل حبيس المصادر المحلية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ماذا يعني قبولك في هذا القسم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يعني أنك ضمن نخبة مختارة بعناية، مما يخلق بيئة تنافسية عالية المستوى.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل المقابلة روتينية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا، كانت اختباراً حقيقياً وجاداً لاستكشاف طريقة تفكير الطالب.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف تضمنون العدالة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>من خلال تنوع المعايير (معدل + لغة + مقابلة) لضمان وصول الطالب الأكثر تكاملاً.</p></div></div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هو معدل القبول في كلية الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>يُحدد معدل القبول سنويًا من قبل وزارة التعليم العالي، ووفقًا لأحدث نتائج للعام 2025-2026، بلغ الحد الأدنى 96.86%. القبول في الكلية هو قبول خاص.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي الآلية التي يعتمد عليها القبول الخاص؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>تعتمد على عدة محاور: معدل الطالب (لا يقل عن 85)، اختبار اللغة الإنجليزية، المقابلة الشخصية، والخبرة التقنية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">لماذا اختبار اللغة الإنجليزية هو العتبة الأولى؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لأن الإنجليزية هي لغة التكنولوجيا. هو فلترة واقعية لضمان قدرة الطالب على البحث في المصادر العالمية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما فائدة المقابلة الشخصية بعد الاختبار؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لقياس الشخصية القيادية والقدرة على التواصل والارتجال، لتمييز الطالب المثقف عن الطالب الحافظ.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف يتم الحسم عند تشابه الكفاءات؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>المعدل الدراسي (السادس العلمي) هو العامل المرجح، لأنه يعكس الاجتهاد طويل المدى.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف كانت تجربة التسجيل مع د. زياد؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>كانت تجربة مميزة بفضل اللمسة الإنسانية والتعاون الكبير الذي ذلل العقبات.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل اشتراط اللغة إقصاء للأذكياء؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا، بل توجيه مهني. الطالب العبقري بلا لغة سيظل حبيس المصادر المحلية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ماذا يعني قبولك في هذا القسم؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>يعني أنك ضمن نخبة مختارة بعناية، مما يخلق بيئة تنافسية عالية المستوى.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل المقابلة روتينية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا، كانت اختباراً حقيقياً وجاداً لاستكشاف طريقة تفكير الطالب.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف تضمنون العدالة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>من خلال تنوع المعايير (معدل + لغة + مقابلة) لضمان وصول الطالب الأكثر تكاملاً.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">2. التأسيس والرؤية الأكاديمية</h2>
-            <div class="q-wrapper"><button class="accordion">تأسس القسم في 2025، هل هي قلة خبرة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بل ميزة استراتيجية. القسم وُلد رقمياً بمناهج 2025 بعيداً عن تركة المناهج القديمة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ماذا يعني أن نكون الدفعة الأولى؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أنتم المؤسسون الشركاء، ولستم حقل تجارب. نجاحكم هو دليل نجاح الكلية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف تخدم صرامة د. سهاد الطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تفرض معايير جودة عالية من اليوم الأول لضمان ثقل الشهادة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما هي رؤية القسم المستقبلية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أن يكون مركزاً بحثياً وبوابة تعبر منها الشركات لاستقطاب المواهب.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">تأثير المباني الحديثة على الطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بيئة محفزة للإبداع تشعر الطالب باحترام عقله.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل هناك مخاوف من حداثة القسم في السوق؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>السوق يعترف بالمهارة لا تاريخ التأسيس. مخرجات القسم ستفرض احترامها.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">القيمة المضافة للعراق؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>سد الفجوة في علماء البيانات لدعم التحول الرقمي والحوكمة الإلكترونية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل التدريس تقليدي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا، يعتمد على التفاعل والمشاريع وكسر الجمود الأكاديمي.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">تأسس القسم في 2025، هل هي قلة خبرة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بل ميزة استراتيجية. القسم وُلد رقمياً بمناهج 2025 بعيداً عن تركة المناهج القديمة.</p></div>
+            </div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">ماذا يعني أن نكون الدفعة الأولى؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>أنتم المؤسسون الشركاء، ولستم حقل تجارب. نجاحكم هو دليل نجاح الكلية.</p></div>
+            </div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">كيف تخدم صرامة د. سهاد الطالب؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>تفرض معايير جودة عالية من اليوم الأول لضمان ثقل الشهادة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما هي رؤية القسم المستقبلية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>أن يكون مركزاً بحثياً وبوابة تعبر منها الشركات لاستقطاب المواهب.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">تأثير المباني الحديثة على الطالب؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بيئة محفزة للإبداع تشعر الطالب باحترام عقله.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل هناك مخاوف من حداثة القسم في السوق؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>السوق يعترف بالمهارة لا تاريخ التأسيس. مخرجات القسم ستفرض احترامها.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">القيمة المضافة للعراق؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>سد الفجوة في علماء البيانات لدعم التحول الرقمي والحوكمة الإلكترونية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل التدريس تقليدي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا، يعتمد على التفاعل والمشاريع وكسر الجمود الأكاديمي.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">3. المناهج ونظام بولونيا</h2>
-            <div class="q-wrapper"><button class="accordion">هل المنهج تعجيزي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هو محاكاة لواقع العمل الشاق، لبناء صلابة ذهنية ومهارية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما الفرق في نظام بولونيا؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الطالب شريك، التقييم مستمر يومياً، وليس مجرد امتحان نهائي.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما فائدة التفكير الناقد (Critical Thinking)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يحولك من كاتب كود إلى مهندس حلول قادر على تحليل المشاكل.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل انتهى عصر الدرخ؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، 95% تطبيقي. التقييم على ما تفعله بيدك لا ما تحفظه.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف يقلص بولونيا الفجوة مع الأستاذ؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>عبر المجموعات الصغيرة والتفاعل المستمر، تصبح العلاقة "مشرف وفريق عمل".</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل التفكير الناقد عبء؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هو استثمار في العقلية، يفيد في القرارات المصيرية وتحليل البيانات.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما التحدي الأكبر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>إدارة الوقت والضغط، فالطالب هنا موظف بدوام كامل.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل يضمن المنهج الجاهزية للعمل؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، لأنك قضيت وقتاً طويلاً في حل مشاكل حقيقية، فأنت جاهز للإنتاج فوراً.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل الشهادة جواز سفر تقني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، هي وسام استحقاق يثبت لأرباب العمل جاهزيتك لأصعب المهام.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">هل المنهج تعجيزي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>هو محاكاة لواقع العمل الشاق، لبناء صلابة ذهنية ومهارية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما الفرق في نظام بولونيا؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>الطالب شريك، التقييم مستمر يومياً، وليس مجرد امتحان نهائي.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما فائدة التفكير الناقد (Critical Thinking)؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>يحولك من كاتب كود إلى مهندس حلول قادر على تحليل المشاكل.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل انتهى عصر الدرخ؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، 95% تطبيقي. التقييم على ما تفعله بيدك لا ما تحفظه.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف يقلص بولونيا الفجوة مع الأستاذ؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>عبر المجموعات الصغيرة والتفاعل المستمر، تصبح العلاقة "مشرف وفريق عمل".</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل التفكير الناقد عبء؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>هو استثمار في العقلية، يفيد في القرارات المصيرية وتحليل البيانات.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما التحدي الأكبر؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>إدارة الوقت والضغط، فالطالب هنا موظف بدوام كامل.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل يضمن المنهج الجاهزية للعمل؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، لأنك قضيت وقتاً طويلاً في حل مشاكل حقيقية، فأنت جاهز للإنتاج فوراً.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل الشهادة جواز سفر تقني؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، هي وسام استحقاق يثبت لأرباب العمل جاهزيتك لأصعب المهام.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">4. بيئة الامتحانات والتقييم</h2>
-            <div class="q-wrapper"><button class="accordion">هل تعدد بيئات الامتحان تعقيد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هو تدريب على المرونة الذهنية لتكون قادراً على استخدام أدوات مختلفة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف تضمنون عدالة التقييم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بملاءمة الأداة للمهمة؛ المبرمج يُقيم بالكود، وليس بالحفظ الكتابي.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف تمنعون الغش الإلكتروني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بيئات مغلقة (Sandboxed) وأسئلة تعتمد على التحليل الآني وليس الحفظ.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">كيف يكون امتحان التفكير الناقد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بيئة اشتباك فكري؛ تفكيك معضلات ونقد بيانات، وليس صح وخطأ.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل يقلل هذا النظام التوتر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، يتحول الخوف إلى تحدٍ لإثبات المهارة باستخدام أدوات محببة للطالب.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل البنية التحتية قوية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، قاعاتنا هي محطات عمل (Workstations) متطورة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل التقييم مزاجي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا، نستخدم مصفوفات تقييم (Rubrics) دقيقة ومعلنة مسبقاً.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما رسالة القسم من تنويع الامتحانات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن نحترم تخصصك ونعطي كل علم حقه وقدره.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">هل تعدد بيئات الامتحان تعقيد؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>هو تدريب على المرونة الذهنية لتكون قادراً على استخدام أدوات مختلفة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف تضمنون عدالة التقييم؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بملاءمة الأداة للمهمة؛ المبرمج يُقيم بالكود، وليس بالحفظ الكتابي.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف تمنعون الغش الإلكتروني؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بيئات مغلقة (Sandboxed) وأسئلة تعتمد على التحليل الآني وليس الحفظ.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">كيف يكون امتحان التفكير الناقد؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بيئة اشتباك فكري؛ تفكيك معضلات ونقد بيانات، وليس صح وخطأ.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل يقلل هذا النظام التوتر؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، يتحول الخوف إلى تحدٍ لإثبات المهارة باستخدام أدوات محببة للطالب.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل البنية التحتية قوية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، قاعاتنا هي محطات عمل (Workstations) متطورة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل التقييم مزاجي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا، نستخدم مصفوفات تقييم (Rubrics) دقيقة ومعلنة مسبقاً.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما رسالة القسم من تنويع الامتحانات؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نحن نحترم تخصصك ونعطي كل علم حقه وقدره.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">5. التدريس والمشاريع والأساتذة</h2>
-            <div class="q-wrapper"><button class="accordion">لماذا الحزم الشديد من الأساتذة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لأننا نتعامل معكم كمشاريع خبراء، وهدفنا صقلكم لمستوى الشركات العالمية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">ما ميزة المواد غير التقنية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تبني عقلاً مفكراً وليس مجرد مبرمج منفذ.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل نكتفي بالمحاضرة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا، الكلاس روم مكتبة حية مليئة بالمصادر والكورسات الإضافية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">فائدة شراكة هواوي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تدرس منهجاً صناعياً عالمياً وتحصل على شهادة خبرة معتمدة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">فائدة الورش الخارجية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نافذة على العالم وتجارب الخبراء الدوليين.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">الاستفادة من خبرة د. لؤي إدوارد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>إشراف خبير يحول مشروع تخرجك إلى بحث علمي رصين.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">المشاريع: نظرية أم عملية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>عملية وتطبيقية بحتة لحل مشاكل حقيقية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">المسابقات الدولية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نشجعها بقوة وتعتبر جزءاً من التدريب العملي.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">لماذا كورسات إضافية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لخلق متعلم ذاتي (Self-learner) يواكب التغير السريع في التكنولوجيا.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">الهدف النهائي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بناء شخصية مهنية تكون الخيار الأول للشركات الكبرى.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">لماذا الحزم الشديد من الأساتذة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لأننا نتعامل معكم كمشاريع خبراء، وهدفنا صقلكم لمستوى الشركات العالمية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">ما ميزة المواد غير التقنية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>تبني عقلاً مفكراً وليس مجرد مبرمج منفذ.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل نكتفي بالمحاضرة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا، الكلاس روم مكتبة حية مليئة بالمصادر والكورسات الإضافية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">فائدة شراكة هواوي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>تدرس منهجاً صناعياً عالمياً وتحصل على شهادة خبرة معتمدة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">فائدة الورش الخارجية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نافذة على العالم وتجارب الخبراء الدوليين.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">الاستفادة من خبرة د. لؤي إدوارد؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>إشراف خبير يحول مشروع تخرجك إلى بحث علمي رصين.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">المشاريع: نظرية أم عملية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>عملية وتطبيقية بحتة لحل مشاكل حقيقية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">المسابقات الدولية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نشجعها بقوة وتعتبر جزءاً من التدريب العملي.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">لماذا كورسات إضافية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لخلق متعلم ذاتي (Self-learner) يواكب التغير السريع في التكنولوجيا.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">الهدف النهائي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>بناء شخصية مهنية تكون الخيار الأول للشركات الكبرى.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">6. المستقبل المهني وسوق العمل</h2>
-            <div class="q-wrapper"><button class="accordion">هل التخصص "تريند" مؤقت؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>البيانات هي النفط الجديد، والطلب في تصاعد مستمر مع الأتمتة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل العمل محصور بالبرمجة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا، أنت جوكر (بنوك، مستشفيات، اتصالات، تسويق). تبيع حلولاً لا أكواداً.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل سيأخذ AI وظيفتي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أنت صانع الـ AI ومدربه، ولست المستخدم الذي سيتم استبداله.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل يمكن العمل عن بعد (Remotely)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم وبقوة، فالمهارة مطلوبة عالمياً بغض النظر عن الموقع.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل الرواتب مجزية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، تصنف ضمن الأعلى دخلاً لندرة المهارة وصعوبتها.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">العمل الحر (Freelance)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>مطلوب جداً في تحليل البيانات وبناء لوحات المعلومات (Dashboards).</p></div></div>
-            <div class="q-wrapper"><button class="accordion">الفرق عن خريج الحاسوب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أنت متخصص دقيق في البنية التحتية للبيانات الضخمة، وهو "طبيب عام".</p></div></div>
-            <div class="q-wrapper"><button class="accordion">هل تكفي الشهادة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الشهادة أساس، والتعلم الذاتي قدرك. الكلية توفر كورسات لتقليل الفجوة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">تأسيس Startup؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، أغلب الشركات المليارية قائمة على البيانات. أنت تملك الأداة الأقوى.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">هل التخصص "تريند" مؤقت؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>البيانات هي النفط الجديد، والطلب في تصاعد مستمر مع الأتمتة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل العمل محصور بالبرمجة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>لا، أنت جوكر (بنوك، مستشفيات، اتصالات، تسويق). تبيع حلولاً لا أكواداً.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل سيأخذ AI وظيفتي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>أنت صانع الـ AI ومدربه، ولست المستخدم الذي سيتم استبداله.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل يمكن العمل عن بعد (Remotely)؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم وبقوة، فالمهارة مطلوبة عالمياً بغض النظر عن الموقع.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل الرواتب مجزية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، تصنف ضمن الأعلى دخلاً لندرة المهارة وصعوبتها.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">العمل الحر (Freelance)؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>مطلوب جداً في تحليل البيانات وبناء لوحات المعلومات (Dashboards).</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">الفرق عن خريج الحاسوب؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>أنت متخصص دقيق في البنية التحتية للبيانات الضخمة، وهو "طبيب عام".</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">هل تكفي الشهادة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>الشهادة أساس، والتعلم الذاتي قدرك. الكلية توفر كورسات لتقليل الفجوة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">تأسيس Startup؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، أغلب الشركات المليارية قائمة على البيانات. أنت تملك الأداة الأقوى.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">7. المختبرات والتجهيزات</h2>
-            <div class="q-wrapper"><button class="accordion">هل الحاسبات قوية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، مواصفات عالية مخصصة للمعالجات الثقيلة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">طريقة الشرح في المختبر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>شاشات تفاعلية ذكية توضح الكود والخطوات للجميع.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">الراحة الجسدية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كراسي مريحة (Ergonomic) للحفاظ على التركيز والصحة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">الدعم الفني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>متواجد دائماً للمساعدة وحل المشاكل التقنية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">استخدام المختبر وقت الفراغ؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>متاح بسياسة الباب المفتوح لتطوير المهارات.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">البرامج (Software)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>منصبة وجاهزة ومحدثة دورياً.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">مختبرات متخصصة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>خطط لتخصيص زوايا تحاكي بيئات الأمن السيبراني والشبكات.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">تفاعل الشاشات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يمكن للطلاب استخدامها لعرض مشاريعهم باحترافية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">تحديث الأجهزة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ميزانية دورية لتحديث القطع الحيوية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">روبوتات وطباعة 3D؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>متاحة في المنهج اليومي للتجربة والتعلم العملي.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">هل الحاسبات قوية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نعم، مواصفات عالية مخصصة للمعالجات الثقيلة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">طريقة الشرح في المختبر؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>شاشات تفاعلية ذكية توضح الكود والخطوات للجميع.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">الراحة الجسدية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>كراسي مريحة (Ergonomic) للحفاظ على التركيز والصحة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">الدعم الفني؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>متواجد دائماً للمساعدة وحل المشاكل التقنية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">استخدام المختبر وقت الفراغ؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>متاح بسياسة الباب المفتوح لتطوير المهارات.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">البرامج (Software)؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>منصبة وجاهزة ومحدثة دورياً.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">مختبرات متخصصة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>خطط لتخصيص زوايا تحاكي بيئات الأمن السيبراني والشبكات.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">تفاعل الشاشات؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>يمكن للطلاب استخدامها لعرض مشاريعهم باحترافية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">تحديث الأجهزة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>ميزانية دورية لتحديث القطع الحيوية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">روبوتات وطباعة 3D؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>متاحة في المنهج اليومي للتجربة والتعلم العملي.</p></div>
+            </div>
         </div>
 
         <div class="searchable-section">
             <h2 class="section-title">8. الدعم والتواصل</h2>
-            <div class="q-wrapper"><button class="accordion">طلب شرح إضافي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>متاح، نوجهك للأستاذ المختص أو الساعات المكتبية.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">سرعة الرد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>24-48 ساعة، والحالات الطارئة تعامل كـ "عاجل".</p></div></div>
-            <div class="q-wrapper"><button class="accordion">تقديم مقترحات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نرحب بها جداً وتناقش في اجتماعات القسم.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">سرية الأسئلة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>مقدسة، لا يطلع عليها إلا المسؤول.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">أسئلة إدارية/نقل؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نساعدك ونوجهك للجهة الصحيحة ولن نتركك.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">الشكاوى والتظلم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>متاحة وتُعامل بسرية لضمان العدالة.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">منح ودراسات عليا؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نزودك بكافة التعليمات والتحديثات.</p></div></div>
-            <div class="q-wrapper"><button class="accordion">استشارة حول كورسات خارجية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نقيم المحتوى وننصحك بصدق لمصلحتك المهنية.</p></div></div>
+            
+            <div class="q-wrapper">
+                <button class="accordion">طلب شرح إضافي؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>متاح، نوجهك للأستاذ المختص أو الساعات المكتبية.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">سرعة الرد؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>24-48 ساعة، والحالات الطارئة تعامل كـ "عاجل".</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">تقديم مقترحات؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نرحب بها جداً وتناقش في اجتماعات القسم.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">سرية الأسئلة؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>مقدسة، لا يطلع عليها إلا المسؤول.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">أسئلة إدارية/نقل؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نساعدك ونوجهك للجهة الصحيحة ولن نتركك.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">الشكاوى والتظلم؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>متاحة وتُعامل بسرية لضمان العدالة.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">منح ودراسات عليا؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نزودك بكافة التعليمات والتحديثات.</p></div>
+            </div>
+
+            <div class="q-wrapper">
+                <button class="accordion">استشارة حول كورسات خارجية؟ <i class="fas fa-chevron-down icon"></i></button>
+                <div class="panel"><p>نقيم المحتوى وننصحك بصدق لمصلحتك المهنية.</p></div>
+            </div>
         </div>
 
         <div id="noResults" class="no-results-box">
@@ -141,7 +432,7 @@
     </div>
 
     <script>
-        // Accordion Logic
+        // كود القائمة المنسدلة (Accordion)
         var acc = document.getElementsByClassName("accordion");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
@@ -160,41 +451,43 @@
             });
         }
 
-        // Updated Search Logic
+        // كود البحث الذكي
         function searchFunction() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
             var wrappers = document.getElementsByClassName("q-wrapper");
             var sections = document.getElementsByClassName("searchable-section");
             var noResultsDiv = document.getElementById("noResults");
-            var totalVisibleQuestions = 0; // Counter for results
+            var totalVisibleQuestions = 0; // عداد النتائج
 
-            // 1. Loop through all questions
+            // 1. فحص جميع الأسئلة
             for (var i = 0; i < wrappers.length; i++) {
                 var btn = wrappers[i].getElementsByClassName("accordion")[0];
                 var panel = wrappers[i].getElementsByClassName("panel")[0];
                 var txtValue = btn.textContent || btn.innerText;
                 var panelValue = panel.textContent || panel.innerText;
                 
+                // البحث في السؤال والإجابة
                 if ((txtValue.toUpperCase().indexOf(filter) > -1) || (panelValue.toUpperCase().indexOf(filter) > -1)) {
                     wrappers[i].style.display = "";
-                    totalVisibleQuestions++; // Count it
+                    totalVisibleQuestions++; // زيادة العداد
                 } else {
                     wrappers[i].style.display = "none";
                 }
             }
             
-            // 2. Hide/Show Sections based on questions inside
+            // 2. إخفاء الأقسام الفارغة
             for (var j = 0; j < sections.length; j++) {
                 var visibleInThisSection = 0;
                 var questionsInSection = sections[j].getElementsByClassName("q-wrapper");
                 for (var k = 0; k < questionsInSection.length; k++) {
                     if (questionsInSection[k].style.display !== "none") visibleInThisSection++;
                 }
+                // إخفاء القسم إذا لم يكن به أسئلة ظاهرة وكان هناك نص في البحث
                 sections[j].style.display = (visibleInThisSection === 0 && filter !== "") ? "none" : "";
             }
 
-            // 3. SHOW "No Results" Box if count is 0
+            // 3. إظهار صندوق "لا توجد نتائج" إذا كان العداد صفر
             if (totalVisibleQuestions === 0 && filter !== "") {
                 noResultsDiv.style.display = "block";
             } else {
