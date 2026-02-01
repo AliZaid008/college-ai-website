@@ -1,87 +1,79 @@
 <!DOCTYPE html>
-<html lang="{{ data.lang }}" dir="{{ data.dir }}">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ data.title }} - {{ data.university }}</title>
+    <title>دليل كلية الذكاء الاصطناعي - جامعة بغداد</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Cairo:wght@600;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     
     <style>
+        /* =======================================================
+           1. نظام الألوان الفخم (The Magnificent Palette)
+           ======================================================= */
         :root {
-            --primary-neon: #00f3ff;
-            --secondary-neon: #bc13fe;
-            --bg-dark: #050505;
-            --glass-bg: rgba(20, 20, 20, 0.8);
-            --text-color: #e0e0e0;
+            --primary-neon: #00f2ff;       /* سماوي مشع */
+            --secondary-neon: #7000ff;     /* بنفسجي مشع */
+            --accent-gold: #ffd700;        /* ذهبي ملكي */
+            
+            --card-bg: rgba(20, 20, 45, 0.8);
+            --accordion-bg: rgba(30, 30, 70, 0.85);
+            --accordion-hover: rgba(50, 50, 100, 0.95);
+            --panel-bg: rgba(15, 15, 30, 0.7);
+            
+            --text-main: #ffffff;
+            --text-secondary: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Tajawal', 'Poppins', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
+            font-family: 'Tajawal', 'Cairo', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.7;
+            text-align: right;
+            
+            /* --- الخلفية: الصورة الرابعة (مدخل الجامعة) --- */
+            background-image: url("{{ url_for('static', filename='uob-entrance001.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
-        
-        /* دعم الخطوط حسب اللغة */
-        html[lang="en"] body { font-family: 'Poppins', sans-serif; }
-        html[lang="ar"] body { font-family: 'Tajawal', sans-serif; }
 
-        /* الخلفية المميزة */
+        /* طبقة التلوين الفخمة */
         .magnificent-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(188, 19, 254, 0.1) 0%, transparent 40%);
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(5, 5, 20, 0.93) 0%, rgba(30, 20, 60, 0.88) 100%);
             z-index: -1;
         }
 
-        /* زر تغيير اللغة */
-        .lang-switch {
-            position: absolute;
-            top: 25px;
-            z-index: 1000;
-        }
-        /* مكان الزر يتغير حسب الاتجاه */
-        html[dir="rtl"] .lang-switch { left: 30px; }
-        html[dir="ltr"] .lang-switch { right: 30px; }
-
-        .lang-btn {
-            background: rgba(0, 243, 255, 0.1);
-            color: var(--primary-neon);
-            border: 1px solid var(--primary-neon);
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(5px);
-        }
-        .lang-btn:hover {
-            background: var(--primary-neon);
-            color: #000;
-            box-shadow: 0 0 20px var(--primary-neon);
-        }
-
-        /* الهيدر */
-        .official-header {
+        /* =======================================================
+           2. الهيدر والتصميم العلوي
+           ======================================================= */
+        header.official-header {
+            position: relative;
+            padding: 60px 20px 40px;
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
         .header-content {
-            max-width: 800px;
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -89,204 +81,262 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
+            gap: 40px;
+            margin-bottom: 35px;
         }
 
         .logo-img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid var(--primary-neon);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
-            transition: transform 0.3s;
-        }
-        .logo-center {
             width: 110px;
             height: 110px;
-            z-index: 2;
-            border-color: var(--secondary-neon);
-            box-shadow: 0 0 25px rgba(188, 19, 254, 0.4);
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
-        .logo-img:hover { transform: scale(1.1); }
+        
+        .logo-center {
+            width: 140px;
+            height: 140px;
+            box-shadow: 0 0 45px rgba(0, 242, 255, 0.6);
+            z-index: 5;
+        }
 
-        .titles-container h1 {
-            font-family: 'Cairo', sans-serif;
-            margin: 0;
-            color: #fff;
-            font-size: 1.8rem;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        .logo-img:hover { transform: scale(1.15) rotate(5deg); }
+
+        .titles-container h1 { 
+            font-size: 2.8rem; 
+            color: var(--primary-neon); 
+            margin-bottom: 10px; 
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+            font-weight: 900;
         }
-        .titles-container h2 {
-            margin: 10px 0;
-            color: var(--primary-neon);
-            font-size: 1.5rem;
+        
+        .titles-container h2 { 
+            font-size: 2.4rem; 
+            color: #fff; 
+            margin-bottom: 10px;
+            font-weight: 700; 
         }
-        .titles-container h3 {
-            margin: 0;
-            color: var(--secondary-neon);
-            font-weight: normal;
-            font-size: 1.1rem;
+        
+        .titles-container h3 { 
+            font-size: 1.8rem; 
+            color: var(--accent-gold); 
+            margin-bottom: 35px; 
             letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
-        /* البحث */
+        .college-description {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 35px;
+            font-size: 1.2rem;
+            line-height: 2.1;
+            text-align: justify;
+            text-align-last: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: #f8f9fa;
+        }
+
+        .disclaimer-box {
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.5);
+            color: #ffadb5;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1rem;
+            display: inline-block;
+            max-width: 900px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* =======================================================
+           3. شريط البحث
+           ======================================================= */
         .search-container {
+            margin-top: 70px;
+            margin-bottom: 70px;
             text-align: center;
-            margin: -25px auto 40px;
+        }
+
+        .search-box {
+            width: 90%;
+            max-width: 850px;
+            padding: 25px 45px;
+            border-radius: 60px;
+            background: rgba(0, 0, 0, 0.7); 
+            border: 2px solid var(--primary-neon);
+            color: white;
+            font-size: 1.4rem;
+            outline: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .search-box:focus {
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.5);
+            transform: scale(1.02);
+            border-color: var(--accent-gold);
+        }
+
+        /* =======================================================
+           4. الأسئلة (Accordion)
+           ======================================================= */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 150px 20px;
             position: relative;
             z-index: 10;
-            max-width: 600px;
-            padding: 0 20px;
-        }
-        .search-box {
-            width: 100%;
-            padding: 15px 25px;
-            border-radius: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            font-size: 1.1rem;
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            text-align: inherit;
-        }
-        .search-box:focus {
-            border-color: var(--primary-neon);
-            outline: none;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-        }
-
-        /* المحتوى الرئيسي */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px 60px;
-        }
-
-        .searchable-section {
-            margin-bottom: 50px;
-            animation: fadeIn 0.8s ease-in-out;
         }
 
         .section-title {
             color: var(--primary-neon);
-            border-bottom: 2px solid var(--primary-neon);
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-top: 90px;
+            margin-bottom: 40px;
+            font-size: 2.1rem;
+            font-weight: 800;
+            position: relative;
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        /* تعديل اتجاه الايقونات */
-        html[dir="rtl"] .section-title i { margin-left: 10px; }
-        html[dir="ltr"] .section-title i { margin-right: 10px; }
-
-        /* الأكورديون (الأسئلة) */
-        .q-wrapper {
-            margin-bottom: 15px;
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: 0;
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent-gold);
+            border-radius: 3px;
         }
 
+        .q-wrapper { margin-bottom: 22px; }
+
         .accordion {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #fff;
+            background: var(--accordion-bg);
+            color: white;
             cursor: pointer;
-            padding: 18px 25px;
+            padding: 25px 35px;
             width: 100%;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: inherit;
+            border: none;
+            border-right: 5px solid transparent;
+            text-align: right;
             outline: none;
-            font-size: 1.1rem;
-            transition: 0.4s;
-            border-radius: 12px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            border-radius: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
+            font-family: 'Tajawal', sans-serif;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
-        .accordion:hover, .accordion.active {
-            background-color: rgba(0, 243, 255, 0.1);
-            border-color: var(--primary-neon);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+        .accordion:hover {
+            background: var(--accordion-hover);
+            transform: translateX(-8px);
+        }
+
+        .active {
+            background: linear-gradient(90deg, rgba(0, 210, 255, 0.2) 0%, rgba(30, 30, 70, 0.95) 100%);
+            border-right: 5px solid var(--accent-gold);
+            color: var(--accent-gold);
         }
 
         .panel {
-            padding: 0 25px;
-            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0 40px;
+            background: var(--panel-bg);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            border-radius: 0 0 12px 12px;
+            transition: max-height 0.4s ease-out;
+            border-radius: 0 0 15px 15px;
+            margin-top: -8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
             border-top: none;
         }
 
         .panel p {
-            padding: 20px 0;
-            line-height: 1.8;
-            color: #ccc;
-            font-size: 1rem;
+            padding: 35px 0;
+            line-height: 2;
+            color: #e6e6e6;
+            font-size: 1.2rem;
         }
 
-        /* الأيقونة داخل السؤال */
-        .icon { transition: transform 0.3s; font-size: 0.8em; }
-        .active .icon { transform: rotate(180deg); }
-
-        /* رسالة لا توجد نتائج */
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            display: none;
-            color: #888;
-        }
-
-        /* زر اتصل بنا */
+        /* =======================================================
+           5. الأزرار والفوتر
+           ======================================================= */
         .footer-cta {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 120px;
+            padding-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .ask-btn {
             display: inline-block;
-            background: linear-gradient(45deg, var(--secondary-neon), #9b00e8);
-            color: #fff;
-            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--accent-gold), #ffbf00);
+            color: #000;
+            padding: 20px 60px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
+            font-size: 1.4rem;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
             transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(188, 19, 254, 0.4);
+            border: none;
+            cursor: pointer;
         }
         .ask-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.6);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+        }
+
+        .no-results-box {
+            display: none;
+            text-align: center;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            margin-top: 50px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            color: #666;
-            font-size: 0.9rem;
-            background: #000;
+            padding: 50px;
+            background: rgba(0,0,0,0.95);
+            font-size: 1.1rem;
+            color: #999;
+            border-top: 1px solid #333;
+            margin-top: 50px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .header-content h1 { font-size: 1.4rem; }
-            .logo-img { width: 60px; height: 60px; }
-            .logo-center { width: 80px; height: 80px; }
-            .lang-switch { top: 15px; } 
-            html[dir="rtl"] .lang-switch { left: 15px; }
-            html[dir="ltr"] .lang-switch { right: 15px; }
-            .lang-btn span { display: none; } /* إخفاء النص في الموبايل */
+        @media (max-width: 768px) {
+            .logos-container { gap: 15px; }
+            .logo-img { width: 70px; height: 70px; }
+            .logo-center { width: 90px; height: 90px; }
+            .titles-container h1 { font-size: 2rem; }
+            .college-description { font-size: 1rem; padding: 20px; }
+            .search-box { padding: 15px 25px; font-size: 1.1rem; width: 95%; }
+            .accordion { font-size: 1.1rem; padding: 18px 25px; }
+            .section-title { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -294,120 +344,306 @@
 
     <div class="magnificent-overlay"></div>
 
-    <div class="lang-switch">
-        <a href="{{ url_for('toggle_lang') }}" class="lang-btn">
-            <i class="fas fa-globe"></i> <span>{{ data.toggle_text }}</span>
-        </a>
-    </div>
-
     <header class="official-header">
         <div class="header-content">
             <div class="logos-container">
-                <img src="{{ url_for('static', filename='OIP logo.jpg') }}" class="logo-img">
-                <img src="{{ url_for('static', filename='coai-arabic-logo.png') }}" class="logo-img logo-center">
-                <img src="{{ url_for('static', filename='1769261644329.jpg') }}" class="logo-img">
+                <img src="{{ url_for('static', filename='OIP logo.jpg') }}" alt="جامعة بغداد" class="logo-img" title="جامعة بغداد">
+                <img src="{{ url_for('static', filename='coai-arabic-logo.png') }}" alt="كلية الذكاء الاصطناعي" class="logo-img logo-center" title="كلية الذكاء الاصطناعي">
+                <img src="{{ url_for('static', filename='1769261644329.jpg') }}" alt="قسم البيانات الضخمة" class="logo-img" title="قسم البيانات الضخمة">
             </div>
 
             <div class="titles-container">
-                <h1>{{ data.university }}</h1>
-                <h2>{{ data.title }}</h2>
-                <h3>{{ data.department }}</h3>
+                <h1>جامعة بغداد</h1>
+                <h2>كلية الذكاء الاصطناعي</h2>
+                <h3>قسم البيانات الضخمة</h3>
+            </div>
+
+            <div class="college-description">
+                <p>
+                    تُعد <strong>جامعة بغداد - كلية الذكاء الاصطناعي</strong> مؤسسة مرموقة تقع في قلب بغداد، وتكرس جهودها لتعزيز التميز الأكاديمي والنمو الشخصي للطلبة. انطلاقاً من رسالتها الرامية إلى تطوير المعرفة والابتكار في مجال الذكاء الاصطناعي، تقدم الكلية مجموعة متنوعة من البرامج المتقدمة في الذكاء الاصطناعي، وعلوم البيانات، وتقنيات الحوسبة الحديثة.
+                </p>
+                <br>
+                <p>
+                    يتمتع طلابنا بحياة جامعية نابضة بالحيوية، تزخر بالأندية الطلابية، وورش العمل، والندوات. كما تدعم مرافقنا المتطورة - التي تشمل مختبرات حاسوب حديثة، ومراكز أبحاث متخصصة - كلا الجانبين العلمي والترفيهي. نحن نبني قادة المستقبل الرقمي في العراق.
+                </p>
+            </div>
+
+            <div class="disclaimer-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>تنويه هام:</strong> هذا الدليل هو <u>مبادرة طلابية تطوعية</u>. المعلومات الواردة هنا تم جمعها بعناية لتسهيل حياة الطالب الجامعي، ولكن هذا الموقع <strong>غير رسمي</strong> ولا يمثل القنوات الرسمية لعمادة الكلية.
             </div>
         </div>
     </header>
 
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="{{ data.search_placeholder }}">
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchFunction()" placeholder="ابحث عن سؤالك هنا... (مثلاً: الأقسام الداخلية، اللابتوب، المناهج)">
     </div>
 
     <div class="container">
-        
-        {% for section in data.sections %}
-        <div class="searchable-section">
-            <h2 class="section-title">
-                <i class="fas {{ section.icon }}"></i> {{ section.title }}
-            </h2>
-            
-            {% for item in section.questions %}
-            <div class="q-wrapper">
-                <button class="accordion">
-                    {{ item.q }} 
-                    <i class="fas fa-chevron-down icon"></i>
-                </button>
-                <div class="panel">
-                    <p>{{ item.a }}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
 
-        <div id="noResults" class="no-results">
-            <h3>{{ data.no_results }} 🧐</h3>
+<div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-user-graduate" style="margin-left:10px;"></i>معدلات القبول وآلية التقديم</h2>
+
+            <div class="q-wrapper"><button class="accordion">ما هو معدل القبول في كلية الذكاء الاصطناعي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يُحدد معدل القبول سنويًا من قبل وزارة التعليم العالي والبحث العلمي، ويعتمد على الطاقة الاستيعابية للكلية والمعدلات العامة للمتقدمين. ووفقًا لأحدث نتائج القبول الخاص للعام الدراسي 2025-2026، بلغ الحد الأدنى لمعدل القبول لكلية الذكاء الاصطناعي - جامعة بغداد 96.86%. وهذا يعني أنه يجب على الطالب الحصول على معدل قريب من هذا المعدل ليتم قبوله في احد اقسام الكلية، علما ان نظام القبول في الكلية يكون قبولا خاصا.</p></div></div>
+            
+            <div class="q-wrapper"><button class="accordion">ما هي الآلية التي يعتمد عليها القبول الخاص او القبول المباشر للكلية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الآلية التي يعتمد عليها نظام القبول بالكلية تتكون من عدة محاور اولها معدل الطالب المتقدم حيث يجب ان لا يقل معدل المتقدم عن 85، اما المحاور الأخرى فيتم التركيز فيها على اللغة الانجليزية للمتقدم وكذلك الخبرة التقنية للمتقدم حيث تتم مقابلة كل المتقدمين وعلى هذا الاساس يُقبل المتقدم في كلية الذكاء الاصطناعي.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">لماذا تم وضع "اختبار كفاءة اللغة الإنجليزية" كأول عتبة يجب اجتيازها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لأن اللغة الإنجليزية هي لغة التكنولوجيا والبرمجة عالمياً. وضع هذا الاختبار في البداية هو بمثابة "فلترة واقعية"؛ فإذا لم يمتلك الطالب الأدوات اللغوية التي تمكنه من البحث في المصادر العالمية وفهم الخوارزميات، فسيواجه صعوبات جمة لاحقاً. إنه إجراء لضمان مصلحة الطالب الأكاديمية قبل كل شيء.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما الغاية من إجراء "مقابلة شخصية باللغة الإنجليزية" بعد اجتياز الاختبار التحريري؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الاختبار الورقي يقيس المخزون اللغوي، أما المقابلة فهي تقيس الشخصية القيادية والقدرة على التواصل والارتجال تحت الضغط. اللجنة تبحث عن طلاب يمتلكون الثقة للحديث والنقاش بلغة التخصص، وهو ما يميز الطالب "المثقف" عن الطالب الذي يعتمد الحفظ فقط.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف يتم الحسم في الاختيار النهائي عندما تتشابه كفاءات الطلاب في اللغة والمقابلة؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هنا يأتي دور "معدل السادس العلمي" كعامل مرجح وحاسم. فالمعدل الدراسي يعكس الانضباط والاجتهاد الطويل المدى. وبالتالي، فإن الطالب الذي يجمع بين الموهبة (اللغة) والاجتهاد (المعدل) هو الأحق بالمقعد في ظل التنافس الشديد.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">عادة ما تتسم إجراءات التسجيل في الجامعات بالروتين والتعقيد، فكيف كانت التجربة في هذا القسم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كانت التجربة مختلفة تماماً بفضل اللمسة الإنسانية والإدارية المتميزة، وتحديداً من مشرف التسجيل د. زياد. لقد كان لتعاونه الكبير وسعة صدره دور جوهري في تذليل العقبات وتوجيه الطلاب.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يعتبر اشتراط اللغة الإنجليزية نوعاً من الإقصاء للطلاب الأذكياء علمياً ولكنهم ضعفاء لغوياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ليس إقصاء بقدر ما هو "توجيه مهني". الطالب العبقري في الرياضيات الذي يفتقر للغة سيظل حبيس المصادر المحلية المحدودة. شروط القسم تضع الطالب أمام حقيقة سوق العمل مبكراً: "طور لغتك لتتمكن من إطلاق عنان ذكائك العلمي عالمياً".</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما الذي يعنيه اجتيازك لكل هذه المراحل (اختبار، مقابلة، مفاضلة) بالنسبة لك كطالب مقبول؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>يعني أنني لست هنا بالصدفة، وأن زملائي في القاعة الدراسية هم "نخبة" تم اختيارهم بعناية. هذا الشعور يخلق بيئة تنافسية صحية ومرتفعة المستوى، حيث يكون النقاش العلمي أعمق وأكثر إثراء مقارنة بالتخصصات ذات القبول العشوائي.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل كانت المقابلة الشخصية مجرد إجراء روتيني أم اختباراً حقيقياً للقدرات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كانت اختباراً حقيقياً وجاداً. الأسئلة لم تكن سطحية، بل استهدفت استكشاف طريقة تفكير الطالب ومدى جديته. هذا النوع من المقابلات يعطي انطباعاً أولياً للطالب بأن هذا الصرح الأكاديمي يحترم العقول ويقدر الكفاءة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">في ظل التنافس الكبير، كيف تضمن آلية القبول العدالة بين المتقدمين؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>العدالة تحققت من خلال تنوع المعايير. لم يتم الاعتماد على معيار واحد قد يظلم الطالب، بل تم الدمج بين مهارة اللغة (الاختبار)، وقوة الشخصية (المقابلة)، والتاريخ الدراسي (المعدل). هذه المنظومة المتكاملة تضمن وصول الطالب الأكثر استحقاقاً وتكاملاً للمقعد الدراسي.</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-university" style="margin-left:10px;"></i> التأسيس والرؤية الأكاديمية</h2>
+            
+            <div class="q-wrapper"><button class="accordion">تأسس القسم عام 2025 تزامناً مع افتتاح الكلية، هل يعتبر هذا "حداثة" تحسب له أم "نقصاً في الخبرة"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بل هي ميزة استراتيجية كبرى. تأسيس القسم في 2025 يعني أنه ولد "رقميا" بامتياز، بمناهج وضعت اليوم لتناسب تكنولوجيا اليوم، بعيداً عن تركة المناهج القديمة التي تعاني منها الكليات التقليدية. إنه انطلاقة من حيث انتهى الآخرون لا من حيث بدأوا.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما الذي يعنيه أن تكون طالباً في "الدفعة الأولى" لقسم جديد؟ هل أنتم حقل تجارب أم قادة المستقبل؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الدفعة الأولى هم "المؤسسون الشركاء". القسم ينظر إليهم كرواد سيصنعون سمعة الكلية. الاهتمام الموجه لهذه الدفعة استثنائي لأن نجاحهم هو الدليل الوحيد على نجاح القسم. لذا، هم ليسوا حقل تجارب، بل هم حجر الأساس الذي سيبنى عليه المستقبل.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">تترأس القسم "د. سهاد"، التي توصف بقوة الشخصية والصرامة الأكاديمية.. كيف يخدم ذلك مصلحة الطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>القسم الجديد يحتاج إلى يد قوية لترسيخ النظام وبناء التقاليد الأكاديمية من الصفر. قوة شخصية د. سهاد تضمن عدم التسيب، وتفرض معايير جودة عالية منذ اليوم الأول، مما يجعل الشهادة التي سيحملها الطالب ذات ثقل وقيمة حقيقية، وليست مجرد ورقة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">بما أن القسم يختص بـ "البيانات الضخمة"، هل رؤيته المستقبلية تقتصر على التخريج أم بناء شراكات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الرؤية تتجاوز القاعات الدراسية. القسم يخطط ليكون مركزاً بحثياً واستشارياً يربط الطلاب بسوق العمل قبل التخرج. الهدف ليس فقط منح شهادة بكالوريوس، بل بناء "بوابة" تعبر منها كبرى الشركات لاستقطاب المواهب العراقية الشابة في مجال البيانات.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل "حداثة" المباني والتجهيزات في الكلية الجديدة تنعكس على النفسية الدراسية للطالب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>البيئة المكانية جزء لا يتجزأ من العملية التعليمية. الدراسة في قاعات حديثة ومختبرات مجهزة بأحدث تقنيات 2025 تخلق بيئة محفزة للإبداع، وتشعر الطالب بأنه في صرح علمي يحترم عقله، بعيداً عن كآبة المباني المتهالكة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل هناك مخاوف من عدم اعتراف سوق العمل بالقسم لأنه جديد؟ وكيف يتم تبديد هذه المخاوف؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>سوق التكنولوجيا لا يعترف بتاريخ التأسيس، بل بمهارة الخريج. القسم يراهن على "المحتوى". عندما يخرج طالب يتقن أدوات 2025 ويعالج البيانات باحترافية، سيفرض نفسه على السوق. ووجود قيادة واعية تضمن أن المخرجات ستتحدث عن نفسها وتجبر السوق على الاحترام.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما هي القيمة المضافة التي يقدمها هذا القسم للعراق تحديداً في هذا التوقيت؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>العراق يتجه نحو التحول الرقمي والحوكمة الإلكترونية. هذا القسم جاء ليسد فجوة هائلة في "علماء البيانات" المحليين. إنه استجابة وطنية ذكية لحاجة ملحة، وليس مجرد ترف أكاديمي، مما يجعل خريجيه عملة نادرة ومطلوبة في القطاعين الحكومي والخاص.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يتوقع من القسم أن يتبع أساليب تدريس تقليدية أم سيكون هناك كسر للجمود الأكاديمي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>النشأة الحديثة تفرض أساليب حديثة. القسم متحرر من قيود "هكذا وجدنا آباءنا". المتوقع هو اعتماد التعليم التفاعلي والمشاريع التطبيقية، والابتعاد عن التلقين، تماشياً مع عقلية الجيل الجديد وطبيعة تخصص البيانات المتسارع.</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-book-reader" style="margin-left:10px;"></i>المناهج ونظام بولونيا</h2>
+
+            <div class="q-wrapper"><button class="accordion">توصف الخطة الدراسية بأنها صعبة وكثيفة، هل الهدف هو تعجيز الطالب أم صناعة "نخبة" تقنية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الصعوبة هنا ليست تعجيزاً، بل هي "محاكاة لواقع العمل". مجال البيانات الضخمة عالمياً هو مجال شاق ومتغير. المنهج الصعب هو بمثابة "دورة تدريب القوات الخاصة"؛ من يجتازها يخرج بصلابة ذهنية ومهارية تجعل أي وظيفة لاحقاً تبدو سهلة مقارنة بما درسه. إنها صعوبة بناءة وليست هدامة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">يعتمد القسم "نظام بولونيا" (Bologna Process)، كيف يختلف هذا عن النظام الجامعي التقليدي المعتاد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>النظام التقليدي يعتمد غالباً على "الامتحان النهائي" كمصير وحيد. أما نظام بولونيا، فهو يضع الطالب في قلب العملية التعليمية؛ الطالب شريك، والحضور إلزامي، والتقييم مستمر يومياً. إنه يحول الطالب من "متلق سلبي" للمعلومة إلى "باحث نشط" عنها، وهذا هو جوهر التعليم الحديث.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">يتم تدريس مادة "التفكير الناقد" (Critical Thinking) لأول مرة، ما علاقة الفلسفة بالبيانات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذه هي "الجوهرة الخفية" في المنهج. عالم البيانات ليس مجرد أكواد، بل هو قدرة على تحليل المشكلة، طرح الأسئلة الصحيحة، وكشف التحيزات في البيانات. التفكير الناقد هو الأداة التي تحول المبرمج من مجرد "كاتب كود" (Coder) إلى "مهندس حلول" (Problem Solver) يرى ما لا يراه الآخرون.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">إذا كان 95% من المنهج "تطبيقياً"، فهل يعني ذلك موت أسلوب "الدرخ" والحفظ التقليدي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تماماً. في هذا القسم الذاكرة وحدها لن تسعفك. نسبة 95% تعني أنك ستقضي وقتك أمام الشاشات وفي المختبرات أكثر من قاعات المحاضرات النظرية. التقييم هنا مبني على "ماذا تستطيع أن تفعل بيدك؟" وليس "ماذا تستطيع أن تكتب على الورقة؟".</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف يساهم نظام بولونيا في تقليص الفجوة بين الطالب والأستاذ؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نظام بولونيا يفرض التفاعل المستمر وقلة أعداد الطلاب في المجموعات (Small Groups)، مما يجبر الأستاذ على متابعة تطور كل طالب بشكل فردي. العلاقة تتحول من "محاضر وجمهور" إلى "مشرف وفريق عمل"، مما يعزز الثقة وينقل الخبرة بشكل أسرع.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">مادة "Critical Thinking" تبدو غريبة على مسامع الطالب العراقي، هل ستكون عبئاً إضافياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ستكون الصدمة الإيجابية الأكبر للطالب. هذه المادة ستعلمه كيف لا يقبل المعلومة كمسلمات، وكيف يفكك المشاكل المعقدة. إنها مهارة ستفيده في حياته الشخصية وقراراته المصيرية بنفس قدر فائدتها في تحليل البيانات. إنها الاستثمار الأهم في "عقلية" الطالب.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما هو التحدي الأكبر الذي سيواجهه الطالب في ظل هذا النظام المكثف والصارم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>التحدي هو "إدارة الوقت والضغط". الطالب هنا موظف بدوام كامل؛ محاضرات، مختبرات، مشاريع مستمرة، وتفكير ناقد. هذا الضغط هو الذي يصقل الشخصية، ولكنه يتطلب التزاماً حديدياً وتنظيماً دقيقاً للوقت، فلا مجال للتأجيل أو التسويف.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف يضمن التركيز العملي بنسبة 95% جاهزية الخريج لسوق العمل من "اليوم الأول"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الشركات تعاني عادة من إعادة تدريب الخريجين لأنهم درسوا النظريات فقط. خريج هذا القسم، الذي قضى 95% من وقته يطبق ويحل مشاكل برمجية، سيدخل سوق العمل وكأنه يمتلك خبرة عملية مسبقة. هو لا يحتاج لمن يعلمه "كيف يعمل"، بل جاهز للإنتاج فوراً.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">في ظل هذه الصعوبة والمعايير العالمية، هل شهادة هذا القسم ستكون مجرد ورقة أم "جواز سفر" تقني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>ستكون "وسام استحقاق". من ينجو من هذا النظام الصارم، ويتقن التفكير الناقد، ويمتلك مهارات عملية بنسبة 95%، لن يبحث عن عمل، بل العمل هو من سيبحث عنه. هذه الشهادة ستقول لأرباب العمل "حامل هذه الورقة خضع لاختبارات حقيقية وهو جاهز لأصعب المهام".</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-tasks" style="margin-left:10px;"></i> بيئة الامتحانات والتقييم</h2>
+
+            <div class="q-wrapper"><button class="accordion">هل يعتبر تعدد بيئات الامتحان "تعقيداً" إضافياً للطالب الذي اعتاد على نمط واحد؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هو ليس تعقيداً، بل هو "تدريب على المرونة الذهنية". في سوق العمل، المهندس لا يحل المشاكل بالورقة والقلم، بل باستخدام أدوات مختلفة لكل مشكلة. هذا التنوع يكسر حاجز الرهبة ويجعل الطالب "حرباء تقنية" قادرة على التكيف مع أي بيئة عمل توضع أمامه.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف تضمنون "العدالة" في التقييم إذا كانت ظروف وطريقة الامتحان تختلف جذرياً من مادة لأخرى؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>العدالة هنا تتحقق من خلال "ملاءمة الأداة للمهمة". ظلم للطالب المبرمج أن يُقيم بقدرته على الحفظ والكتابة اليدوية، بينما تكمن مهارته في التفكير المنطقي والكود. تخصيص البيئة يضمن أن كل مهارة تقاس بالميزان الصحيح الخاص بها، وهذا قمة الإنصاف الأكاديمي.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">في ظل وجود بيئات امتحانية تقنية (Digital Environments)، كيف يتم التعامل مع النزاهة ومنع الغش الإلكتروني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>البيئات الخاصة مصممة لتكون "صناديق مغلقة" (Sandboxed Environments). الطالب يمتلك الأدوات اللازمة للحل فقط، وتكون الشبكة مراقبة ومقيدة. التحدي في هذه الامتحانات ليس في "سرقة المعلومة" لأن الأسئلة تعتمد على الفهم والتحليل الآني، مما يجعل الغش بلا جدوى أمام امتحان يتطلب حلاً إبداعياً.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ذكرتم أن مادة "التفكير الناقد" تُدرس لأول مرة، فكيف تكون "بيئة الامتحان" الخاصة بها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>قطعاً لا (ليست صح وخطأ). بيئة امتحان التفكير الناقد هي "بيئة اشتباك فكري". قد يُوضع الطالب أمام معضلة حقيقية أو بيانات متضاربة ويُطلب منه تفكيكها ونقدها. الامتحان هنا يقيس "مسار التفكير" (Process) وليس النتيجة النهائية فقط. إنها بيئة تقيس عمق العقل لا سعة الذاكرة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يؤدي تغيير بيئة الامتحان لكل مادة إلى تقليل التوتر النفسي لدى الطلاب (Exam Anxiety)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وبشكل ملحوظ. الرهبة تأتي غالباً من "الجمود" والصمت في القاعات التقليدية. عندما يدخل الطالب بيئة امتحان تشبه المختبر الذي يحبه، ويستخدم الحاسوب والأدوات التي يتدرب عليها يومياً، يتحول الشعور من "خوف من الاختبار" إلى "تحد لإثبات المهارة".</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يتطلب هذا النظام بنية تحتية تقنية هائلة داخل القاعات الامتحانية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بالتأكيد، وهذا ما يميز القسم في كليته الجديدة. القاعات الامتحانية ليست مجرد طاولات وكراسي بل هي "محطات عمل" (Workstations) متصلة بسيرفرات وأنظمة إدارة تعلم متطورة، قادرة على استيعاب بيئات برمجية ثقيلة لكل طالب في وقت واحد.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف يتم تقييم الطالب في مادة تعتمد كلياً على بيئة ابتكارية؟ هل التقييم ذاتي أم بمعايير؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لا مكان للمزاجية هنا. لكل بيئة امتحان "مصفوفة تقييم" (Rubrics) دقيقة ومعلنة. في البرمجة مثلاً، يُقاس الكود بناء على العمل، الكفاءة، النظافة، والتوثيق. الطالب يعرف مسبقاً القواعد التي "ستحكم بها لعبته" داخل هذه البيئة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما هي الرسالة التي يود القسم إيصالها من خلال هذا الجهد الكبير في تنويع بيئات الامتحانات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الرسالة هي: "نحن نحترم تخصصك". نحن لا نتعامل مع المواد كقوالب جامدة، بل نعطي كل علم حقه وقدره. هذا الاهتمام بالتفاصيل الامتحانية يعكس احترام القسم لعقلية الطالب ولطبيعة العلم الذي يدرسه، مما يعزز انتماء الطالب لهذا الصرح المتقدم.</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher" style="margin-left:10px;"></i>التدريس والمشاريع والأساتذة</h2>
+
+            <div class="q-wrapper"><button class="accordion">يُقال إن التدريسيين في هذا القسم "شديدين جداً" في التعامل الأكاديمي، لماذا كل هذا الحزم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذا الحزم هو "حرقة دم ايجابية"؛ الأساتذة هنا يتعاملون معكم كـ "مشاريع خبراء" وليس مجرد طلاب. الشدة في الدراسة هدفها صقل مهاراتكم لتكونوا بمستوى العمالقة الذين يدرسونكم، وضمان أن خريجنا يمتلك الانضباط الذي تتطلبه الشركات العالمية.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما الذي يميز المواد الدراسية مثل "التفكير النقدي" (Critical Thinking) في قسم تقني؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن لا نخرج آلات كود بل نخرج مفكرين. مواد مثل التفكير النقدي تبني عقلك ليعرف كيف يحلل المشكلة قبل كتابة أول سطر برمجي، وهذه المواد هي التي تميز خريجنا وتجعله قادراً على اتخاذ قرارات ذكية في المشاريع المعقدة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل نكتفي بما يُطرح في المحاضرة فقط، أم هناك مصادر إضافية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الأستاذ هنا لا ينهي دوره بانتهاء المحاضرة. الكلاس روم (Google Classroom) يتحول إلى مكتبة حية؛ حيث يرسل الأساتذة باستمرار كورسات مجانية، مصادر تعليمية، وتحديثات تقنية لضمان أن الطالب يسبق سوق العمل بخطوات.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما هي قيمة التعاون مع شركة "هواوي" (Huawei) في هذا القسم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>تعاوننا مع هواوي ليس شكلياً؛ نحن ندرس منهجاً من صنعهم (Introduction to AI)، مما يعني أنك تدرس مادة صممتها واحدة من أكبر شركات التكنولوجيا في العالم، وهذا يمنحك شهادة وخبرة مطابقة للمعايير الصناعية العالمية.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل الورش الخارجية مجرد "تضييع وقت" أم لها فائدة حقيقية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الورش هي نافذتك على العالم. نستضيف فيها خبراء ودكاترة أجانب لنقل تجاربهم الدولية إليك. هذه الورش تكسر حاجز الخوف وتجعلك تطلع على كيف يفكر العالم في تكنولوجيا البيانات والذكاء الاصطناعي خارج حدود الكتاب.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف نستفيد من خبرة "عمالقة الشرح" في القسم بمشاريعنا؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>وجود دكاترة بخبرة د. لؤي إدوارد وغيره من المتخصصين في الـ Big Data يعني أن مشروع تخرجك سيشرف عليه عقل خبير يوجهك نحو أحدث ما توصل إليه العلم، مما يرفع قيمة مشروعك من مجرد "واجب" إلى "بحث علمي" رصين.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل المشاريع تركز على الجانب النظري أم الجانب التطبيقي العملي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>التركيز الكلي هو على (التطبيق). بفضل التعاون مع شركات مثل هواوي وتوفر المصادر، تُبنى المشاريع لحل مشكلات حقيقية، ويُطلب من الطالب إثبات نجاح مشروعه عملياً باستخدام البيانات الضخمة التي تدرب عليها.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل هناك تشجيع للطلاب على المشاركة في مسابقات دولية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وبقوة. القسم يعتبر هذه المسابقات جزءاً من التدريب العملي، ويقوم الأساتذة بالإشراف المباشر على الفرق المشاركة لتمثيل الجامعة في المحافل الدولية، وهذا بحد ذاته تدريب لا يُقدر بثمن.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">لماذا يتم إرسال كورسات خارجية إضافية لنا بينما المنهج دسم بما يكفي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لأن تكنولوجيا البيانات تتغير كل ساعة. الأساتذة يطمحون لأن يكون الطالب "متعلماً ذاتياً" (Self-learner)؛ الكورسات الإضافية هي أدوات مساعدة لتوسيع مداركك وجعلك مرجعاً في تخصصك، بعيداً عن التقيد بالورقة والقلم فقط.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما هو الهدف النهائي من كل هذا الضغط الأكاديمي والورش والمشاريع؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الهدف هو بناء "شخصية مهنية". نحن نعدك لتخرج من هنا وأنت تمتلك عقلية نقدية، مهارة تقنية عالمية (من هواوي) وخبرة عملية من عمالقة التخصص، لتكون الخيار الأول لأي شركة كبرى فور تخرجك.</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-briefcase" style="margin-left:10px;"></i> المستقبل المهني وسوق العمل</h2>
+
+            <div class="q-wrapper"><button class="accordion">هل هذا التخصص مجرد "تريند" (موضة) حالياً وسيختفي الطلب عليه بعد 4 سنوات حين أتخرج؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذا تخوف ضروري لكن الحقيقة تقول العكس. البيانات أصبحت هي "النفط الجديد". طالما هناك إنترنت، بنوك، تطبيقات وتسويق سيزداد حجم البيانات. العالم يتجه للأتمتة والذكاء الاصطناعي، وهذا التخصص هو العمود الفقري لهذه التقنيات، لذا الحاجة للخريجين في تصاعد وليست فقاعة مؤقتة.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل سأكون محصوراً في العمل بشركات البرمجة فقط وأكون أمام الشاشات السوداء طيلة حياتي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أبداً، هذه ميزة "علم البيانات". أنت الجوكر في سوق العمل. يمكنك العمل في مستشفى (لتحليل بيانات المرضى)، في بنك (لكشف الاحتيال)، في شركات اتصالات، أو حتى في شركات تسويق لفهم سلوك الزبائن. أنت لا تبيع "كود"، أنت تبيع "حلولاً وقرارات" لكل القطاعات.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل سيأتي يوم يأخذ فيه الـ AI وظيفتي كمحلل بيانات؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الـ AI هو أداة بيدك أنت وليست بديلاً عنك. الأدوات تحتاج لمن يبنيها، يدربها، ويراقب مخرجاتها ويصححها. دراستك هنا تجعلك أنت "صانع" الذكاء الاصطناعي، وليس المستخدم الذي يتم استبداله.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل شهادتي تؤهلني للعمل "عن بعد" (Remotely) مع شركات عالمية وأنا في بلدي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وبقوة. تخصص البيانات الضخمة هو أحد أكثر التخصصات طلبا في نظام العمل عن بعد عالمياً. لغة البيانات والرياضيات عالمية، والشركات الأجنبية تبحث عن المهارة بغض النظر عن موقعك الجغرافي.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل الرواتب في هذا المجال تستحق عناء الدراسة وصعوبتها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>قاعدة السوق تقول: "كلما زادت ندرة المهارة وصعوبتها، زاد السعر". بما أن تخصص البيانات الضخمة يتطلب مهارات تحليلية وبرمجية عالية، فإن رواتب هذا المجال تُصنف عالمياً ومحلياً ضمن الفئات الأعلى دخلاً مقارنة بتخصصات الـ IT التقليدية.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يمكنني العمل كـ (Freelancer)؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بالتأكيد. مهارات مثل "تنظيف البيانات"، "بناء لوحات المعلومات (Dashboards)"، أو "التنبؤ بالمبيعات" مطلوبة جداً بنظام القطعة (المشاريع المستقلة) لأصحاب الأعمال الصغيرة والمتوسطة الذين لا يستطيعون توظيف موظف دائم.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ما الفرق بيني وبين خريج علوم الحاسوب العادي؟ لماذا قد توظفني الشركة أنا بدلاً منه؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>خريج الحاسوب العام هو "طبيب عام"، وأنت "طبيب جراح متخصص". الشركة التي لديها تيرا بايت من البيانات تحتاج شخصاً يعرف كيف يتعامل مع البنية التحتية الضخمة (Hadoop, Spark) وكيف يستخرج منها قيمة، وهي مهارات دقيقة يفتقدها المبرمج العام.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل الشهادة الجامعية وحدها تكفي، أم سأضطر لدفع مبالغ على دورات خارجية لأجد عملاً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>لنكن واقعيين التكنولوجيا تتغير كل يوم. الشهادة تمنحك الأساس القوي والمنطق السليم، لكننا في القسم نحاول دمج الشهادات الاحترافية ضمن المنهج لتقليل الفجوة. التعلم الذاتي المستمر هو قدرك في هذا المجال، لكن الأساس الذي ستبنيه هنا سيوفر عليك سنوات من التخبط. وعلى الرغم من ذلك فإن كلية الذكاء الاصطناعي في جامعة بغداد وفرت كورسات مجانية لطلبتها وبذلك تعمل على زيادة الخبرة بالاضافة لإيجاد العمل.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يمكنني تأسيس عملي الخاص (Startup) بهذا التخصص؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وأغلب الشركات المليارية اليوم (مثل Uber، كريم، طلبات) قائمة في أساسها على "البيانات". إذا كانت لديك فكرة تعتمد على استغلال البيانات لحل مشكلة، فأنت تمتلك أقوى أداة لتنفيذها.</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-microchip" style="margin-left:10px;"></i>المختبرات والتجهيزات التقنية</h2>
+
+            <div class="q-wrapper"><button class="accordion">هل حاسبات المختبر قوية بما يكفي لتشغيل الخوارزميات، أم سأضطر لاستخدام لابتوبي الشخصي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>المختبرات مجهزة بحاسبات ذات مواصفات عالية جداً ومصممة خصيصاً لتتحمل الكودات الصعبة والمعالجات الثقيلة التي يتطلبها تخصصنا، لضمان تنفيذ مشاريعك بكفاءة عالية وبدون توقف.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف يتم شرح المواد البرمجية المعقدة في المختبر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>المختبرات مجهزة بشاشات ذكية تفاعلية حديثة، تسمح للأستاذ بعرض الكود وشرح الخطوات البرمجية بوضوح تام أمام الجميع، مما يجعل عملية الفهم والمتابعة أسهل بكثير من الطرق التقليدية.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">سأقضي ساعات طويلة في البرمجة والمختبر، هل البيئة مريحة جسدياً؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن نهتم بصحتك وتركيزك؛ لذلك اختارت الكلية كراسي مريحة جداً (Ergonomic) مصممة للجلسات الطويلة أمام الحاسوب، لضمان أن يكون تركيزك كاملاً على الإبداع والكود وليس على آلام الظهر.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ماذا لو واجهت مشكلة تقنية أو "Error" في الكود أثناء العمل في المختبر؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>أبداً، ستجد مشرفي المختبر متواجدين دائماً وهم متعاونون لأبعد الحدود. هدفهم ليس فقط المراقبة، بل مساعدتك في حل المشاكل التقنية وتوجيهك لتجاوز أي عقبة تواجهك أثناء التطبيق العملي.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل المختبرات متاحة فقط وقت المحاضرة، أم يمكنني استغلال "الحاسبات القوية" في وقت فراغي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الأجهزة موجودة لخدمتك. نتبع سياسة الباب المفتوح في حال عدم وجود محاضرة، حيث يمكنك الجلوس والعمل على تطوير مهاراتك واستخدام إمكانيات الأجهزة المتطورة في أي وقت متاح للقسم.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل البرامج (Software) المطلوبة محملة مسبقاً على الأجهزة أم سأضيع وقتي في التنصيب؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>كل ما تحتاجه من بيئات تطوير وأدوات تحليل بيانات منصبة وجاهزة للعمل فوراً. فريق الدعم الفني يحرص على تحديث البرامج دورياً لتكون متوافقة مع أحدث التقنيات في سوق العمل.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل توجد بيئة مختبرات متخصصة جداً لأمور مثل "الأمن السيبراني" أو "الشبكات الضخمة"؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>القسم في تطور مستمر، وهناك خطط لتخصيص زوايا تقنية داخل المختبرات تحاكي بيئات العمل الحقيقية في الشركات الكبرى لضمان أن الطالب يتدرب في بيئة تشبه ما سيجده بعد التخرج.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل الشاشات الذكية تستخدم فقط للعرض أم يمكن للطلاب التفاعل معها؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هي شاشات تفاعلية؛ يمكنك كطالب في مرحلة عرض المشاريع أن تستخدمها لعرض نتائجك ومناقشة الكود مع زملائك والأساتذة بطريقة احترافية تشبه العروض التقديمية في الشركات العالمية.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">كيف يضمن القسم بقاء هذه التجهيزات "حديثة" ولا تصبح قديمة بعد سنة أو سنتين؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هناك ميزانية دورية مخصصة لتحديث القطع الحيوية في الحاسبات مثل الرامات وكروت الشاشة وصيانة الشاشات الذكية، لأننا نؤمن أن جودة التعليم من جودة الأدوات التي يستخدمها الطالب.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل استخدام الروبوتات والطابعات ثلاثية الأبعاد متاح لكل الطلاب، أم هو مخصص لمشاريع التخرج فقط؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>هذه التجهيزات جزء من المنهج العملي؛ أي أنك ستتعامل مع الروبوتات وتتعلم أسرار الطباعة ثلاثية الأبعاد في مختبرات الدروس اليومية. نحن نؤمن أن التجربة والخطأ بالأجهزة الفعلية هي التي تصنع مهندساً أو محللاً ناجحاً، وليست محصورة بمرحلة التخرج فقط.</p></div></div>
+        </div>
+
+        <div class="searchable-section">
+            <h2 class="section-title"><i class="fas fa-hands-helping" style="margin-left:10px;"></i> الدعم الطلابي والتواصل</h2>
+
+            <div class="q-wrapper"><button class="accordion">إذا واجهت مشكلة في فهم مادة معينة، هل يمكنني استخدام هذا القسم لطلب جلسة شرح إضافية؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>طبعاً، الهدف من "أطرح سؤالاً" ليس فقط للمشاكل الإدارية. يمكنك طلب توضيح لنقطة علمية، وسيقوم القسم بتوجيه سؤالك للأستاذ المختص ليرد عليك أو يحدد لك موعداً في الساعات المكتبية ليشرح لك وجهاً لوجه.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل الردود هنا سريعة؟ أخاف أن ينتهي الفصل الدراسي وأنا أنتظر الجواب. <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الردود غالباً ما تصلك خلال 24 إلى 48 ساعة. إذا كان السؤال طارئاً (مثل مشاكل الامتحانات)، يتم التعامل معه بصفة "عاجل".</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يمكنني تقديم اقتراح لتطوير المختبر أو إضافة مادة معينة من خلال هذا القسم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن نكبر بمقترحاتكم. هذا القسم هو "صندوق الأفكار أيضاً؛ أي طالب يرى نقصاً في خدمة معينة أو لديه فكرة لمشروع مشترك، رسالته تصل مباشرة للإدارة وتؤخذ بمحمل الجد في اجتماعات القسم.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل الأسئلة التي تُطرح هنا تظهر للعلن (للكل) أم هي سرية بيني وبين القسم؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>الخصوصية مقدسة عندنا. رسالتك تصل كبريد إلكتروني خاص ومحمي، ولا يطلع عليها إلا الشخص المسؤول عن حل مشكلتك. لن يعرف أحد بخصوصية سؤالك أو هويتك.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">سؤالي يتعلق بـ "النقل" أو "الادارة"، هل هذا القسم يجاوبني أم يرفض طلبي؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>حتى لو كان سؤالك خارج اختصاص القسم (إداري مثلاً)، فنحن لن نتركك ابدا. سنقوم بتوجيهك للجهة الصحيحة أو نأتي لك بالمعلومة الأكيدة من رئاسة الكلية لنوفر عليك عناء البحث والتنقل بين المكاتب.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">ماذا لو شعرت أن أحد الأساتذة ظلمني في الدرجات هل يمكنني تقديم شكوى هنا دون خوف؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نعم، وبكل ثقة. هذا القسم هو وسيلة لضمان العدالة. الشكاوى تعامل بسرية تامة وتُرفع للجنة المختصة للنظر فيها دون أي تأثير سلبي على الطالب، لأن هدفنا هو بيئة تعليمية عادلة للجميع.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">هل يمكنني السؤال عن "المنح الدراسية" أو "نظام الدراسات العليا" من خلال هذا النموذج؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>بالتأكيد، القسم مطلع على كافة التحديثات والتعليمات الوزارية والجامعية بخصوص المنح والتخفيضات، وسنزودك بالشروط والأوراق المطلوبة وكيفية التقديم عليها.</p></div></div>
+
+            <div class="q-wrapper"><button class="accordion">إذا سألت عن رأي القسم في "كورس خارجي" أريد أخذه، هل ستنصحوني بصدق؟ <i class="fas fa-chevron-down icon"></i></button><div class="panel"><p>نحن شركاء في نجاحك. إذا استشرتنا عن أي مهارة خارجية أو كورس تريد تطوير نفسك به، سيقوم أساتذة القسم بتقييم المحتوى لك وإخبارك إذا كان مفيداً لمسارك المهني أم لا.</p></div></div>
+        </div>
+
+    </div>
+
+        <div id="noResults" class="no-results-box">
+            <h3 style="color: var(--accent-color); margin-bottom: 10px;">لم تجد سؤالك؟</h3>
+            <p style="margin-bottom: 20px;">يبدو أننا لم نجب على هذا السؤال بعد. يمكنك إرساله إلينا الآن!</p>
+            <a href="{{ url_for('ask') }}" class="ask-btn">
+                <i class="fas fa-paper-plane"></i> أرسل سؤالك للفريق
+            </a>
         </div>
 
         <div class="footer-cta">
+            <p style="margin-bottom: 20px; font-size: 1.2rem;">هل تصفحت الأسئلة ولم تجد ضالتك؟</p>
             <a href="{{ url_for('ask') }}" class="ask-btn">
-                <i class="fas fa-envelope-open-text"></i> {{ data.btn_ask }}
+                <i class="fas fa-plus-circle"></i> اضغط هنا لطرح سؤال جديد
             </a>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 {{ data.footer_text }} ❤️</p>
+        <p>&copy; 2026 مبادرة طلبة كلية الذكاء الاصطناعي - جامعة بغداد.</p>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">تم التصميم والتطوير بجهود طلابية خالصة ❤️</p>
     </footer>
 
     <script>
-        // كود الأكورديون
         var acc = document.getElementsByClassName("accordion");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
+                var icon = this.querySelector(".icon");
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
+                    if(icon) {
+                        icon.classList.remove("fa-chevron-up");
+                        icon.classList.add("fa-chevron-down");
+                    }
                 } else {
+                    // إغلاق باقي الأكورديونات (اختياري، لراحة المستخدم)
+                    var allPanels = document.querySelectorAll('.panel');
+                    var allIcons = document.querySelectorAll('.accordion .icon');
+                    // لإلغاء هذه الميزة وحل كل سؤال وحده، احذف هذا الجزء
+                    
                     panel.style.maxHeight = panel.scrollHeight + "px";
+                    if(icon) {
+                        icon.classList.remove("fa-chevron-down");
+                        icon.classList.add("fa-chevron-up");
+                    }
                 } 
             });
         }
-        
-        // كود البحث المتقدم
+
         function searchFunction() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
+            var wrappers = document.getElementsByClassName("q-wrapper");
             var sections = document.getElementsByClassName("searchable-section");
-            var hasResults = false;
+            var noResultsDiv = document.getElementById("noResults");
+            var totalVisibleQuestions = 0;
 
-            for (var i = 0; i < sections.length; i++) {
-                var section = sections[i];
-                var wrappers = section.getElementsByClassName("q-wrapper");
-                var sectionHasVisibleQ = false;
-
-                for (var j = 0; j < wrappers.length; j++) {
-                    var btn = wrappers[j].getElementsByClassName("accordion")[0];
-                    var panel = wrappers[j].getElementsByClassName("panel")[0];
-                    
-                    if (btn.innerText.toUpperCase().indexOf(filter) > -1 || panel.innerText.toUpperCase().indexOf(filter) > -1) {
-                        wrappers[j].style.display = "";
-                        sectionHasVisibleQ = true;
-                        hasResults = true;
-                    } else {
-                        wrappers[j].style.display = "none";
-                    }
-                }
-
-                // إخفاء عنوان القسم إذا لم تكن تحته أسئلة مطابقة
-                if(sectionHasVisibleQ) {
-                    section.style.display = "";
+            for (var i = 0; i < wrappers.length; i++) {
+                var btn = wrappers[i].getElementsByClassName("accordion")[0];
+                var panel = wrappers[i].getElementsByClassName("panel")[0];
+                var txtValue = btn.textContent || btn.innerText;
+                var panelValue = panel.textContent || panel.innerText;
+                
+                if ((txtValue.toUpperCase().indexOf(filter) > -1) || (panelValue.toUpperCase().indexOf(filter) > -1)) {
+                    wrappers[i].style.display = "";
+                    totalVisibleQuestions++;
                 } else {
-                    section.style.display = "none";
+                    wrappers[i].style.display = "none";
                 }
             }
+            
+            for (var j = 0; j < sections.length; j++) {
+                var visibleInThisSection = 0;
+                var questionsInSection = sections[j].getElementsByClassName("q-wrapper");
+                for (var k = 0; k < questionsInSection.length; k++) {
+                    if (questionsInSection[k].style.display !== "none") visibleInThisSection++;
+                }
+                sections[j].style.display = (visibleInThisSection === 0 && filter !== "") ? "none" : "";
+            }
 
-            // إظهار رسالة لا توجد نتائج
-            document.getElementById("noResults").style.display = hasResults ? "none" : "block";
+            if (totalVisibleQuestions === 0 && filter !== "") {
+                noResultsDiv.style.display = "block";
+            } else {
+                noResultsDiv.style.display = "none";
+            }
         }
     </script>
 </body>
