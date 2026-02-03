@@ -1,51 +1,176 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="{{ session.get('lang', 'ar') }}" dir="{{ dir }}">
 <head>
     <meta charset="UTF-8">
-    <title>أضف سؤالاً جديداً</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ 'Ask a Question' if session.get('lang') == 'en' else 'اسأل الفريق' }}</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    /* 1. MAIN BACKGROUND (Matches Home Page) */
+    body {
+        background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), 
+                    url("{{ url_for('static', filename='uob-entrance001.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 2. THE FORM CARD (Glass Effect) */
+    .form-card {
+        background: rgba(30, 41, 59, 0.7); /* See-through dark blue */
+        backdrop-filter: blur(10px);        /* Blurs the image behind it */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    /* 3. TEXT STYLES */
+    h2 {
+        color: white;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    p {
+        color: #94a3b8; /* Soft grey text */
+        margin-bottom: 30px;
+    }
+
+    /* 4. INPUT FIELDS */
+    .form-control {
+        background: rgba(15, 23, 42, 0.6) !important;
+        border: 1px solid #334155 !important;
+        color: white !important; /* Text you type is white */
+        border-radius: 8px;
+        padding: 12px;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box; /* Ensures padding doesn't break width */
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #06b6d4 !important; /* Neon Cyan border when clicking */
+        box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+        outline: none;
+    }
+
+    /* 5. THE BUTTON */
+    .btn-submit {
+        background: linear-gradient(135deg, #06b6d4, #3b82f6); /* Cyan to Blue */
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: bold;
+        width: 100%;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .btn-submit:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    }
+    
+    /* Icon Color */
+    .icon-top {
+        color: #06b6d4; /* Cyan Icon */
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    /* Placeholder Text Color */
+    ::placeholder {
+        color: #cbd5e1 !important; /* Soft White/Light Blue-Grey */
+        opacity: 0.7;               /* Slight transparency so it looks like a hint */
+    }
+    
+    /* Optional: Fix for Internet Explorer/Edge if needed */
+    :-ms-input-placeholder {
+        color: #cbd5e1 !important;
+    }
+</style>
 </head>
 <body>
 
-    <div class="header-section">
-        <h1><i class="fas fa-question-circle"></i> لم تجد إجابتك؟</h1>
-        <p>لا تقلق، فريقنا والشركاء الخمسة جاهزون للإجابة على استفسارك خلال 24 ساعة.</p>
-    </div>
-
-    <div class="container" style="max-width: 600px;">
-        
-        {% if success %}
-        <div class="success-box">
-            <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 15px;"></i><br>
-            تم إرسال سؤالك بنجاح!<br>
-            سيقوم أحد المتعاونين بمراجعة سؤالك والرد عليك عبر البريد الإلكتروني قريباً.
-            <br><br>
-            <a href="{{ url_for('home') }}" class="ask-btn" style="background: transparent; border: 2px solid #2ecc71; color: #2ecc71; box-shadow: none;">العودة للأسئلة الشائعة</a>
-        </div>
-        {% else %}
-
-        <div class="form-box" style="text-align: right;">
-            <form action="/ask" method="POST">
-                
-                <label class="form-label">البريد الإلكتروني (لنرسل لك الإجابة):</label>
-                <input type="email" name="email" class="form-input" placeholder="example@gmail.com" required>
-
-                <label class="form-label">اكتب سؤالك هنا بالتفصيل:</label>
-                <textarea name="question" class="form-input" rows="6" placeholder="مثال: هل يمكن لخريج هذا القسم العمل في مجال الأمن السيبراني؟" required></textarea>
-
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> إرسال السؤال للتقييم
-                </button>
-            </form>
-            
-            <div style="text-align: center; margin-top: 25px;">
-                <a href="{{ url_for('home') }}" style="color: #aaa; text-decoration: none; border-bottom: 1px dashed #777;">إلغاء والعودة للرئيسية</a>
+    <div class="container">
+        <div class="ask-container">
+            <div class="text-center mb-4">
+                <i class="fas fa-paper-plane fa-3x text-primary mb-3"></i>
+                <h2>
+                    {% if session.get('lang') == 'en' %}
+                        Ask the Team
+                    {% else %}
+                        أرسل سؤالك للفريق
+                    {% endif %}
+                </h2>
+                <p class="text-muted">
+                    {% if session.get('lang') == 'en' %}
+                        We usually reply within 24 hours.
+                    {% else %}
+                        نرد عادةً خلال 24 ساعة.
+                    {% endif %}
+                </p>
             </div>
-        </div>
-        {% endif %}
 
+            {% if success %}
+            <div class="alert alert-success text-center">
+                <i class="fas fa-check-circle"></i> 
+                {% if session.get('lang') == 'en' %}
+                    Message sent successfully!
+                {% else %}
+                    تم إرسال رسالتك بنجاح!
+                {% endif %}
+            </div>
+            <div class="text-center mt-3">
+                <a href="/" class="btn btn-outline-secondary">
+                    {% if session.get('lang') == 'en' %} Return Home {% else %} عودة للرئيسية {% endif %}
+                </a>
+            </div>
+            {% else %}
+
+            <form method="POST">
+            <div style="text-align: left; color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Your Email</div>
+            <input type="email" 
+                   name="email" 
+                   class="form-control" 
+                   placeholder="student@uob.edu.iq" 
+                   required>
+
+            <div style="text-align: left; color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Your Question</div>
+            <textarea name="question" 
+                      class="form-control" 
+                      rows="4" 
+                      placeholder="Hello, I would like to know the required GPA for the Big Data department..." 
+                      required></textarea>
+
+            <button type="submit" class="btn-submit">Send Question</button>
+            
+            <a href="{{ url_for('home') }}" style="display: block; margin-top: 15px; color: #94a3b8; text-decoration: none;">Cancel</a>
+        </form>
+        ```
+
+    
+    
+    /* When typing, text becomes bright white */
+    .form-control {
+        color: white !important;
+    }
+            {% endif %}
+        </div>
     </div>
 
 </body>
