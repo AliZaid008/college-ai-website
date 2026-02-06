@@ -1,7 +1,15 @@
 #-*-coding: utf-8 -*-
+import smtplib
+from email.message import EmailMessage
+
 from flask import Flask, render_template, request, session, redirect, url_for
 app = Flask(__name__)
 app.secret_key = 'baghdad_ai_college_secret_key'
+GROUP_EMAIL = "teamproject438@gmail.com"
+SENDER_EMAIL = "teamproject438@gmail.com"
+SENDER_PASSWORD = "qccjpkxxebqrzioa"
+SMTP_SERVER = "smtp.gmail.com"
+SMTP_PORT = 587
 
 # ==============================================================================
 # قاعدة البيانات (مطابقة تماماً للنصوص التي أرسلتها)
