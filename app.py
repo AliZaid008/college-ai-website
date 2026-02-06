@@ -363,8 +363,29 @@ CONTENT = {
                     },
                     {
                         'q': 'هل العلاقة مع الأساتذة رسمية جامدة أم توجيهية؟',
-                    'a': 'بحكم عددكم وطبيعة القسم، العلاقة أقرب لـ "فريق عمل". الأساتذة، وعلى رأسهم د. سهاد، يعرفون الطلاب بالاسم ويتابعون تطورهم.'
+                        'a': 'بحكم عددكم وطبيعة القسم، العلاقة أقرب لـ "فريق عمل". الأساتذة، وعلى رأسهم د. سهاد، يعرفون الطلاب بالاسم ويتابعون تطورهم.'
+                    },
+                    {
+                        "q": "بصراحة، هل هذا القسم 'موضة' (Trend) وسينتهي الطلب عليه بعد سنوات قليلة مثل بعض التخصصات السابقة؟",
+                        "a": "البيانات هي 'النفط الجديد' للعالم، وليست مجرد موضة عابرة. طالما هناك إنترنت، وهواتف ذكية، وبنوك، وحكومة إلكترونية، ستكون هناك 'بيانات' تحتاج لمن يحللها. الطلب العالمي يتضاعف سنوياً، وهذا القسم هو استثمار في وظيفة ستظل مطلوبة للسنوات العشرين القادمة على الأقل."
+                    },
+                    {
+                        "q": "هل 'البيانات الضخمة' تخصص للطلاب الذين لم يحصلوا على معدلات المجموعة الطبية فقط؟",
+                        "a": "هذا مفهوم خاطئ تماماً. في الدول المتقدمة، رواتب مهندسي البيانات وخبراء الذكاء الاصطناعي تنافس وتتخطى أحياناً رواتب الأطباء. اختيارك لهذا القسم يجب أن يكون نابعاً من شغف بالتكنولوجيا والابتكار، وليس كـ 'جائزة ترضية'. أنت هنا لتقود المستقبل الرقمي، لا لتعالج المرضى."
+                    },
+                    {
+                        "q": "هل توفر الكلية 'بيئة عمل حقيقية' (Internships) مع شركات، أم أننا سنتخرج ونحن لا نعرف سوى التنظير؟",
+                        "a": "نحن ندرك هذه الفجوة جيداً. الكلية تعمل على بناء شراكات استراتيجية مع شركات الاتصالات والمصارف وشركات النفط في العراق، لتوفير فرص تدريب صيفي إلزامية. هدفنا أن تتخرج وفي سيرتك الذاتية (CV) خبرة عملية حقيقية، وليس مجرد شهادة ورقية."
+                    },
+                    {
+                        "q": "هل سأحتاج لشراء حاسوب بمواصفات 'خيالية' وسعر باهظ للدراسة في هذا القسم؟",
+                        "a": "لا تقلق بشأن التكاليف. في المراحل الأولى، أي لابتوب بمواصفات متوسطة يفي بالغرض. وعندما نصل لمرحلة المعالجة الثقيلة للبيانات، فالكلية توفر مختبرات متطورة، بالإضافة إلى تدريبكم على استخدام 'الحوسبة السحابية' (Cloud Computing)، حيث تتم العمليات المعقدة على خوادم بعيدة وليس على جهازك الشخصي."
+                    },
+                    {
+                        "q": "هل يقتصر دور القسم على تخريج موظفين؟ هل يمكنني أن أكون 'رائد أعمال'؟",
+                        "a": "هذا هو جوهر تخصصنا! أغلب الشركات المليارية اليوم (مثل Uber, Facebook, Amazon) قائمة على البيانات. المناهج مصممة لتمنحك الأدوات التي تمكنك من بناء تطبيقك الخاص أو شركتك الناشئة (Startup) وتحويل الأرقام إلى أرباح ومشاريع ريادية."
                     }
+
 
                 ]
             },
@@ -541,6 +562,28 @@ CONTENT = {
                     {
                         'q': 'بكلمة واحدة، كيف تصف الخطة الدراسية؟',
                         'a': '"مكثفة"؛ فهي دورة تدريب قوات خاصة (Elite) لكن في مجال البيانات والتكنولوجيا.'
+                    },
+            
+
+                    {
+                        "q": "هل الدراسة باللغة الإنجليزية 100%؟ لغتي 'نص ونص'، هل سأضيع؟",
+                        "a": "لغة التكنولوجيا هي الإنجليزية، ولا مفر من ذلك. لكننا لا نتوقع منك أن تكون 'شكسبير' من اليوم الأول. المناهج تتدرج معك، والمصطلحات التقنية ستتكرر حتى تحفظها عن ظهر قلب. نحن نستخدم الإنجليزية 'التقنية' الواضحة، وسندعمك بمصادر مساعدة لتتجاوز حاجز اللغة وتصبح نقطة قوة لك لا عليك."
+                    },
+                    {
+                        "q": "هل المواد تعتمد على 'الرياضيات المعقدة'؟ أنا أحب الحاسوب لكني أخاف من الرياضيات!",
+                        "a": "نحن لا نطلب منك أن تكون عالم رياضيات بحتاً. الرياضيات التي ندرسها هي 'الرياضيات التطبيقية' (كيف تستخدم المنطق لحل المشاكل). الحاسوب هو من يقوم بالحسابات المعقدة؛ دورك هو فهم 'لماذا' وكيف توجهه. ستكتشف أن الرياضيات هنا ممتعة لأن لها تطبيقاً عملياً تراه بعينك، وليست مجرد معادلات مجردة."
+                    },
+                    {
+                        "q": "هل المناهج ثابتة (جامدة) أم تتغير؟ التكنولوجيا تتطور كل يوم، فهل سندرس تقنيات قديمة؟",
+                        "a": "الخطة الدراسية في كليتنا 'ديناميكية'. لدينا مساحة مخصصة في المنهج للمواضيع الحديثة (Selected Topics) يتم تحديثها سنوياً لتشمل آخر ما توصل إليه العلم (مثل Generative AI وغيرها). لن تتخرج بمعلومات منتهية الصلاحية، بل ستكون مواكباً للسوق لحظة بلحظة."
+                    },
+                    {
+                        "q": "هل يوجد في الجدول الدراسي مواد 'حشو' لا فائدة منها؟",
+                        "a": "تم تصميم الجدول وفق نظام 'بولونيا' التعليمي، الذي يركز على الكفاءة. كل مادة وضعت لتبني مهارة محددة يحتاجها سوق العمل. حتى المواد التي قد تبدو نظرية (مثل أخلاقيات البيانات أو التفكير الناقد) هي ضرورية جداً لتمييزك كمهندس محترف عن الهواة."
+                    },
+                    {
+                        "q": "هل سنقضي وقتنا كله في قاعات المحاضرات؟ أين الجانب العملي؟",
+                        "a": "المعادلة عندنا معكوسة: العملي هو الأساس. الجدول الدراسي مكثف بالساعات المختبرية (Lab Hours) والمشاريع التطبيقية. ستتعلم 'كيف تعمل' بيدك أكثر مما تسمع بأذنك. المحاضرة النظرية هي مجرد 'مفتاح'، والتطبيق في المختبر هو 'الباب' الحقيقي للمعرفة."
                     }
 
                 ]
@@ -662,6 +705,32 @@ CONTENT = {
                         'q': 'هل النجاح في هذه الامتحانات يعني أنني جاهز للعمل؟',
                         'a': 'نعم، لأن شهادتك ستقول لأرباب العمل: "هذا الطالب خضع لاختبارات حقيقية وهو جاهز لأصعب المهام".'
                     }
+                    ,
+
+                    {
+                        "q": "هل 'الامتحان الورقي النهائي' هو الحكم الوحيد على مستقبلي؟ أنا أرتبك في القاعات!",
+                        "a": "زمن 'الامتحان الواحد يقرر المصير' انتهى. تقييمنا مستمر وشامل (Formative Assessment). درجاتك موزعة على مشاريعك، نشاطك اليومي، الكويزات، وحلولك البرمجية. إذا تعثرت في امتحان ورقي، فإن إبداعك في المشروع العملي وتفاعلك قادران على رفع معدلك بامتياز."
+                    },
+                    {
+                        "q": "كيف سيتم التعامل مع مشاريع البرمجة؟ هل الحفظ (Copy-Paste) ينفع؟",
+                        "a": "في البرمجة، 'الحفظ' هو عدوك الأول. الامتحانات العملية تعتمد على الفهم والمنطق (Problem Solving). قد نسمح لك أحياناً باستخدام المصادر (Open Book)، لأننا لا نمتحن ذاكرتك، بل نمتحن قدرتك على إيجاد الحلول وتركيب 'الكود' الصحيح. المبرمج الحقيقي يفهم ولا يبصم."
+                    },
+                    {
+                        "q": "هل سيتم استخدام أدوات كشف الذكاء الاصطناعي لاتهامنا بالغش؟",
+                        "a": "نحن نشجع على استخدام الذكاء الاصطناعي كـ 'مساعد' (Co-pilot) وليس كـ 'بديل'. التقييم سيتضمن 'مناقشة شفهية' (Code Defense) حيث يسألك الأستاذ عن سبب كتابتك لهذا السطر البرمجي. إذا كنت فاهمًا لما كتبه لك الـ AI، فأنت في أمان. أما النسخ الأعمى فسينكشف فوراً عند المناقشة."
+                    },
+                    {
+                        "q": "ماذا لو تعطل الحاسوب أو السيرفر أثناء الامتحان العملي؟ هل سأرسب؟",
+                        "a": "الطالب لا يتحمل مسؤولية الأخطاء التقنية. في حال حدوث أي خلل فني في المختبر، يتم تعويض الطالب وقتاً إضافياً أو إعادة الامتحان فوراً. نحن هنا لنقيس مهارتك، لا لنعاقبك على ظروف خارجة عن إرادتك."
+                    },
+                    {
+                        "q": "هل الأسئلة ستكون 'تعجيزية' لإثبات صعوبة الكلية؟",
+                        "a": "الصعوبة ليست هدفاً بحد ذاتها. الأسئلة ستكون 'تحدياً للعقل' (Challenging) لتخرج أفضل ما لديك، وليست تعجيزية ومستحيلة. ستجد أسئلة تتطلب التفكير خارج الصندوق، والربط بين المعلومات، وهذا هو التدريب الحقيقي لما ستواجهه في وظيفتك مستقبلاً."
+                    }
+
+
+
+
 
                 ]
             },
@@ -1509,6 +1578,30 @@ CONTENT = {
             'q': 'Is the relationship with professors formal and rigid or guiding?',
             'a': 'Due to your number and the nature of the department, the relationship is closer to a "Team". Professors, led by Dr. Suhad, know students by name and follow their development.'
         }
+        ,
+
+    {
+        "q": "Honestly, is this department just a 'Trend' that will fade away in a few years?",
+        "a": "Data is the 'New Oil' of the world, not just a passing fad. As long as there is internet, smartphones, banking, and e-government, there will be 'Data' that needs analysis. Global demand is doubling annually, and this department is an investment in a career that will remain in high demand for at least the next 20 years."
+    },
+    {
+        "q": "Is 'Big Data' only for students who didn't get high enough grades for Medical Schools?",
+        "a": "This is a complete misconception. In developed countries, salaries for Data Engineers and AI experts often rival or exceed those of doctors. Your choice of this major should stem from a passion for technology and innovation, not as a 'consolation prize.' You are here to lead the digital future, not to treat patients."
+    },
+    {
+        "q": "Does the college provide a real work environment (Internships), or will we graduate only knowing theory?",
+        "a": "We are well aware of this gap. The college is working on building strategic partnerships with telecom companies, banks, and oil companies in Iraq to provide mandatory summer internship opportunities. Our goal is for you to graduate with real practical experience on your CV, not just a piece of paper."
+    },
+    {
+        "q": "Will I need to buy a high-end computer with an 'insane' price to study in this department?",
+        "a": "Don't worry about the costs. In the early stages, any laptop with mid-range specs will do. When we reach the heavy data processing phase, the college provides advanced labs and will train you on using 'Cloud Computing,' where complex operations are performed on remote servers rather than your personal device."
+    },
+    {
+        "q": "Is the department's role limited to graduating employees? Can I be an 'Entrepreneur'?",
+        "a": "This is the core of our specialty! Most billion-dollar companies today (like Uber, Facebook, Amazon) are built on data. The curriculum is designed to give you the tools to build your own app or startup and turn numbers into profits and entrepreneurial projects."
+    }
+
+
     ]
 
 
@@ -1692,6 +1785,29 @@ CONTENT = {
                             'q': 'In one word, how do you describe the study plan?',
                             'a': '"Intensive"; it is a Special Forces (Elite) training course but in the field of data and technology.'
                         }
+                        ,
+
+    {
+        "q": "Is the study 100% in English? My language skills are 'average', will I get lost?",
+        "a": "English is the language of technology, and there is no escape from that. However, we don't expect you to be 'Shakespeare' from day one. The curriculum progresses with you, and technical terms will be repeated until you know them by heart. We use clear 'Technical English,' and we will support you with resources to help you overcome the language barrier until it becomes a strength for you, not a weakness."
+    },
+    {
+        "q": "Do the courses rely on 'complex mathematics'? I love computers but I'm afraid of math!",
+        "a": "We don't expect you to be a pure mathematician. The math we study is 'Applied Mathematics' (how to use logic to solve problems). The computer performs the complex calculations; your role is to understand the 'why' and how to guide it. You will find that math here is enjoyable because it has practical applications you can see, rather than just abstract equations."
+    },
+    {
+        "q": "Are the curricula fixed (rigid) or do they change? Technology evolves daily, will we study old techniques?",
+        "a": "The study plan at our college is 'dynamic.' We have dedicated space in the curriculum for 'Selected Topics' that are updated annually to include the latest scientific advancements (such as Generative AI and others). You won't graduate with expired information; you will be up-to-date with the market moment by moment."
+    },
+    {
+        "q": "Are there 'filler' subjects in the curriculum that have no benefit?",
+        "a": "The schedule is designed according to the 'Bologna Process,' which focuses on efficiency. Every subject is placed to build a specific skill needed by the labor market. Even subjects that might seem theoretical (like Data Ethics or Critical Thinking) are essential to distinguish you as a professional engineer from an amateur."
+    },
+    {
+        "q": "Will we spend all our time in lecture halls? Where is the practical side?",
+        "a": "Our formula is reversed: the practical side is the foundation. The schedule is intensive with Lab Hours and applied projects. You will learn 'how to work' with your hands more than you hear with your ears. The theoretical lecture is just a 'key,' and the lab application is the real 'door' to knowledge."
+    }
+
                     ]
 
             },
@@ -1812,6 +1928,30 @@ CONTENT = {
             'q': 'Does passing these exams mean I am ready for work?',
             'a': 'Yes, because your degree will tell employers: "This student underwent real tests and is ready for the hardest tasks".'
         }
+        ,
+
+    {
+        "q": "Is the 'Final Written Exam' the only judgment of my future? I get nervous in exam halls!",
+        "a": "The era of 'one exam decides your fate' is over. Our assessment is continuous and comprehensive (Formative Assessment). Your grades are distributed across your projects, daily activity, quizzes, and programming solutions. If you stumble in a written exam, your creativity in practical projects and your interaction can still help you achieve an excellent overall grade."
+    },
+    {
+        "q": "How will programming projects be handled? Does memorization (Copy-Paste) work?",
+        "a": "In programming, 'memorization' is your number one enemy. Practical exams depend on understanding and logic (Problem Solving). We may sometimes allow the use of resources (Open Book), because we are not testing your memory, but rather your ability to find solutions and assemble the correct 'code.' A true programmer understands, they don't just memorize."
+    },
+    {
+        "q": "Will AI detection tools be used to accuse us of cheating?",
+        "a": "We encourage the use of Artificial Intelligence as a 'Co-pilot,' not a 'replacement.' The assessment will include a 'viva' or 'oral discussion' (Code Defense) where the professor asks you why you wrote a specific line of code. If you understand what the AI wrote for you, you are safe. Blind copying, however, will be exposed immediately during the discussion."
+    },
+    {
+        "q": "What if the computer or server crashes during a practical exam? Will I fail?",
+        "a": "Students are not responsible for technical errors. In the event of any technical failure in the lab, the student is compensated with extra time or an immediate re-exam. We are here to measure your skill, not to punish you for circumstances beyond your control."
+    },
+    {
+        "q": "Will the questions be 'impossible' just to prove the college is difficult?",
+        "a": "Difficulty is not a goal in itself. The questions will be 'Challenging' to bring out the best in you, not impossible. You will find questions that require thinking outside the box and connecting information, which is the real training for what you will face in your future career."
+    }
+
+
     
                 ]
             },
