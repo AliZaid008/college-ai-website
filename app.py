@@ -2,7 +2,7 @@
 import smtplib
 from email.message import EmailMessage
 
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for, flash
 app = Flask(__name__)
 app.secret_key = 'baghdad_ai_college_secret_key'
 GROUP_EMAIL = "teamproject438@gmail.com"
@@ -2484,6 +2484,11 @@ def toggle_lang():
 
 @app.route('/ask')
 @app.route('/ask', methods=['GET', 'POST'])
+# Make sure these imports are at the top of your file!
+# import smtplib
+# from email.message import EmailMessage
+
+@app.route('/ask', methods=['GET', 'POST'])
 def ask():
     # 1. Determine direction based on current language
     lang_code = session.get('lang', 'ar')
@@ -2494,7 +2499,28 @@ def ask():
         email = request.form.get('email')
         question = request.form.get('question')
         
-        # Here we just print to the black terminal window (simulating a database save)
+        # --- NEW CODE: Send the Email ---
+        try:
+            msg = EmailMessage()
+            msg.set_content(f"You received a new question!\n\nFrom: {email}\n\nQuestion:\n{question}")
+            msg['Subject'] = f'New Question from {email}'
+            msg['From'] = SENDER_EMAIL
+            msg['To'] = GROUP_EMAIL  # This sends it to your team email
+
+            # Connect to Gmail and send
+            with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+                server.starttls()
+                server.login(SENDER_EMAIL, SENDER_PASSWORD)
+                server.send_message(msg)
+                
+            print(f"✅ Email successfully sent to {GROUP_EMAIL}")
+            
+        except Exception as e:
+            # If email fails (bad wifi/password), print error but don't crash the app
+            print(f"❌ Error sending email: {e}")
+        # --------------------------------
+        
+        # Here we just print to the black terminal window (Logs)
         print(f"-------- NEW QUESTION RECEIVED --------")
         print(f"Email: {email}")
         print(f"Question: {question}")
